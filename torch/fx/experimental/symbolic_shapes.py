@@ -104,7 +104,6 @@ if TYPE_CHECKING:
     import types
 
     from torch import Tensor
-    from torch._dynamo.source import TensorPropertySource
     from torch._subclasses.fake_tensor import FakeTensor
     from torch.types import BoolLikeType, FloatLikeType, IntLikeType
 
@@ -1034,7 +1033,7 @@ class Specialization:
     while maintaining a general fallback.
     """
 
-    source: TensorPropertySource
+    source: Any
     check_fn: Callable
 
 

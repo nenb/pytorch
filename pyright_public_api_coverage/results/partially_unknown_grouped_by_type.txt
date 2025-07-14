@@ -1,0 +1,1189 @@
+Grouped by Parameter and Type:
+Parameter: "input", Type: "Tensor", Count: 990
+Parameter: "out", Type: "Tensor | None", Count: 370
+Parameter: "g", Type: "GraphContext", Count: 246
+Parameter: "other", Type: "Tensor", Count: 192
+Parameter: "device", Type: "str | device | int | None", Count: 121
+Parameter: "device", Type: "device | str | int | None", Count: 94
+Parameter: "tensor", Type: "Tensor", Count: 63
+Parameter: "index", Type: "Tensor", Count: 63
+Parameter: "weight", Type: "Tensor", Count: 53
+Parameter: "module", Type: "Module", Count: 51
+Parameter: "generator", Type: "Generator | None", Count: 50
+Parameter: "bias", Type: "Tensor | None", Count: 47
+Parameter: "x", Type: "Tensor", Count: 46
+Parameter: "node", Type: "Node", Count: 45
+Parameter: "target", Type: "Tensor", Count: 42
+Parameter: "weight", Type: "Tensor | None", Count: 39
+Parameter: "model", Type: "GraphModule", Count: 36
+Parameter: "self", Type: "Tensor", Count: 35
+Parameter: "groups", Type: "int | SymInt", Count: 33
+Parameter: "out", Type: "Tensor | tuple[Tensor, ...] | list[Tensor] | None", Count: 32
+Parameter: "other", Type: "Tensor | int | float | bool | complex", Count: 31
+Parameter: "device", Type: "device | None", Count: 31
+Parameter: "gm", Type: "GraphModule", Count: 31
+Parameter: "group", Type: "ProcessGroup | None", Count: 30
+Parameter: "src", Type: "Tensor", Count: 29
+Parameter: "model", Type: "Module", Count: 29
+Parameter: "mat2", Type: "Tensor", Count: 25
+Parameter: "path", Type: "str | PathLike[Unknown]", Count: 25
+Parameter: "tracer", Type: "PythonKeyTracer | _GraphAppendingTracerEx", Count: 24
+Parameter: "value", Type: "Tensor", Count: 22
+Parameter: "y", Type: "Tensor", Count: 22
+Parameter: "graph", Type: "Graph", Count: 22
+Parameter: "size", Type: "int | SymInt", Count: 21
+Parameter: "source", Type: "Tensor", Count: 20
+Parameter: "optimizer", Type: "Optimizer", Count: 19
+Parameter: "hx", Type: "Tensor", Count: 19
+Parameter: "n", Type: "Node", Count: 18
+Parameter: "stride", Type: "int | SymInt | Sequence[int | SymInt]", Count: 18
+Parameter: "dilation", Type: "int | SymInt | Sequence[int | SymInt]", Count: 18
+Parameter: "mod", Type: "Module", Count: 18
+Parameter: "indices", Type: "Tensor", Count: 17
+Parameter: "device", Type: "device", Count: 15
+Parameter: "batch1", Type: "Tensor", Count: 15
+Parameter: "batch2", Type: "Tensor", Count: 15
+Parameter: "vec", Type: "Tensor", Count: 15
+Parameter: "input2", Type: "Tensor", Count: 15
+Parameter: "out", Type: "Tensor", Count: 15
+Parameter: "batch_sizes", Type: "Tensor | None", Count: 15
+Parameter: "lr", Type: "float | Tensor", Count: 15
+Parameter: "mat1", Type: "Tensor", Count: 14
+Parameter: "device_mesh", Type: "DeviceMesh | None", Count: 14
+Parameter: "other", Type: "Tensor | int", Count: 13
+Parameter: "mask", Type: "Tensor", Count: 13
+Parameter: "t", Type: "Tensor", Count: 12
+Parameter: "padding", Type: "int | SymInt | Sequence[int | SymInt]", Count: 12
+Parameter: "device", Type: "int | str | device", Count: 12
+Parameter: "store", Type: "Store", Count: 12
+Parameter: "scale", Type: "Tensor | float", Count: 12
+Parameter: "mat", Type: "Tensor", Count: 11
+Parameter: "vec2", Type: "Tensor", Count: 11
+Parameter: "w", Type: "Tensor", Count: 11
+Parameter: "backend_config", Type: "BackendConfig", Count: 11
+Parameter: "graph_module", Type: "GraphModule", Count: 11
+Parameter: "tensor1", Type: "Tensor", Count: 10
+Parameter: "tensor2", Type: "Tensor", Count: 10
+Parameter: "end", Type: "Tensor", Count: 10
+Parameter: "running_mean", Type: "Tensor | None", Count: 10
+Parameter: "running_var", Type: "Tensor | None", Count: 10
+Parameter: "data", Type: "Tensor", Count: 10
+Parameter: "state_dict", Type: "dict[str, Unknown | Any]", Count: 10
+Parameter: "checkpoint_id", Type: "str | PathLike[Unknown]", Count: 10
+Parameter: "exponent", Type: "Tensor", Count: 9
+Parameter: "input1", Type: "Tensor", Count: 9
+Parameter: "device", Type: "int | device | None", Count: 9
+Parameter: "b", Type: "Tensor | None", Count: 9
+Parameter: "bucket", Type: "GradBucket", Count: 9
+Parameter: "source", Type: "Source", Count: 9
+Parameter: "func", Type: "OpOverload[..., Any]", Count: 9
+Parameter: "min", Type: "Tensor | None", Count: 8
+Parameter: "max", Type: "Tensor | None", Count: 8
+Parameter: "values", Type: "Tensor", Count: 8
+Parameter: "new_state", Type: "Tensor", Count: 8
+Parameter: "mean", Type: "Tensor", Count: 8
+Parameter: "x1", Type: "Tensor", Count: 8
+Parameter: "x2", Type: "Tensor", Count: 8
+Parameter: "w_ih", Type: "Tensor", Count: 8
+Parameter: "w_hh", Type: "Tensor", Count: 8
+Parameter: "backend_config", Type: "BackendConfig | dict[str, Any] | None", Count: 8
+Parameter: "process_group", Type: "ProcessGroup", Count: 8
+Parameter: "loc", Type: "Tensor | float", Count: 8
+Parameter: "example_inputs", Type: "list[tuple[Unknown, ...]] | dict[(...) -> Unknown, list[tuple[Unknown, ...]]] | None", Count: 8
+Parameter: "_random_samples", Type: "Tensor | None", Count: 8
+Parameter: "vec1", Type: "Tensor", Count: 7
+Parameter: "storage_offset", Type: "int | SymInt | None", Count: 7
+Parameter: "device", Type: "str | device", Count: 7
+Parameter: "A", Type: "Tensor", Count: 7
+Parameter: "condition", Type: "Tensor", Count: 7
+Parameter: "query", Type: "Tensor", Count: 7
+Parameter: "attn_mask", Type: "Tensor | None", Count: 7
+Parameter: "permutation", Type: "Tensor | None", Count: 7
+Parameter: "hx", Type: "Tensor | None", Count: 7
+Parameter: "stream", Type: "Stream | None", Count: 7
+Parameter: "metadata", Type: "Metadata", Count: 7
+Parameter: "params", Type: "RendezvousParameters", Count: 7
+Parameter: "probs", Type: "Tensor | None", Count: 7
+Parameter: "logits", Type: "Tensor | None", Count: 7
+Parameter: "source", Type: "Source | None", Count: 7
+Parameter: "shape_env", Type: "ShapeEnv | None", Count: 7
+Parameter: "original_tensor", Type: "Tensor", Count: 7
+Parameter: "datapipe", Type: "IterDataPipe[Unknown]", Count: 7
+Parameter: "storage", Type: "Storage", Count: 6
+Parameter: "other", Type: "Tensor | int | float | bool | complex | SymInt | SymFloat", Count: 6
+Parameter: "k", Type: "int | SymInt", Count: 6
+Parameter: "start", Type: "Tensor", Count: 6
+Parameter: "length", Type: "int | SymInt", Count: 6
+Parameter: "bias", Type: "Tensor", Count: 6
+Parameter: "output_padding", Type: "int | SymInt | Sequence[int | SymInt]", Count: 6
+Parameter: "per_sample_weights", Type: "Tensor | None", Count: 6
+Parameter: "high", Type: "int | SymInt", Count: 6
+Parameter: "offsets", Type: "Tensor | None", Count: 6
+Parameter: "values", Type: "Tensor | list[Unknown]", Count: 6
+Parameter: "_weight", Type: "Tensor | None", Count: 6
+Parameter: "qconfig", Type: "QConfig | None", Count: 6
+Parameter: "key", Type: "Tensor", Count: 6
+Parameter: "root", Type: "Module | dict[str, Any]", Count: 6
+Parameter: "m", Type: "Module", Count: 6
+Parameter: "quantization_config", Type: "QuantizationConfig | None", Count: 6
+Parameter: "group", Type: "ProcessGroup", Count: 6
+Parameter: "checkpoint_id", Type: "str | PathLike[Unknown] | None", Count: 6
+Parameter: "optim", Type: "Optimizer", Count: 6
+Parameter: "lib", Type: "Library | None", Count: 6
+Parameter: "op", Type: "str | OpOverload[..., Any] | Any", Count: 6
+Parameter: "datapipe", Type: "IterDataPipe[Unknown] | MapDataPipe[Unknown]", Count: 6
+Parameter: "other", Type: "Tensor | int | float | bool", Count: 5
+Parameter: "output_size", Type: "int | SymInt | None", Count: 5
+Parameter: "index", Type: "int | SymInt", Count: 5
+Parameter: "start", Type: "int | SymInt | None", Count: 5
+Parameter: "end", Type: "int | SymInt | None", Count: 5
+Parameter: "step", Type: "int | SymInt", Count: 5
+Parameter: "invstd", Type: "Tensor", Count: 5
+Parameter: "grid", Type: "Tensor", Count: 5
+Parameter: "anchor", Type: "Tensor", Count: 5
+Parameter: "positive", Type: "Tensor", Count: 5
+Parameter: "negative", Type: "Tensor", Count: 5
+Parameter: "tensors", Type: "Tensor", Count: 5
+Parameter: "stream", Type: "Stream", Count: 5
+Parameter: "quantization_config", Type: "QuantizationConfig", Count: 5
+Parameter: "input_tensor", Type: "Tensor", Count: 5
+Parameter: "process_group", Type: "ProcessGroup | None", Count: 5
+Parameter: "probs", Type: "Tensor | int | float | bool | None", Count: 5
+Parameter: "logits", Type: "Tensor | int | float | bool | None", Count: 5
+Parameter: "x", Type: "int | float | Any | Unknown", Count: 5
+Parameter: "fx_module", Type: "GraphModule", Count: 5
+Parameter: "module", Type: "GraphModule", Count: 5
+Parameter: "obj", Type: "Tensor", Count: 5
+Parameter: "a", Type: "bool | SymBool", Count: 5
+Parameter: "args", Type: "tuple[Unknown, ...]", Count: 4
+Parameter: "max", Type: "Tensor", Count: 4
+Parameter: "min", Type: "Tensor", Count: 4
+Parameter: "other", Type: "Tensor | int | float | bool | SymInt | SymFloat", Count: 4
+Parameter: "window", Type: "Tensor | None", Count: 4
+Parameter: "q", Type: "Tensor", Count: 4
+Parameter: "start", Type: "int | SymInt", Count: 4
+Parameter: "the_template", Type: "Tensor", Count: 4
+Parameter: "device", Type: "str | device | int", Count: 4
+Parameter: "model", Type: "ScriptModule", Count: 4
+Parameter: "mod", Type: "ScriptModule", Count: 4
+Parameter: "input", Type: "Tensor | int | float | bool | complex", Count: 4
+Parameter: "log_probs", Type: "Tensor", Count: 4
+Parameter: "targets", Type: "Tensor", Count: 4
+Parameter: "n", Type: "int | SymInt", Count: 4
+Parameter: "scale", Type: "Tensor", Count: 4
+Parameter: "zero_point", Type: "Tensor", Count: 4
+Parameter: "batch_sizes", Type: "Tensor", Count: 4
+Parameter: "b_ih", Type: "Tensor | None", Count: 4
+Parameter: "b_hh", Type: "Tensor | None", Count: 4
+Parameter: "b_ih", Type: "Tensor", Count: 4
+Parameter: "b_hh", Type: "Tensor", Count: 4
+Parameter: "packed_ih", Type: "Tensor", Count: 4
+Parameter: "packed_hh", Type: "Tensor", Count: 4
+Parameter: "col_offsets_ih", Type: "Tensor", Count: 4
+Parameter: "col_offsets_hh", Type: "Tensor", Count: 4
+Parameter: "key_padding_mask", Type: "Tensor | None", Count: 4
+Parameter: "root", Type: "Module", Count: 4
+Parameter: "fuser_method_mapping", Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, Sequential | ((...) -> Unknown)]", Count: 4
+Parameter: "args", Type: "Tensor", Count: 4
+Parameter: "inputs", Type: "Tensor | Sequence[Tensor]", Count: 4
+Parameter: "output_tensor", Type: "Tensor", Count: 4
+Parameter: "write_item", Type: "WriteItem", Count: 4
+Parameter: "planner", Type: "LoadPlanner", Count: 4
+Parameter: "optimizers", Type: "Optimizer | Iterable[Optimizer]", Count: 4
+Parameter: "args", Type: "dict[int, tuple[Unknown, ...]]", Count: 4
+Parameter: "concentration", Type: "Tensor | float", Count: 4
+Parameter: "temperature", Type: "Tensor", Count: 4
+Parameter: "obj", Type: "ScriptObject | FakeScriptObject", Count: 4
+Parameter: "obj", Type: "SymInt | SymFloat | SymBool", Count: 4
+Parameter: "key", Type: "SymInt | SymFloat | SymBool", Count: 4
+Parameter: "x", Type: "bool | SymBool", Count: 4
+Parameter: "bn", Type: "_BatchNorm", Count: 4
+Parameter: "bn_rm", Type: "Tensor", Count: 4
+Parameter: "bn_rv", Type: "Tensor", Count: 4
+Parameter: "input", Type: "Value", Count: 4
+Parameter: "self", Type: "Value", Count: 4
+Parameter: "model", Type: "Module | ((...) -> Unknown)", Count: 4
+Parameter: "optimizer", Type: "Optimizer | None", Count: 4
+Parameter: "wrapper_class", Type: "type[DataChunk[Unknown]]", Count: 4
+Parameter: "datapipes", Type: "IterDataPipe[Unknown]", Count: 4
+Parameter: "event", Type: "Event", Count: 3
+Parameter: "LU_data", Type: "Tensor", Count: 3
+Parameter: "LU_pivots", Type: "Tensor", Count: 3
+Parameter: "repeats", Type: "int | SymInt", Count: 3
+Parameter: "repeats", Type: "Tensor", Count: 3
+Parameter: "split_size", Type: "int | SymInt", Count: 3
+Parameter: "map_location", Type: "((Storage, str) -> Storage) | device | str | dict[str, str] | None", Count: 3
+Parameter: "theta", Type: "Tensor", Count: 3
+Parameter: "pos_weight", Type: "Tensor | None", Count: 3
+Parameter: "input_lengths", Type: "Tensor", Count: 3
+Parameter: "target_lengths", Type: "Tensor", Count: 3
+Parameter: "input", Type: "Tensor | int | float | bool", Count: 3
+Parameter: "low", Type: "int | SymInt", Count: 3
+Parameter: "sorted_indices", Type: "Tensor | None", Count: 3
+Parameter: "hidden", Type: "Tensor", Count: 3
+Parameter: "arg", Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 3
+Parameter: "root", Type: "Module | ((...) -> Any)", Count: 3
+Parameter: "obj", Type: "Proxy", Count: 3
+Parameter: "base_name_to_sets_of_related_ops", Type: "dict[str, set[((...) -> Unknown) | str]]", Count: 3
+Parameter: "m", Type: "GraphModule", Count: 3
+Parameter: "X", Type: "Tensor", Count: 3
+Parameter: "min_val", Type: "Tensor", Count: 3
+Parameter: "max_val", Type: "Tensor", Count: 3
+Parameter: "ep", Type: "ExportedProgram", Count: 3
+Parameter: "q1", Type: "QConfig | None", Count: 3
+Parameter: "q2", Type: "QConfig | None", Count: 3
+Parameter: "additional_static_quant_mapping", Type: "dict[(...) -> Unknown, Any] | None", Count: 3
+Parameter: "additional_dynamic_quant_mapping", Type: "dict[(...) -> Unknown, Any] | None", Count: 3
+Parameter: "backend_config", Type: "BackendConfig | None", Count: 3
+Parameter: "convert_custom_config", Type: "ConvertCustomConfig | dict[str, Any] | None", Count: 3
+Parameter: "qconfig_mapping", Type: "QConfigMapping | dict[str, Any] | None", Count: 3
+Parameter: "qconfig_mapping", Type: "QConfigMapping | dict[str, Any]", Count: 3
+Parameter: "prepare_custom_config", Type: "PrepareCustomConfig | dict[str, Any] | None", Count: 3
+Parameter: "grad_outputs", Type: "Tensor | Sequence[Tensor] | None", Count: 3
+Parameter: "params", Type: "_SDPAParams", Count: 3
+Parameter: "pg", Type: "ProcessGroup | None", Count: 3
+Parameter: "metadata", Type: "Metadata | None", Count: 3
+Parameter: "new_path", Type: "str | PathLike[Unknown]", Count: 3
+Parameter: "planner", Type: "SavePlanner", Count: 3
+Parameter: "sharding_spec", Type: "ShardingSpec", Count: 3
+Parameter: "pg", Type: "ProcessGroup", Count: 3
+Parameter: "spec", Type: "WorkerSpec", Count: 3
+Parameter: "metric_data", Type: "MetricData", Count: 3
+Parameter: "optim", Type: "Optimizer | None", Count: 3
+Parameter: "stage_module", Type: "Module", Count: 3
+Parameter: "pipe_info", Type: "PipeInfo", Count: 3
+Parameter: "losses", Type: "list[Unknown] | None", Count: 3
+Parameter: "rate", Type: "Tensor | float", Count: 3
+Parameter: "loc", Type: "Tensor", Count: 3
+Parameter: "proxy", Type: "Proxy", Count: 3
+Parameter: "decomposition_table", Type: "Mapping[OpOverload[..., Any], (...) -> Unknown] | None", Count: 3
+Parameter: "t", Type: "MetaTensorDesc[Unknown]", Count: 3
+Parameter: "s", Type: "MetaStorageDesc", Count: 3
+Parameter: "self", Type: "_LazyProtocol", Count: 3
+Parameter: "tgt", Type: "Tensor", Count: 3
+Parameter: "tgt_mask", Type: "Tensor | None", Count: 3
+Parameter: "memory_mask", Type: "Tensor | None", Count: 3
+Parameter: "src_key_padding_mask", Type: "Tensor | None", Count: 3
+Parameter: "tgt_key_padding_mask", Type: "Tensor | None", Count: 3
+Parameter: "memory_key_padding_mask", Type: "Tensor | None", Count: 3
+Parameter: "output_device", Type: "int | device | None", Count: 3
+Parameter: "value", Type: "Value", Count: 3
+Parameter: "model", Type: "Module | ScriptModule", Count: 3
+Parameter: "grad_scale", Type: "Tensor | None", Count: 3
+Parameter: "found_inf", Type: "Tensor | None", Count: 3
+Parameter: "sample_input", Type: "Tensor | Any", Count: 3
+Parameter: "extensions", Type: "Iterable[Unknown]", Count: 3
+Parameter: "header_include_dirs", Type: "Iterable[Unknown]", Count: 3
+Parameter: "indices", Type: "SupportsIndex | bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | _NestedSequence[bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | None] | tuple[SupportsIndex | bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | _NestedSequence[bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | None] | None, ...] | None", Count: 2
+Parameter: "weights", Type: "Tensor | None", Count: 2
+Parameter: "minlength", Type: "int | SymInt", Count: 2
+Parameter: "fweights", Type: "Tensor | None", Count: 2
+Parameter: "aweights", Type: "Tensor | None", Count: 2
+Parameter: "device", Type: "device | int | str | None", Count: 2
+Parameter: "prepend", Type: "Tensor | None", Count: 2
+Parameter: "append", Type: "Tensor | None", Count: 2
+Parameter: "bins", Type: "Tensor", Count: 2
+Parameter: "num_samples", Type: "int | SymInt", Count: 2
+Parameter: "input3", Type: "Tensor", Count: 2
+Parameter: "shifts", Type: "int | SymInt | Sequence[int | SymInt]", Count: 2
+Parameter: "source", Type: "Storage | TypedStorage | UntypedStorage", Count: 2
+Parameter: "tensor_indices_or_sections", Type: "Tensor", Count: 2
+Parameter: "sections", Type: "int | SymInt", Count: 2
+Parameter: "n", Type: "Value", Count: 2
+Parameter: "val", Type: "Tensor", Count: 2
+Parameter: "n", Type: "Block | Node", Count: 2
+Parameter: "cu", Type: "CompilationUnit", Count: 2
+Parameter: "map_location", Type: "str | device | int | None", Count: 2
+Parameter: "outputs", Type: "Tensor", Count: 2
+Parameter: "new_scale", Type: "float | Tensor | None", Count: 2
+Parameter: "grad_out", Type: "Tensor", Count: 2
+Parameter: "count", Type: "Tensor", Count: 2
+Parameter: "boundaries", Type: "Tensor", Count: 2
+Parameter: "z", Type: "Tensor", Count: 2
+Parameter: "offsets", Type: "Tensor", Count: 2
+Parameter: "packed_weight", Type: "Tensor", Count: 2
+Parameter: "packed", Type: "Tensor", Count: 2
+Parameter: "col_offsets", Type: "Tensor", Count: 2
+Parameter: "elements", Type: "Tensor", Count: 2
+Parameter: "test_elements", Type: "Tensor", Count: 2
+Parameter: "std", Type: "Tensor", Count: 2
+Parameter: "scales", Type: "Tensor", Count: 2
+Parameter: "zero_points", Type: "Tensor", Count: 2
+Parameter: "sorted_sequence", Type: "Tensor", Count: 2
+Parameter: "sorter", Type: "Tensor | None", Count: 2
+Parameter: "lengths", Type: "Tensor | None", Count: 2
+Parameter: "ccol_indices", Type: "Tensor | list[Unknown]", Count: 2
+Parameter: "row_indices", Type: "Tensor | list[Unknown]", Count: 2
+Parameter: "crow_indices", Type: "Tensor | list[Unknown]", Count: 2
+Parameter: "col_indices", Type: "Tensor | list[Unknown]", Count: 2
+Parameter: "tensors", Type: "Tensor | list[Tensor]", Count: 2
+Parameter: "M", Type: "Tensor | None", Count: 2
+Parameter: "k", Type: "type[TorchDispatchMode] | type[Tensor] | TransformType | DispatchKey", Count: 2
+Parameter: "options", Type: "dict[str, str | int | bool | ((...) -> Unknown)] | None", Count: 2
+Parameter: "in_dims", Type: "int | tuple[Unknown, ...]", Count: 2
+Parameter: "tensor", Type: "Tensor | None", Count: 2
+Parameter: "param", Type: "Parameter | None", Count: 2
+Parameter: "permutation", Type: "Tensor", Count: 2
+Parameter: "gm_a", Type: "GraphModule", Count: 2
+Parameter: "gm_b", Type: "GraphModule", Count: 2
+Parameter: "n", Type: "Node | None", Count: 2
+Parameter: "exporter", Type: "PackageExporter", Count: 2
+Parameter: "first_node", Type: "Node", Count: 2
+Parameter: "last_node", Type: "Node", Count: 2
+Parameter: "mt", Type: "GraphModule", Count: 2
+Parameter: "node_type_to_io_type_map", Type: "dict[str, set[((...) -> Unknown) | str]]", Count: 2
+Parameter: "op_pattern", Type: "((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any", Count: 2
+Parameter: "qconfig_mapping", Type: "QConfigMapping | None", Count: 2
+Parameter: "fused_graph", Type: "Graph", Count: 2
+Parameter: "root_node", Type: "Node", Count: 2
+Parameter: "fuse_custom_config", Type: "FuseCustomConfig", Count: 2
+Parameter: "fuse_custom_config", Type: "FuseCustomConfig | dict[str, Any] | None", Count: 2
+Parameter: "node_name_to_match_result_with_qconfig", Type: "dict[str, tuple[Node, list[Node], ((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any | None, QuantizeHandler, QConfig | None]]", Count: 2
+Parameter: "prepare_custom_config", Type: "PrepareCustomConfig", Count: 2
+Parameter: "_equalization_config", Type: "QConfigMapping | dict[str, Any] | None", Count: 2
+Parameter: "quantizer", Type: "Quantizer", Count: 2
+Parameter: "stream", Type: "_CudaStreamBase", Count: 2
+Parameter: "allocator", Type: "_CUDAAllocator", Count: 2
+Parameter: "s", Type: "Storage", Count: 2
+Parameter: "obj", Type: "ScriptObject", Count: 2
+Parameter: "pool", Type: "MemPool", Count: 2
+Parameter: "ddp", Type: "DistributedDataParallel", Count: 2
+Parameter: "zero", Type: "ZeroRedundancyOptimizer", Count: 2
+Parameter: "state", Type: "PowerSGDState", Count: 2
+Parameter: "storage_meta", Type: "StorageMeta | None", Count: 2
+Parameter: "dcp_checkpoint_dir", Type: "str | PathLike[Unknown]", Count: 2
+Parameter: "torch_save_path", Type: "str | PathLike[Unknown]", Count: 2
+Parameter: "storage_reader", Type: "StorageReader", Count: 2
+Parameter: "planner", Type: "LoadPlanner | None", Count: 2
+Parameter: "handler", Type: "MetricHandler", Count: 2
+Parameter: "mp_queue", Type: "Queue[Unknown]", Count: 2
+Parameter: "datasets", Type: "Iterable[Dataset[Unknown]]", Count: 2
+Parameter: "mesh", Type: "DeviceMesh | None", Count: 2
+Parameter: "config", Type: "LaunchConfig", Count: 2
+Parameter: "module_cls", Type: "type[Module]", Count: 2
+Parameter: "args", Type: "tuple[Unknown, ...] | None", Count: 2
+Parameter: "submodule", Type: "Module", Count: 2
+Parameter: "device_mesh", Type: "DeviceMesh", Count: 2
+Parameter: "tensor", Type: "DTensor", Count: 2
+Parameter: "parent_mesh", Type: "DeviceMesh | None", Count: 2
+Parameter: "concentration1", Type: "Tensor | float", Count: 2
+Parameter: "concentration0", Type: "Tensor | float", Count: 2
+Parameter: "df", Type: "Tensor | float", Count: 2
+Parameter: "concentration", Type: "Tensor", Count: 2
+Parameter: "p", Type: "Distribution", Count: 2
+Parameter: "q", Type: "Distribution", Count: 2
+Parameter: "covariance_matrix", Type: "Tensor | None", Count: 2
+Parameter: "precision_matrix", Type: "Tensor | None", Count: 2
+Parameter: "scale_tril", Type: "Tensor | None", Count: 2
+Parameter: "logits", Type: "Tensor", Count: 2
+Parameter: "probs", Type: "Tensor", Count: 2
+Parameter: "x", Type: "bool | Unknown", Count: 2
+Parameter: "module", Type: "ExportedProgram", Count: 2
+Parameter: "args", Type: "Any | tuple[Unknown, ...] | None", Count: 2
+Parameter: "futures", Type: "list[Future[Unknown]]", Count: 2
+Parameter: "pattern", Type: "((...) -> Unknown) | GraphModule", Count: 2
+Parameter: "replacement", Type: "((...) -> Unknown) | GraphModule", Count: 2
+Parameter: "submodule_node", Type: "Node", Count: 2
+Parameter: "e1", Type: "TVar", Count: 2
+Parameter: "e2", Type: "TVar", Count: 2
+Parameter: "e11", Type: "TVar", Count: 2
+Parameter: "e12", Type: "TVar", Count: 2
+Parameter: "val", Type: "SymInt | SymFloat | SymBool | ScriptObject | FakeScriptObject | BackwardState | list[_ExtractValType] | tuple[_ExtractValType, ...] | dict[str, _ExtractValType] | Tensor | int | float | bool | None", Count: 2
+Parameter: "constant", Type: "Tensor | None", Count: 2
+Parameter: "proxy_mode", Type: "ProxyTorchDispatchMode", Count: 2
+Parameter: "shape_env", Type: "ShapeEnv", Count: 2
+Parameter: "constraint_dim", Type: "StrictMinMaxConstraint | RelaxedUnspecConstraint | None", Count: 2
+Parameter: "symbolic_context", Type: "StatelessSymbolicContext[..., Unknown] | None", Count: 2
+Parameter: "elem", Type: "Tensor", Count: 2
+Parameter: "a", Type: "int | SymInt", Count: 2
+Parameter: "a", Type: "float | SymFloat", Count: 2
+Parameter: "val", Type: "SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor | Sequence[SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor]", Count: 2
+Parameter: "x", Type: "SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor | Sequence[SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor]", Count: 2
+Parameter: "others", Type: "bool | SymBool", Count: 2
+Parameter: "a", Type: "SymInt", Count: 2
+Parameter: "device", Type: "device | str", Count: 2
+Parameter: "s", Type: "UntypedStorage", Count: 2
+Parameter: "pytype", Type: "type[Tensor] | None", Count: 2
+Parameter: "fake_mode", Type: "FakeTensorMode", Count: 2
+Parameter: "importer", Type: "PackageImporter", Count: 2
+Parameter: "operator_support", Type: "OperatorSupportBase", Count: 2
+Parameter: "op_support", Type: "OperatorSupportBase", Count: 2
+Parameter: "lib", Type: "Library", Count: 2
+Parameter: "var", Type: "Tensor | float", Count: 2
+Parameter: "src_mask", Type: "Tensor | None", Count: 2
+Parameter: "norm", Type: "Module | None", Count: 2
+Parameter: "memory", Type: "Tensor", Count: 2
+Parameter: "kv_num_blocks", Type: "Tensor", Count: 2
+Parameter: "kv_indices", Type: "Tensor", Count: 2
+Parameter: "full_kv_num_blocks", Type: "Tensor | None", Count: 2
+Parameter: "full_kv_indices", Type: "Tensor | None", Count: 2
+Parameter: "target_device", Type: "int | device", Count: 2
+Parameter: "inputs", Type: "Tensor", Count: 2
+Parameter: "parameters", Type: "Tensor | Iterable[Tensor]", Count: 2
+Parameter: "conv_w", Type: "Tensor", Count: 2
+Parameter: "conv_b", Type: "Tensor | None", Count: 2
+Parameter: "bn_w", Type: "Tensor | None", Count: 2
+Parameter: "bn_b", Type: "Tensor | None", Count: 2
+Parameter: "linear_w", Type: "Tensor", Count: 2
+Parameter: "linear_b", Type: "Tensor | None", Count: 2
+Parameter: "bn_w", Type: "Tensor", Count: 2
+Parameter: "bn_b", Type: "Tensor", Count: 2
+Parameter: "raw_args", Type: "Tensor | Value", Count: 2
+Parameter: "pad", Type: "Value", Count: 2
+Parameter: "mode", Type: "Value", Count: 2
+Parameter: "tensor_list", Type: "Value", Count: 2
+Parameter: "execution_trace_observer", Type: "_ITraceObserver | None", Count: 2
+Parameter: "safe_globals", Type: "list[((...) -> Unknown) | tuple[(...) -> Unknown, str]]", Count: 2
+Parameter: "a", Type: "Iterable[Unknown]", Count: 2
+Parameter: "loss_fn", Type: "Module | ((...) -> Unknown) | None", Count: 2
+Parameter: "conversion", Type: "((...) -> Any) | dict[str | Any, ((...) -> Unknown) | Any] | None", Count: 2
+Parameter: "datapipes", Type: "MapDataPipe[Unknown]", Count: 2
+Parameter: "indices", Type: "list[Unknown] | None", Count: 2
+Parameter: "dataset", Type: "Dataset[_T@random_split]", Count: 2
+Parameter: "includes", Type: "Iterable[Unknown]", Count: 2
+Parameter: "ignores", Type: "Iterable[Unknown]", Count: 2
+Parameter: "all_files", Type: "Iterable[Unknown]", Count: 2
+Parameter: "stats", Type: "dict[str, list[Unknown]]", Count: 2
+Parameter: "clean_ctx", Type: "GeneratedFileCleaner", Count: 2
+Parameter: "script_module", Type: "ScriptModule", Count: 2
+Parameter: "event", Type: "Event | None", Count: 1
+Parameter: "fut", Type: "Future[Unknown]", Count: 1
+Parameter: "kwargs", Type: "dict[Unknown, Unknown]", Count: 1
+Parameter: "value", Type: "Tensor | int | float | bool", Count: 1
+Parameter: "_new_state", Type: "Tensor", Count: 1
+Parameter: "p", Type: "Tensor", Count: 1
+Parameter: "s", Type: "Stream", Count: 1
+Parameter: "shape", Type: "int | SymInt", Count: 1
+Parameter: "storage_offset", Type: "int | SymInt", Count: 1
+Parameter: "dims", Type: "int | SymInt", Count: 1
+Parameter: "newValue", Type: "Value", Count: 1
+Parameter: "from_", Type: "Value", Count: 1
+Parameter: "to", Type: "Value", Count: 1
+Parameter: "export_writer", Type: "PyTorchFileWriter", Count: 1
+Parameter: "data", Type: "Storage | bytes | int", Count: 1
+Parameter: "t", Type: "type[Tensor] | str", Count: 1
+Parameter: "sum_dy", Type: "Tensor", Count: 1
+Parameter: "sum_dy_xmu", Type: "Tensor", Count: 1
+Parameter: "counts", Type: "Tensor", Count: 1
+Parameter: "prob", Type: "Tensor", Count: 1
+Parameter: "real", Type: "Tensor", Count: 1
+Parameter: "imag", Type: "Tensor", Count: 1
+Parameter: "padding_idx", Type: "int | SymInt", Count: 1
+Parameter: "qtensor", Type: "Tensor", Count: 1
+Parameter: "m", Type: "int | SymInt", Count: 1
+Parameter: "observer_on", Type: "Tensor", Count: 1
+Parameter: "fake_quant_on", Type: "Tensor", Count: 1
+Parameter: "running_min", Type: "Tensor", Count: 1
+Parameter: "running_max", Type: "Tensor", Count: 1
+Parameter: "cx", Type: "Tensor | None", Count: 1
+Parameter: "dropout_state", Type: "Tensor | None", Count: 1
+Parameter: "grad_output", Type: "Tensor", Count: 1
+Parameter: "weight0", Type: "Tensor", Count: 1
+Parameter: "weight1", Type: "Tensor", Count: 1
+Parameter: "weight2", Type: "Tensor", Count: 1
+Parameter: "weight3", Type: "Tensor", Count: 1
+Parameter: "hx_", Type: "Tensor", Count: 1
+Parameter: "cx_", Type: "Tensor", Count: 1
+Parameter: "N", Type: "int | SymInt", Count: 1
+Parameter: "C", Type: "int | SymInt", Count: 1
+Parameter: "HxW", Type: "int | SymInt", Count: 1
+Parameter: "v", Type: "Tensor", Count: 1
+Parameter: "abs", Type: "Tensor", Count: 1
+Parameter: "angle", Type: "Tensor", Count: 1
+Parameter: "var", Type: "Tensor", Count: 1
+Parameter: "high", Type: "Tensor", Count: 1
+Parameter: "indices", Type: "Tensor | None", Count: 1
+Parameter: "compressed_indices", Type: "Tensor | list[Unknown]", Count: 1
+Parameter: "plain_indices", Type: "Tensor | list[Unknown]", Count: 1
+Parameter: "B", Type: "Tensor | None", Count: 1
+Parameter: "X", Type: "Tensor | None", Count: 1
+Parameter: "iK", Type: "Tensor | None", Count: 1
+Parameter: "pred", Type: "bool | int | float | Tensor", Count: 1
+Parameter: "operands", Type: "tuple[Unknown, ...] | list[Unknown]", Count: 1
+Parameter: "args", Type: "Module", Count: 1
+Parameter: "value", Type: "Tensor | Module", Count: 1
+Parameter: "embeddings", Type: "Tensor", Count: 1
+Parameter: "device", Type: "int | str | device | None", Count: 1
+Parameter: "compressed_indices_mapping", Type: "Tensor | None", Count: 1
+Parameter: "other", Type: "LSTM", Count: 1
+Parameter: "float_linear", Type: "Linear", Count: 1
+Parameter: "base_name_to_sets_of_related_ops", Type: "dict[str, set[((...) -> Unknown) | str]] | None", Count: 1
+Parameter: "unmatchable_types_map", Type: "dict[str, set[((...) -> Unknown) | str]] | None", Count: 1
+Parameter: "tracer_cls", Type: "type[Tracer] | None", Count: 1
+Parameter: "autowrap_functions", Type: "tuple[(...) -> Unknown, ...]", Count: 1
+Parameter: "to_erase", Type: "Node", Count: 1
+Parameter: "result", Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 1
+Parameter: "codegen", Type: "CodeGen", Count: 1
+Parameter: "output_args", Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 1
+Parameter: "g", Type: "Graph", Count: 1
+Parameter: "folder", Type: "str | PathLike[Unknown]", Count: 1
+Parameter: "node_type_to_io_type_map", Type: "dict[str, set[((...) -> Unknown) | str]] | None", Count: 1
+Parameter: "qconfig_mapping", Type: "QConfigMapping", Count: 1
+Parameter: "global_qconfig", Type: "QConfig | None", Count: 1
+Parameter: "end_node", Type: "Node", Count: 1
+Parameter: "reversed_fusion", Type: "tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]] | tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]]", Count: 1
+Parameter: "op_to_type_to_weight_extraction_fn", Type: "dict[str, dict[(...) -> Unknown, (...) -> Unknown]] | None", Count: 1
+Parameter: "parameterization", Type: "type[Module]", Count: 1
+Parameter: "sparsifier", Type: "BaseSparsifier", Count: 1
+Parameter: "parametrization", Type: "type[Module]", Count: 1
+Parameter: "model", Type: "Module | None", Count: 1
+Parameter: "x_orig", Type: "Tensor", Count: 1
+Parameter: "observer_node", Type: "Node", Count: 1
+Parameter: "graph_signature", Type: "ExportGraphSignature", Count: 1
+Parameter: "decomp_table", Type: "dict[OperatorBase, (...) -> Unknown] | None", Count: 1
+Parameter: "config", Type: "BackendPatternConfig", Count: 1
+Parameter: "pattern", Type: "((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any | None", Count: 1
+Parameter: "pattern", Type: "((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any", Count: 1
+Parameter: "root_module", Type: "type[Module]", Count: 1
+Parameter: "qat_module", Type: "type[Module]", Count: 1
+Parameter: "reference_quantized_module", Type: "type[Module]", Count: 1
+Parameter: "fused_module", Type: "type[Module]", Count: 1
+Parameter: "current_module", Type: "Module", Count: 1
+Parameter: "skipped_module_classes", Type: "list[(...) -> Unknown]", Count: 1
+Parameter: "root", Type: "GraphModule", Count: 1
+Parameter: "target_module_type", Type: "type[Module] | None", Count: 1
+Parameter: "quantized_graph", Type: "Graph", Count: 1
+Parameter: "old_node", Type: "Node", Count: 1
+Parameter: "model", Type: "ExportedProgram | GraphModule", Count: 1
+Parameter: "conv_node", Type: "Node", Count: 1
+Parameter: "conv_weight_node", Type: "Node", Count: 1
+Parameter: "conv_bias_node", Type: "Node | None", Count: 1
+Parameter: "bn_node", Type: "Node", Count: 1
+Parameter: "match_pattern", Type: "GraphModule", Count: 1
+Parameter: "model", Type: "GraphModule | Module", Count: 1
+Parameter: "operator_type", Type: "OpOverloadPacket[..., Any]", Count: 1
+Parameter: "eps", Type: "Tensor", Count: 1
+Parameter: "data", Type: "Tensor | None", Count: 1
+Parameter: "_grad_fn", Type: "_FunctionBase | None", Count: 1
+Parameter: "tensors", Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge]", Count: 1
+Parameter: "grad_tensors", Type: "Tensor | Sequence[Tensor] | None", Count: 1
+Parameter: "grad_variables", Type: "Tensor | Sequence[Tensor] | None", Count: 1
+Parameter: "inputs", Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge] | None", Count: 1
+Parameter: "outputs", Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge]", Count: 1
+Parameter: "inputs", Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge]", Count: 1
+Parameter: "tensor", Type: "Tensor | Iterable[Tensor]", Count: 1
+Parameter: "peer_device", Type: "device | str | int | None", Count: 1
+Parameter: "output", Type: "Tensor | Sequence[Tensor] | None", Count: 1
+Parameter: "opts", Type: "AllreduceOptions", Count: 1
+Parameter: "output_tensors", Type: "Tensor", Count: 1
+Parameter: "output", Type: "Tensor", Count: 1
+Parameter: "backend", Type: "Backend", Count: 1
+Parameter: "reducer", Type: "Reducer", Count: 1
+Parameter: "optimizer_class", Type: "type[Optimizer]", Count: 1
+Parameter: "state", Type: "PostLocalSGDState", Count: 1
+Parameter: "joinable", Type: "Joinable", Count: 1
+Parameter: "model_state_dict", Type: "dict[str, Unknown | Any]", Count: 1
+Parameter: "checkpoint_md", Type: "TensorStorageMetadata", Count: 1
+Parameter: "local_tensor", Type: "Tensor", Count: 1
+Parameter: "mesh", Type: "Tensor | _Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str]", Count: 1
+Parameter: "group", Type: "ProcessGroup | list[ProcessGroup]", Count: 1
+Parameter: "mesh", Type: "Tensor | _Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str] | None", Count: 1
+Parameter: "tensor_properties", Type: "TensorProperties", Count: 1
+Parameter: "resharding_spec", Type: "ShardingSpec", Count: 1
+Parameter: "storage_writer", Type: "StorageWriter", Count: 1
+Parameter: "planner", Type: "SavePlanner | None", Count: 1
+Parameter: "bootstrap_store_info", Type: "RendezvousStoreInfo", Count: 1
+Parameter: "event", Type: "RdzvEvent", Count: 1
+Parameter: "error_handler", Type: "ErrorHandler | None", Count: 1
+Parameter: "rdzv_impl", Type: "EtcdRendezvous", Count: 1
+Parameter: "timer_client", Type: "TimerClient", Count: 1
+Parameter: "dataset", Type: "Dataset[T@ElasticDistributedSampler]", Count: 1
+Parameter: "dataset", Type: "Dataset[Unknown]", Count: 1
+Parameter: "comm", Type: "AllGather", Count: 1
+Parameter: "comm", Type: "ReduceScatter", Count: 1
+Parameter: "process_group", Type: "ProcessGroup | tuple[ProcessGroup, ProcessGroup] | None", Count: 1
+Parameter: "auto_wrap_policy", Type: "((...) -> Unknown) | ModuleWrapPolicy | CustomPolicy | None", Count: 1
+Parameter: "device_id", Type: "int | device | None", Count: 1
+Parameter: "module", Type: "Module | None", Count: 1
+Parameter: "averager", Type: "ModelAverager", Count: 1
+Parameter: "split_gm", Type: "GraphModule", Count: 1
+Parameter: "user", Type: "Node", Count: 1
+Parameter: "bwd_kwargs", Type: "dict[Unknown, Unknown]", Count: 1
+Parameter: "graph", Type: "Graph | None", Count: 1
+Parameter: "args", Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 1
+Parameter: "stage", Type: "_PipelineStageBase", Count: 1
+Parameter: "loss_fn", Type: "((...) -> Unknown) | _Loss | None", Count: 1
+Parameter: "input_args", Type: "Tensor | tuple[Tensor, ...] | None", Count: 1
+Parameter: "output_args", Type: "Tensor | tuple[Tensor, ...] | None", Count: 1
+Parameter: "buffer", Type: "Tensor", Count: 1
+Parameter: "_transports", Type: "list[Unknown] | None", Count: 1
+Parameter: "_channels", Type: "list[Unknown] | None", Count: 1
+Parameter: "op", Type: "OpOverload[..., Any] | list[OpOverload[..., Any]]", Count: 1
+Parameter: "tp_device_mesh", Type: "DeviceMesh", Count: 1
+Parameter: "total_count", Type: "Tensor | int", Count: 1
+Parameter: "df1", Type: "Tensor | float", Count: 1
+Parameter: "df2", Type: "Tensor | float", Count: 1
+Parameter: "base_distribution", Type: "Distribution", Count: 1
+Parameter: "transforms", Type: "Transform | list[Transform]", Count: 1
+Parameter: "cov_factor", Type: "Tensor", Count: 1
+Parameter: "cov_diag", Type: "Tensor", Count: 1
+Parameter: "mixture_distribution", Type: "Categorical", Count: 1
+Parameter: "component_distribution", Type: "Distribution", Count: 1
+Parameter: "total_count", Type: "Tensor | float", Count: 1
+Parameter: "alpha", Type: "Tensor | float", Count: 1
+Parameter: "rate", Type: "Tensor | int | float | bool", Count: 1
+Parameter: "distribution", Type: "Distribution", Count: 1
+Parameter: "base_transform", Type: "Transform", Count: 1
+Parameter: "low", Type: "Tensor | float", Count: 1
+Parameter: "high", Type: "Tensor | float", Count: 1
+Parameter: "df", Type: "Tensor | int | float | bool", Count: 1
+Parameter: "values", Type: "Tensor | int | float | bool", Count: 1
+Parameter: "lower", Type: "bool | Unknown", Count: 1
+Parameter: "upper", Type: "bool | Unknown", Count: 1
+Parameter: "x", Type: "int | float | Any | bool | Unknown", Count: 1
+Parameter: "arg", Type: "int | float | Any | Unknown", Count: 1
+Parameter: "arg", Type: "bool | Unknown", Count: 1
+Parameter: "y", Type: "int | float | Any | Unknown", Count: 1
+Parameter: "y", Type: "bool | Unknown", Count: 1
+Parameter: "export_module", Type: "ExportedProgram", Count: 1
+Parameter: "x", Type: "ScriptObject", Count: 1
+Parameter: "location", Type: "device | str | dict[str, str]", Count: 1
+Parameter: "models", Type: "Sequence[Module] | ModuleList", Count: 1
+Parameter: "partition_0", Type: "Partition", Count: 1
+Parameter: "partition_1", Type: "Partition", Count: 1
+Parameter: "torch_module", Type: "Module", Count: 1
+Parameter: "module_with_submodules", Type: "GraphModule", Count: 1
+Parameter: "const_subgraph", Type: "Graph | None", Count: 1
+Parameter: "mod_traced", Type: "GraphModule", Count: 1
+Parameter: "module", Type: "Module | GraphModule", Count: 1
+Parameter: "result", Type: "Tensor", Count: 1
+Parameter: "a", Type: "Node", Count: 1
+Parameter: "b", Type: "Node", Count: 1
+Parameter: "in_mod", Type: "Module", Count: 1
+Parameter: "e1_var", Type: "TVar", Count: 1
+Parameter: "e11", Type: "BinConstraintT", Count: 1
+Parameter: "e2", Type: "BinConstraintT", Count: 1
+Parameter: "e12", Type: "BinConstraintT", Count: 1
+Parameter: "constraint", Type: "TGreatestUpperBound", Count: 1
+Parameter: "new_module", Type: "Module", Count: 1
+Parameter: "orig_module", Type: "Module", Count: 1
+Parameter: "fx_graph", Type: "Graph", Count: 1
+Parameter: "graph", Type: "MklSubgraph", Count: 1
+Parameter: "tracer", Type: "type[Tracer]", Count: 1
+Parameter: "partition", Type: "Partition", Count: 1
+Parameter: "parent_partition", Type: "Partition", Count: 1
+Parameter: "child_partition", Type: "Partition", Count: 1
+Parameter: "proxy", Type: "_ProxyTensor", Count: 1
+Parameter: "e", Type: "Tensor", Count: 1
+Parameter: "e", Type: "SymInt | SymFloat | SymBool", Count: 1
+Parameter: "e", Type: "ScriptObject | FakeScriptObject", Count: 1
+Parameter: "proxy_res", Type: "Proxy | Sequence[_NestedProxys] | Mapping[object, _NestedProxys]", Count: 1
+Parameter: "constant", Type: "Tensor | Sequence[Tensor | ... | Mapping[object, _NestedTensors]] | Mapping[object, Tensor | Sequence[_NestedTensors] | ...] | None", Count: 1
+Parameter: "t", Type: "ScriptObject | FakeScriptObject", Count: 1
+Parameter: "t", Type: "SymInt | SymFloat | SymBool", Count: 1
+Parameter: "func", Type: "OpOverload[..., Any] | ((...) -> Unknown)", Count: 1
+Parameter: "new_graph", Type: "Graph", Count: 1
+Parameter: "op", Type: "OpOverload[..., Any]", Count: 1
+Parameter: "root", Type: "Module | ((...) -> Unknown)", Count: 1
+Parameter: "ex", Type: "Tensor", Count: 1
+Parameter: "val", Type: "int | SymInt | float | SymFloat", Count: 1
+Parameter: "equalities_inputs", Type: "EqualityConstraint | None", Count: 1
+Parameter: "source1", Type: "Source", Count: 1
+Parameter: "source2", Type: "Source", Count: 1
+Parameter: "src", Type: "Source", Count: 1
+Parameter: "symbol_src", Type: "Source", Count: 1
+Parameter: "fx_node", Type: "Node | None", Count: 1
+Parameter: "val", Type: "SymInt | int", Count: 1
+Parameter: "a", Type: "SymInt | int", Count: 1
+Parameter: "a", Type: "SymInt | SymFloat | SymBool | int | float | bool", Count: 1
+Parameter: "a", Type: "SymBool | SymFloat | SymInt | bool | float | int", Count: 1
+Parameter: "expr", Type: "SymBool | bool", Count: 1
+Parameter: "result", Type: "Tensor | tuple[Tensor, ...]", Count: 1
+Parameter: "s", Type: "int | SymInt", Count: 1
+Parameter: "a", Type: "SymBool | SymInt | SymFloat | int | bool | float", Count: 1
+Parameter: "b", Type: "SymInt", Count: 1
+Parameter: "converter", Type: "FakeTensorConverter", Count: 1
+Parameter: "v", Type: "UntypedStorage", Count: 1
+Parameter: "callback_", Type: "_MetaTensorCallback[_TensorT@MetaConverter]", Count: 1
+Parameter: "callback", Type: "_MetaTensorCallback[_TensorT@MetaConverter] | None", Count: 1
+Parameter: "value", Type: "SymInt | SymFloat | None", Count: 1
+Parameter: "_", Type: "device", Count: 1
+Parameter: "real_tensor", Type: "Tensor | None", Count: 1
+Parameter: "coeff", Type: "int | SymInt", Count: 1
+Parameter: "val", Type: "int | SymInt | float | SymFloat | bool | SymBool", Count: 1
+Parameter: "symbool", Type: "bool | SymBool", Count: 1
+Parameter: "mode", Type: "FakeTensorMode | None", Count: 1
+Parameter: "root_m", Type: "Module", Count: 1
+Parameter: "GraphModuleCls", Type: "type[GraphModule]", Count: 1
+Parameter: "fusion_group", Type: "FusionGroup", Count: 1
+Parameter: "subgraph", Type: "Graph", Count: 1
+Parameter: "left", Type: "Graph", Count: 1
+Parameter: "right", Type: "Graph", Count: 1
+Parameter: "sub_gm", Type: "GraphModule", Count: 1
+Parameter: "pattern", Type: "Graph", Count: 1
+Parameter: "pattern_gm", Type: "GraphModule", Count: 1
+Parameter: "tracer", Type: "TracerBase | None", Count: 1
+Parameter: "tracer", Type: "TracerBase", Count: 1
+Parameter: "pattern", Type: "((...) -> Unknown) | Graph | GraphModule", Count: 1
+Parameter: "replacement", Type: "((...) -> Unknown) | Graph | GraphModule | None", Count: 1
+Parameter: "node", Type: "Node | None", Count: 1
+Parameter: "d", Type: "str | PathLike[Unknown]", Count: 1
+Parameter: "obj", Type: "type[Module]", Count: 1
+Parameter: "obj", Type: "dict[Unknown, Unknown]", Count: 1
+Parameter: "obj", Type: "list[Unknown]", Count: 1
+Parameter: "obj", Type: "Module", Count: 1
+Parameter: "op", Type: "OpOverload[..., Any] | OpOverloadPacket[..., Any] | CustomOpDef", Count: 1
+Parameter: "input", Type: "Tensor | MaskedTensor", Count: 1
+Parameter: "other", Type: "Tensor | MaskedTensor", Count: 1
+Parameter: "input_mask", Type: "Tensor | None", Count: 1
+Parameter: "other_mask", Type: "Tensor | None", Count: 1
+Parameter: "writer", Type: "SummaryWriter", Count: 1
+Parameter: "device", Type: "device | str | int", Count: 1
+Parameter: "ts", Type: "Tensor | list[Tensor] | tuple[Tensor, ...]", Count: 1
+Parameter: "start", Type: "int | Tensor", Count: 1
+Parameter: "length", Type: "int | Tensor", Count: 1
+Parameter: "input_", Type: "Tensor", Count: 1
+Parameter: "target_", Type: "Tensor", Count: 1
+Parameter: "log_input", Type: "Tensor", Count: 1
+Parameter: "encoder_layer", Type: "TransformerEncoderLayer", Count: 1
+Parameter: "mask", Type: "Tensor | None", Count: 1
+Parameter: "decoder_layer", Type: "TransformerDecoderLayer", Count: 1
+Parameter: "output_device", Type: "int | device", Count: 1
+Parameter: "batch", Type: "Tensor", Count: 1
+Parameter: "head", Type: "Tensor", Count: 1
+Parameter: "token_q", Type: "Tensor", Count: 1
+Parameter: "token_kv", Type: "Tensor", Count: 1
+Parameter: "q_num_blocks", Type: "Tensor | None", Count: 1
+Parameter: "q_indices", Type: "Tensor | None", Count: 1
+Parameter: "full_q_num_blocks", Type: "Tensor | None", Count: 1
+Parameter: "full_q_indices", Type: "Tensor | None", Count: 1
+Parameter: "q_nt", Type: "Tensor", Count: 1
+Parameter: "kv_nt", Type: "Tensor | None", Count: 1
+Parameter: "block_mask", Type: "BlockMask | None", Count: 1
+Parameter: "in_proj_weight", Type: "Tensor | None", Count: 1
+Parameter: "in_proj_bias", Type: "Tensor | None", Count: 1
+Parameter: "bias_k", Type: "Tensor | None", Count: 1
+Parameter: "bias_v", Type: "Tensor | None", Count: 1
+Parameter: "out_proj_weight", Type: "Tensor", Count: 1
+Parameter: "out_proj_bias", Type: "Tensor | None", Count: 1
+Parameter: "q_proj_weight", Type: "Tensor | None", Count: 1
+Parameter: "k_proj_weight", Type: "Tensor | None", Count: 1
+Parameter: "v_proj_weight", Type: "Tensor | None", Count: 1
+Parameter: "static_k", Type: "Tensor | None", Count: 1
+Parameter: "static_v", Type: "Tensor | None", Count: 1
+Parameter: "obj", Type: "Tensor | list[Any] | tuple[Any, ...] | dict[Any, Any]", Count: 1
+Parameter: "param", Type: "Tensor", Count: 1
+Parameter: "original", Type: "Tensor | Parameter", Count: 1
+Parameter: "parametrization", Type: "Module", Count: 1
+Parameter: "from_module", Type: "Module", Count: 1
+Parameter: "to_module", Type: "Module", Count: 1
+Parameter: "unsorted_indices", Type: "Tensor | None", Count: 1
+Parameter: "lengths", Type: "Tensor | list[int]", Count: 1
+Parameter: "sequence", Type: "PackedSequence", Count: 1
+Parameter: "sequences", Type: "Tensor | list[Tensor]", Count: 1
+Parameter: "padded_sequences", Type: "Tensor", Count: 1
+Parameter: "lengths", Type: "Tensor", Count: 1
+Parameter: "packed_sequences", Type: "PackedSequence", Count: 1
+Parameter: "exported_program", Type: "ExportedProgram | None", Count: 1
+Parameter: "destination", Type: "str | PathLike[Unknown]", Count: 1
+Parameter: "value", Type: "Value | Tensor | None", Count: 1
+Parameter: "model", Type: "Module | ExportedProgram | ScriptModule | ScriptFunction[..., Unknown]", Count: 1
+Parameter: "f", Type: "str | PathLike[Unknown] | None", Count: 1
+Parameter: "custom_translation_table", Type: "dict[(...) -> Unknown, ((...) -> Unknown) | Sequence[(...) -> Unknown]] | None", Count: 1
+Parameter: "artifacts_dir", Type: "str | PathLike[Unknown]", Count: 1
+Parameter: "shape", Type: "Tensor", Count: 1
+Parameter: "cos_cache", Type: "Tensor", Count: 1
+Parameter: "sin_cache", Type: "Tensor", Count: 1
+Parameter: "position_ids", Type: "Tensor | None", Count: 1
+Parameter: "Q", Type: "Tensor", Count: 1
+Parameter: "K", Type: "Tensor", Count: 1
+Parameter: "V", Type: "Tensor", Count: 1
+Parameter: "past_key", Type: "Tensor | None", Count: 1
+Parameter: "past_value", Type: "Tensor | None", Count: 1
+Parameter: "x", Type: "Value", Count: 1
+Parameter: "qtensor", Type: "Value", Count: 1
+Parameter: "tensor", Type: "Value", Count: 1
+Parameter: "scale", Type: "Value", Count: 1
+Parameter: "zero_point", Type: "Value", Count: 1
+Parameter: "axis", Type: "Value | None", Count: 1
+Parameter: "device_value", Type: "Value", Count: 1
+Parameter: "eps", Type: "Value", Count: 1
+Parameter: "model", Type: "Module | ScriptModule | ScriptFunction[..., Unknown]", Count: 1
+Parameter: "args", Type: "tuple[Any, ...] | Tensor", Count: 1
+Parameter: "expected", Type: "Tensor | float | int | bool", Count: 1
+Parameter: "actual", Type: "Tensor | float | int | bool", Count: 1
+Parameter: "onnx_program", Type: "ONNXProgram", Count: 1
+Parameter: "input_args", Type: "Tensor | tuple[Any, ...]", Count: 1
+Parameter: "graph_info", Type: "GraphInfo | None", Count: 1
+Parameter: "weight_decay", Type: "float | Tensor", Count: 1
+Parameter: "exc", Type: "PackagingError", Count: 1
+Parameter: "dependency_graph", Type: "DiGraph", Count: 1
+Parameter: "storage", Type: "Storage | TypedStorage | UntypedStorage", Count: 1
+Parameter: "packed", Type: "Tensor | None", Count: 1
+Parameter: "meta", Type: "Tensor | None", Count: 1
+Parameter: "packed_t", Type: "Tensor | None", Count: 1
+Parameter: "meta_t", Type: "Tensor | None", Count: 1
+Parameter: "compressed_swizzled_bitmask", Type: "Tensor | None", Count: 1
+Parameter: "constraints", Type: "list[(...) -> Unknown] | None", Count: 1
+Parameter: "inputs", Type: "Sequence[tuple[Any, ...]] | dict[(...) -> Unknown, Sequence[tuple[Any, ...]] | None] | None", Count: 1
+Parameter: "info", Type: "list[str] | dict[(...) -> Unknown, list[str]] | None", Count: 1
+Parameter: "inputs", Type: "dict[(...) -> Unknown, Sequence[tuple[Any, ...]] | None]", Count: 1
+Parameter: "info", Type: "dict[(...) -> Unknown, list[str]] | None", Count: 1
+Parameter: "dataset", Type: "Dataset[_T_co@DataLoader]", Count: 1
+Parameter: "sampler", Type: "Sampler[Unknown] | Iterable[Unknown] | None", Count: 1
+Parameter: "batch_sampler", Type: "Sampler[list[Unknown]] | Iterable[list[Unknown]] | None", Count: 1
+Parameter: "collate_fn", Type: "((list[Unknown]) -> Any) | None", Count: 1
+Parameter: "loader", Type: "DataLoader[Unknown]", Count: 1
+Parameter: "other", Type: "Dataset[_T_co@IterableDataset]", Count: 1
+Parameter: "arg", Type: "type[IterDataPipe[Unknown]] | (() -> bool)", Count: 1
+Parameter: "args", Type: "Dataset[_T_co@__init__]", Count: 1
+Parameter: "kwargs", Type: "Dataset[_T_co@__init__]", Count: 1
+Parameter: "indices", Type: "list[Unknown]", Count: 1
+Parameter: "dataset", Type: "Dataset[_T_co@Subset]", Count: 1
+Parameter: "sampler", Type: "type[Sampler[Unknown]]", Count: 1
+Parameter: "sampler_args", Type: "tuple[Unknown, ...] | None", Count: 1
+Parameter: "sampler_kwargs", Type: "dict[Unknown, Unknown] | None", Count: 1
+Parameter: "datapipe", Type: "IterDataPipe[_T_co@ShufflerIterDataPipe]", Count: 1
+Parameter: "root", Type: "str | Sequence[str] | IterDataPipe[Unknown]", Count: 1
+Parameter: "datapipe", Type: "IterDataPipe[_T_co@__init__]", Count: 1
+Parameter: "datapipe", Type: "IterDataPipe[_T_co@FilterIterDataPipe]", Count: 1
+Parameter: "source_datapipe", Type: "IterDataPipe[Unknown]", Count: 1
+Parameter: "datapipe", Type: "IterDataPipe[tuple[str, IOBase]]", Count: 1
+Parameter: "datapipe", Type: "MapDataPipe[Unknown]", Count: 1
+Parameter: "datapipe", Type: "MapDataPipe[_T_co@ShufflerIterDataPipe]", Count: 1
+Parameter: "datapipes", Type: "MapDataPipe[_T_co@ZipperMapDataPipe]", Count: 1
+Parameter: "datapipe", Type: "MapDataPipe[_T@__init__]", Count: 1
+Parameter: "input_col", Type: "int | tuple[Unknown, ...] | list[Unknown] | None", Count: 1
+Parameter: "pathnames", Type: "Iterable[Unknown]", Count: 1
+Parameter: "graph", Type: "dict[int, tuple[IterDataPipe[Unknown] | MapDataPipe[Unknown], DataPipeGraph]]", Count: 1
+Parameter: "rng", Type: "Generator", Count: 1
+Parameter: "mods", Type: "Module | list[Module] | None", Count: 1
+Parameter: "header_extensions", Type: "Iterable[Unknown]", Count: 1
+Parameter: "extra_files", Type: "Iterable[Unknown]", Count: 1
+Parameter: "clean_ctx", Type: "GeneratedFileCleaner | None", Count: 1
+Parameter: "inp_type", Type: "TensorType", Count: 1
+Parameter: "stream", Type: "_XpuStreamBase", Count: 1
+
+Total occurrences per Type:
+Type: "Tensor", Count: 2227
+Type: "Tensor | None", Count: 696
+Type: "GraphContext", Count: 246
+Type: "Module", Count: 124
+Type: "str | device | int | None", Count: 123
+Type: "int | SymInt", Count: 117
+Type: "GraphModule", Count: 104
+Type: "device | str | int | None", Count: 95
+Type: "Node", Count: 81
+Type: "int | SymInt | Sequence[int | SymInt]", Count: 56
+Type: "Generator | None", Count: 50
+Type: "str | PathLike[Unknown]", Count: 46
+Type: "Tensor | float", Count: 41
+Type: "ProcessGroup | None", Count: 38
+Type: "Tensor | int | float | bool | complex", Count: 35
+Type: "Tensor | tuple[Tensor, ...] | list[Tensor] | None", Count: 32
+Type: "Graph", Count: 32
+Type: "device | None", Count: 31
+Type: "Value", Count: 29
+Type: "Optimizer", Count: 25
+Type: "PythonKeyTracer | _GraphAppendingTracerEx", Count: 24
+Type: "int | SymInt | None", Count: 22
+Type: "DeviceMesh | None", Count: 18
+Type: "ProcessGroup", Count: 17
+Type: "Iterable[Unknown]", Count: 17
+Type: "device", Count: 16
+Type: "float | Tensor", Count: 16
+Type: "Tensor | list[Unknown]", Count: 16
+Type: "Tensor | int", Count: 14
+Type: "int | device | None", Count: 13
+Type: "Source", Count: 13
+Type: "QConfig | None", Count: 13
+Type: "int | str | device", Count: 12
+Type: "Store", Count: 12
+Type: "IterDataPipe[Unknown]", Count: 12
+Type: "Tensor | int | float | bool", Count: 12
+Type: "bool | SymBool", Count: 12
+Type: "BackendConfig", Count: 11
+Type: "dict[str, Unknown | Any]", Count: 11
+Type: "OpOverload[..., Any]", Count: 10
+Type: "Tensor | int | float | bool | None", Count: 10
+Type: "ScriptModule", Count: 10
+Type: "SymInt | SymFloat | SymBool", Count: 10
+Type: "GradBucket", Count: 9
+Type: "type[Module]", Count: 9
+Type: "TVar", Count: 9
+Type: "BackendConfig | dict[str, Any] | None", Count: 8
+Type: "list[tuple[Unknown, ...]] | dict[(...) -> Unknown, list[tuple[Unknown, ...]]] | None", Count: 8
+Type: "Storage", Count: 8
+Type: "str | device", Count: 7
+Type: "Stream | None", Count: 7
+Type: "Metadata", Count: 7
+Type: "RendezvousParameters", Count: 7
+Type: "Source | None", Count: 7
+Type: "ShapeEnv | None", Count: 7
+Type: "str | PathLike[Unknown] | None", Count: 7
+Type: "int | float | Any | Unknown", Count: 7
+Type: "Optimizer | None", Count: 7
+Type: "list[Unknown] | None", Count: 7
+Type: "Distribution", Count: 7
+Type: "Tensor | int | float | bool | complex | SymInt | SymFloat", Count: 6
+Type: "Module | dict[str, Any]", Count: 6
+Type: "QuantizationConfig | None", Count: 6
+Type: "Library | None", Count: 6
+Type: "str | OpOverload[..., Any] | Any", Count: 6
+Type: "IterDataPipe[Unknown] | MapDataPipe[Unknown]", Count: 6
+Type: "Stream", Count: 6
+Type: "ScriptObject | FakeScriptObject", Count: 6
+Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 6
+Type: "Proxy", Count: 6
+Type: "ExportedProgram", Count: 6
+Type: "dict[(...) -> Unknown, Any] | None", Count: 6
+Type: "Tensor | Sequence[Tensor] | None", Count: 6
+Type: "bool | Unknown", Count: 6
+Type: "QuantizationConfig", Count: 5
+Type: "Module | ((...) -> Unknown)", Count: 5
+Type: "dict[str, set[((...) -> Unknown) | str]]", Count: 5
+Type: "QConfigMapping | dict[str, Any] | None", Count: 5
+Type: "Node | None", Count: 5
+Type: "Partition", Count: 5
+Type: "tuple[Unknown, ...]", Count: 4
+Type: "Tensor | int | float | bool | SymInt | SymFloat", Count: 4
+Type: "str | device | int", Count: 4
+Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, Sequential | ((...) -> Unknown)]", Count: 4
+Type: "Tensor | Sequence[Tensor]", Count: 4
+Type: "WriteItem", Count: 4
+Type: "LoadPlanner", Count: 4
+Type: "Optimizer | Iterable[Optimizer]", Count: 4
+Type: "dict[int, tuple[Unknown, ...]]", Count: 4
+Type: "_BatchNorm", Count: 4
+Type: "type[DataChunk[Unknown]]", Count: 4
+Type: "ShardingSpec", Count: 4
+Type: "((...) -> Unknown) | GraphModule", Count: 4
+Type: "SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor | Sequence[SymInt | SymFloat | SymBool | int | float | bool | Any | Tensor]", Count: 4
+Type: "OperatorSupportBase", Count: 4
+Type: "Module | None", Count: 4
+Type: "Event", Count: 3
+Type: "((Storage, str) -> Storage) | device | str | dict[str, str] | None", Count: 3
+Type: "Module | ((...) -> Any)", Count: 3
+Type: "BackendConfig | None", Count: 3
+Type: "ConvertCustomConfig | dict[str, Any] | None", Count: 3
+Type: "QConfigMapping | dict[str, Any]", Count: 3
+Type: "PrepareCustomConfig | dict[str, Any] | None", Count: 3
+Type: "_SDPAParams", Count: 3
+Type: "Metadata | None", Count: 3
+Type: "SavePlanner", Count: 3
+Type: "WorkerSpec", Count: 3
+Type: "MetricData", Count: 3
+Type: "PipeInfo", Count: 3
+Type: "Mapping[OpOverload[..., Any], (...) -> Unknown] | None", Count: 3
+Type: "MetaTensorDesc[Unknown]", Count: 3
+Type: "MetaStorageDesc", Count: 3
+Type: "_LazyProtocol", Count: 3
+Type: "Module | ScriptModule", Count: 3
+Type: "Tensor | Any", Count: 3
+Type: "Storage | TypedStorage | UntypedStorage", Count: 3
+Type: "Tensor | list[Tensor]", Count: 3
+Type: "((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any", Count: 3
+Type: "ScriptObject", Count: 3
+Type: "tuple[Unknown, ...] | None", Count: 3
+Type: "DeviceMesh", Count: 3
+Type: "SymInt", Count: 3
+Type: "UntypedStorage", Count: 3
+Type: "int | device", Count: 3
+Type: "Tensor | Iterable[Tensor]", Count: 3
+Type: "MapDataPipe[Unknown]", Count: 3
+Type: "dict[Unknown, Unknown]", Count: 3
+Type: "dict[str, set[((...) -> Unknown) | str]] | None", Count: 3
+Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge]", Count: 3
+Type: "BinConstraintT", Count: 3
+Type: "SupportsIndex | bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | _NestedSequence[bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | None] | tuple[SupportsIndex | bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | _NestedSequence[bool | int | slice[Any, Any, Any] | EllipsisType | Tensor | None] | None, ...] | None", Count: 2
+Type: "device | int | str | None", Count: 2
+Type: "Block | Node", Count: 2
+Type: "CompilationUnit", Count: 2
+Type: "float | Tensor | None", Count: 2
+Type: "type[TorchDispatchMode] | type[Tensor] | TransformType | DispatchKey", Count: 2
+Type: "dict[str, str | int | bool | ((...) -> Unknown)] | None", Count: 2
+Type: "int | tuple[Unknown, ...]", Count: 2
+Type: "Parameter | None", Count: 2
+Type: "PackageExporter", Count: 2
+Type: "QConfigMapping | None", Count: 2
+Type: "FuseCustomConfig", Count: 2
+Type: "FuseCustomConfig | dict[str, Any] | None", Count: 2
+Type: "dict[str, tuple[Node, list[Node], ((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any | None, QuantizeHandler, QConfig | None]]", Count: 2
+Type: "PrepareCustomConfig", Count: 2
+Type: "Quantizer", Count: 2
+Type: "_CudaStreamBase", Count: 2
+Type: "_CUDAAllocator", Count: 2
+Type: "MemPool", Count: 2
+Type: "DistributedDataParallel", Count: 2
+Type: "ZeroRedundancyOptimizer", Count: 2
+Type: "PowerSGDState", Count: 2
+Type: "StorageMeta | None", Count: 2
+Type: "StorageReader", Count: 2
+Type: "LoadPlanner | None", Count: 2
+Type: "MetricHandler", Count: 2
+Type: "Queue[Unknown]", Count: 2
+Type: "Iterable[Dataset[Unknown]]", Count: 2
+Type: "LaunchConfig", Count: 2
+Type: "DTensor", Count: 2
+Type: "Any | tuple[Unknown, ...] | None", Count: 2
+Type: "list[Future[Unknown]]", Count: 2
+Type: "SymInt | SymFloat | SymBool | ScriptObject | FakeScriptObject | BackwardState | list[_ExtractValType] | tuple[_ExtractValType, ...] | dict[str, _ExtractValType] | Tensor | int | float | bool | None", Count: 2
+Type: "ProxyTorchDispatchMode", Count: 2
+Type: "ShapeEnv", Count: 2
+Type: "StrictMinMaxConstraint | RelaxedUnspecConstraint | None", Count: 2
+Type: "StatelessSymbolicContext[..., Unknown] | None", Count: 2
+Type: "float | SymFloat", Count: 2
+Type: "device | str", Count: 2
+Type: "type[Tensor] | None", Count: 2
+Type: "FakeTensorMode", Count: 2
+Type: "PackageImporter", Count: 2
+Type: "Library", Count: 2
+Type: "Tensor | Value", Count: 2
+Type: "_ITraceObserver | None", Count: 2
+Type: "list[((...) -> Unknown) | tuple[(...) -> Unknown, str]]", Count: 2
+Type: "Module | ((...) -> Unknown) | None", Count: 2
+Type: "((...) -> Any) | dict[str | Any, ((...) -> Unknown) | Any] | None", Count: 2
+Type: "Dataset[_T@random_split]", Count: 2
+Type: "dict[str, list[Unknown]]", Count: 2
+Type: "GeneratedFileCleaner", Count: 2
+Type: "Graph | None", Count: 2
+Type: "Tensor | tuple[Tensor, ...] | None", Count: 2
+Type: "SymInt | int", Count: 2
+Type: "list[Unknown]", Count: 2
+Type: "Tensor | MaskedTensor", Count: 2
+Type: "int | Tensor", Count: 2
+Type: "PackedSequence", Count: 2
+Type: "Tensor | float | int | bool", Count: 2
+Type: "Dataset[_T_co@__init__]", Count: 2
+Type: "Event | None", Count: 1
+Type: "Future[Unknown]", Count: 1
+Type: "PyTorchFileWriter", Count: 1
+Type: "Storage | bytes | int", Count: 1
+Type: "type[Tensor] | str", Count: 1
+Type: "bool | int | float | Tensor", Count: 1
+Type: "tuple[Unknown, ...] | list[Unknown]", Count: 1
+Type: "Tensor | Module", Count: 1
+Type: "int | str | device | None", Count: 1
+Type: "LSTM", Count: 1
+Type: "Linear", Count: 1
+Type: "type[Tracer] | None", Count: 1
+Type: "tuple[(...) -> Unknown, ...]", Count: 1
+Type: "CodeGen", Count: 1
+Type: "QConfigMapping", Count: 1
+Type: "tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]] | tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]]", Count: 1
+Type: "dict[str, dict[(...) -> Unknown, (...) -> Unknown]] | None", Count: 1
+Type: "BaseSparsifier", Count: 1
+Type: "ExportGraphSignature", Count: 1
+Type: "dict[OperatorBase, (...) -> Unknown] | None", Count: 1
+Type: "BackendPatternConfig", Count: 1
+Type: "((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any | None", Count: 1
+Type: "list[(...) -> Unknown]", Count: 1
+Type: "type[Module] | None", Count: 1
+Type: "ExportedProgram | GraphModule", Count: 1
+Type: "GraphModule | Module", Count: 1
+Type: "OpOverloadPacket[..., Any]", Count: 1
+Type: "_FunctionBase | None", Count: 1
+Type: "Tensor | Sequence[Tensor] | GradientEdge | Sequence[GradientEdge] | None", Count: 1
+Type: "AllreduceOptions", Count: 1
+Type: "Backend", Count: 1
+Type: "Reducer", Count: 1
+Type: "type[Optimizer]", Count: 1
+Type: "PostLocalSGDState", Count: 1
+Type: "Joinable", Count: 1
+Type: "TensorStorageMetadata", Count: 1
+Type: "Tensor | _Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str]", Count: 1
+Type: "ProcessGroup | list[ProcessGroup]", Count: 1
+Type: "Tensor | _Buffer | _SupportsArray[dtype[Any]] | _NestedSequence[_SupportsArray[dtype[Any]]] | complex | bytes | str | _NestedSequence[complex | bytes | str] | None", Count: 1
+Type: "TensorProperties", Count: 1
+Type: "StorageWriter", Count: 1
+Type: "SavePlanner | None", Count: 1
+Type: "RendezvousStoreInfo", Count: 1
+Type: "RdzvEvent", Count: 1
+Type: "ErrorHandler | None", Count: 1
+Type: "EtcdRendezvous", Count: 1
+Type: "TimerClient", Count: 1
+Type: "Dataset[T@ElasticDistributedSampler]", Count: 1
+Type: "Dataset[Unknown]", Count: 1
+Type: "AllGather", Count: 1
+Type: "ReduceScatter", Count: 1
+Type: "ProcessGroup | tuple[ProcessGroup, ProcessGroup] | None", Count: 1
+Type: "((...) -> Unknown) | ModuleWrapPolicy | CustomPolicy | None", Count: 1
+Type: "ModelAverager", Count: 1
+Type: "_PipelineStageBase", Count: 1
+Type: "((...) -> Unknown) | _Loss | None", Count: 1
+Type: "OpOverload[..., Any] | list[OpOverload[..., Any]]", Count: 1
+Type: "Transform | list[Transform]", Count: 1
+Type: "Categorical", Count: 1
+Type: "Transform", Count: 1
+Type: "int | float | Any | bool | Unknown", Count: 1
+Type: "device | str | dict[str, str]", Count: 1
+Type: "Sequence[Module] | ModuleList", Count: 1
+Type: "Module | GraphModule", Count: 1
+Type: "TGreatestUpperBound", Count: 1
+Type: "MklSubgraph", Count: 1
+Type: "type[Tracer]", Count: 1
+Type: "_ProxyTensor", Count: 1
+Type: "Proxy | Sequence[_NestedProxys] | Mapping[object, _NestedProxys]", Count: 1
+Type: "Tensor | Sequence[Tensor | ... | Mapping[object, _NestedTensors]] | Mapping[object, Tensor | Sequence[_NestedTensors] | ...] | None", Count: 1
+Type: "OpOverload[..., Any] | ((...) -> Unknown)", Count: 1
+Type: "int | SymInt | float | SymFloat", Count: 1
+Type: "EqualityConstraint | None", Count: 1
+Type: "SymInt | SymFloat | SymBool | int | float | bool", Count: 1
+Type: "SymBool | SymFloat | SymInt | bool | float | int", Count: 1
+Type: "SymBool | bool", Count: 1
+Type: "Tensor | tuple[Tensor, ...]", Count: 1
+Type: "SymBool | SymInt | SymFloat | int | bool | float", Count: 1
+Type: "FakeTensorConverter", Count: 1
+Type: "_MetaTensorCallback[_TensorT@MetaConverter]", Count: 1
+Type: "_MetaTensorCallback[_TensorT@MetaConverter] | None", Count: 1
+Type: "SymInt | SymFloat | None", Count: 1
+Type: "int | SymInt | float | SymFloat | bool | SymBool", Count: 1
+Type: "FakeTensorMode | None", Count: 1
+Type: "type[GraphModule]", Count: 1
+Type: "FusionGroup", Count: 1
+Type: "TracerBase | None", Count: 1
+Type: "TracerBase", Count: 1
+Type: "((...) -> Unknown) | Graph | GraphModule", Count: 1
+Type: "((...) -> Unknown) | Graph | GraphModule | None", Count: 1
+Type: "OpOverload[..., Any] | OpOverloadPacket[..., Any] | CustomOpDef", Count: 1
+Type: "SummaryWriter", Count: 1
+Type: "device | str | int", Count: 1
+Type: "Tensor | list[Tensor] | tuple[Tensor, ...]", Count: 1
+Type: "TransformerEncoderLayer", Count: 1
+Type: "TransformerDecoderLayer", Count: 1
+Type: "BlockMask | None", Count: 1
+Type: "Tensor | list[Any] | tuple[Any, ...] | dict[Any, Any]", Count: 1
+Type: "Tensor | Parameter", Count: 1
+Type: "Tensor | list[int]", Count: 1
+Type: "ExportedProgram | None", Count: 1
+Type: "Value | Tensor | None", Count: 1
+Type: "Module | ExportedProgram | ScriptModule | ScriptFunction[..., Unknown]", Count: 1
+Type: "dict[(...) -> Unknown, ((...) -> Unknown) | Sequence[(...) -> Unknown]] | None", Count: 1
+Type: "Value | None", Count: 1
+Type: "Module | ScriptModule | ScriptFunction[..., Unknown]", Count: 1
+Type: "tuple[Any, ...] | Tensor", Count: 1
+Type: "ONNXProgram", Count: 1
+Type: "Tensor | tuple[Any, ...]", Count: 1
+Type: "GraphInfo | None", Count: 1
+Type: "PackagingError", Count: 1
+Type: "DiGraph", Count: 1
+Type: "list[(...) -> Unknown] | None", Count: 1
+Type: "Sequence[tuple[Any, ...]] | dict[(...) -> Unknown, Sequence[tuple[Any, ...]] | None] | None", Count: 1
+Type: "list[str] | dict[(...) -> Unknown, list[str]] | None", Count: 1
+Type: "dict[(...) -> Unknown, Sequence[tuple[Any, ...]] | None]", Count: 1
+Type: "dict[(...) -> Unknown, list[str]] | None", Count: 1
+Type: "Dataset[_T_co@DataLoader]", Count: 1
+Type: "Sampler[Unknown] | Iterable[Unknown] | None", Count: 1
+Type: "Sampler[list[Unknown]] | Iterable[list[Unknown]] | None", Count: 1
+Type: "((list[Unknown]) -> Any) | None", Count: 1
+Type: "DataLoader[Unknown]", Count: 1
+Type: "Dataset[_T_co@IterableDataset]", Count: 1
+Type: "type[IterDataPipe[Unknown]] | (() -> bool)", Count: 1
+Type: "Dataset[_T_co@Subset]", Count: 1
+Type: "type[Sampler[Unknown]]", Count: 1
+Type: "dict[Unknown, Unknown] | None", Count: 1
+Type: "IterDataPipe[_T_co@ShufflerIterDataPipe]", Count: 1
+Type: "str | Sequence[str] | IterDataPipe[Unknown]", Count: 1
+Type: "IterDataPipe[_T_co@__init__]", Count: 1
+Type: "IterDataPipe[_T_co@FilterIterDataPipe]", Count: 1
+Type: "IterDataPipe[tuple[str, IOBase]]", Count: 1
+Type: "MapDataPipe[_T_co@ShufflerIterDataPipe]", Count: 1
+Type: "MapDataPipe[_T_co@ZipperMapDataPipe]", Count: 1
+Type: "MapDataPipe[_T@__init__]", Count: 1
+Type: "int | tuple[Unknown, ...] | list[Unknown] | None", Count: 1
+Type: "dict[int, tuple[IterDataPipe[Unknown] | MapDataPipe[Unknown], DataPipeGraph]]", Count: 1
+Type: "Generator", Count: 1
+Type: "Module | list[Module] | None", Count: 1
+Type: "GeneratedFileCleaner | None", Count: 1
+Type: "TensorType", Count: 1
+Type: "_XpuStreamBase", Count: 1

@@ -1,0 +1,96 @@
+**Total Errors Found: 18026**
+
+================================================================================
+PYRIGHT TYPE COMPLETENESS ERROR ANALYSIS
+================================================================================
+
+1. Missing Parameter Annotation
+   Count: 5,849
+   Percentage: 32.45% of total
+   Description: Function arguments that are missing type annotations
+   Example: "Type annotation for parameter "zero_point" is missing"
+------------------------------------------------------------
+
+2. Partially Unknown Parameter Type
+   Count: 4,541
+   Percentage: 25.19% of total
+   Description: Function arguments with incomplete type annotations
+   Example: "Type of parameter "generator" is partially unknown\n  Parameter type is "Generator | None""
+------------------------------------------------------------
+
+3. Missing Return Annotation
+   Count: 2,870
+   Percentage: 15.92% of total
+   Description: Methods/functions missing return type annotations
+   Example: "Return type annotation is missing"
+------------------------------------------------------------
+
+4. Partially Unknown Return Type
+   Count: 1,882
+   Percentage: 10.44% of total
+   Description: Functions with incomplete return type annotations
+   Example: "Return type is partially unknown\n  Return type is "Tensor""
+------------------------------------------------------------
+
+5. Missing Type Annotation
+   Count: 1,198
+   Percentage: 6.65% of total
+   Description: Variables missing explicit type annotations
+   Example: "Type is missing type annotation and could be inferred differently by type checkers\n  Inferred type is "dtype""
+------------------------------------------------------------
+
+6. Partially Unknown Base Class
+   Count: 732
+   Percentage: 4.06% of total
+   Description: Classes inheriting from incomplete base classes
+   Example: "Type of base class "torch.nn.modules.instancenorm._InstanceNorm" is partially unknown"
+------------------------------------------------------------
+
+7. Other
+   Count: 678
+   Percentage: 3.76% of total
+   Description: Miscellaneous errors not matching predefined patterns
+   Example: "Return type is unknown..."
+------------------------------------------------------------
+
+8. Unknown Variable Type
+   Count: 276
+   Percentage: 1.53% of total
+   Description: Variables with completely unknown types
+   Example: "Type unknown for variable "torch.fft.ifft2""
+------------------------------------------------------------
+
+================================================================================
+SAMPLE UNMATCHED ERRORS (showing first 10 of 678)
+================================================================================
+1. Return type is unknown
+----------------------------------------
+2. Return type is unknown
+----------------------------------------
+3. Type argument 1 for class "ReferenceType" has partially unknown type
+  Type is [object Object]
+----------------------------------------
+4. Type argument 1 for class "ReferenceType" has unknown type
+----------------------------------------
+5. Type argument 1 for class "tuple" has unknown type
+----------------------------------------
+6. Type of metaclass "_LegacyStorageMeta" is partially unknown
+----------------------------------------
+7. Type argument 1 for class "_ClassPropertyDescriptor" has partially unknown type
+  Type is [object Object]
+----------------------------------------
+8. Type of metaclass "_LegacyStorageMeta" is partially unknown
+----------------------------------------
+9. Type argument 1 for class "_ClassPropertyDescriptor" has partially unknown type
+  Type is [object Object]
+----------------------------------------
+10. Type of metaclass "_LegacyStorageMeta" is partially unknown
+----------------------------------------
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+Total Errors: 18,026
+Categorized Errors: 17,348
+Unmatched Errors: 678
+Match Rate: 96.2%

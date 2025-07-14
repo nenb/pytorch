@@ -1,0 +1,108 @@
+**Total Errors Found: 20893**
+
+================================================================================
+PYRIGHT TYPE COMPLETENESS ERROR ANALYSIS
+================================================================================
+
+1. Missing Parameter Annotation
+   Count: 6,414
+   Percentage: 30.70% of total
+   Description: Function arguments that are missing type annotations
+   Example: "Type annotation for parameter "zero_point" is missing"
+------------------------------------------------------------
+
+2. Partially Unknown Parameter Type
+   Count: 5,219
+   Percentage: 24.98% of total
+   Description: Function arguments with incomplete type annotations
+   Example: "Type of parameter "generator" is partially unknown\n  Parameter type is "Generator | None""
+------------------------------------------------------------
+
+3. Missing Return Annotation
+   Count: 3,213
+   Percentage: 15.38% of total
+   Description: Methods/functions missing return type annotations
+   Example: "Return type annotation is missing"
+------------------------------------------------------------
+
+4. Partially Unknown Return Type
+   Count: 2,753
+   Percentage: 13.18% of total
+   Description: Functions with incomplete return type annotations
+   Example: "Return type is partially unknown\n  Return type is "Tensor""
+------------------------------------------------------------
+
+5. Missing Type Annotation
+   Count: 1,300
+   Percentage: 6.22% of total
+   Description: Variables missing explicit type annotations
+   Example: "Type is missing type annotation and could be inferred differently by type checkers\n  Inferred type is "dtype""
+------------------------------------------------------------
+
+6. Partially Unknown Base Class
+   Count: 847
+   Percentage: 4.05% of total
+   Description: Classes inheriting from incomplete base classes
+   Example: "Type of base class "torch.nn.modules.instancenorm._InstanceNorm" is partially unknown"
+------------------------------------------------------------
+
+7. Other
+   Count: 831
+   Percentage: 3.98% of total
+   Description: Miscellaneous errors not matching predefined patterns
+   Example: "Return type is unknown..."
+------------------------------------------------------------
+
+8. Unknown Variable Type
+   Count: 316
+   Percentage: 1.51% of total
+   Description: Variables with completely unknown types
+   Example: "Type unknown for variable "torch.fft.ifft2""
+------------------------------------------------------------
+
+================================================================================
+SAMPLE UNMATCHED ERRORS (showing first 10 of 831)
+================================================================================
+1. Return type is unknown
+----------------------------------------
+2. Return type is unknown
+----------------------------------------
+3. Ambiguous base class override
+  Type inferred in child class is "(self: Self@TensorBase) -> Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+4. Ambiguous base class override
+  Type inferred in child class is "(self: Self@TensorBase) -> Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+5. Ambiguous base class override
+  Type inferred in child class is "(self: Self@TensorBase, other: Number | Tensor | complex) -> Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+6. Ambiguous base class override
+  Type inferred in child class is "(self: Self@TensorBase) -> Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+7. Ambiguous base class override
+  Type inferred in child class is "(self: Self@TensorBase) -> Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+8. Ambiguous base class override
+  Type inferred in child class is "Unknown | Tensor"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+9. Ambiguous base class override
+  Type inferred in child class is "Unknown | bool"
+  Inferred child class type is missing type annotation and could be inferred differently by type checkers
+----------------------------------------
+10. Type argument 1 for class "ReferenceType" has partially unknown type
+  Type is [object Object]
+----------------------------------------
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+Total Errors: 20,893
+Categorized Errors: 20,062
+Unmatched Errors: 831
+Match Rate: 96.0%

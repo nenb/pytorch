@@ -1,0 +1,1387 @@
+PyTorch Missing Symbols Report
+==================================================
+
+Summary:
+  Total PyTorch public API symbols: 5252
+  Total Pyright symbols: 19679
+  Missing symbols: 564
+  Coverage: 89.3%
+
+Missing Symbols by Module:
+------------------------------
+
+torch (54 missing):
+  from torch import AVG
+  from torch import ArgumentSpec
+  from torch import Capsule
+  from torch import Code
+  from torch import CompleteArgumentSpec
+  from torch import DeepCopyMemoTable
+  from torch import ExcludeDispatchKeyGuard
+  from torch import ExecutionPlan
+  from torch import FatalError
+  from torch import Gradient
+  from torch import OperatorInfo
+  from torch import PyObjectType
+  from torch import SUM
+  from torch import ScriptClass
+  from torch import ScriptClassFunction
+  from torch import ScriptDictIterator
+  from torch import ScriptDictKeyIterator
+  from torch import ScriptListIterator
+  from torch import ScriptObjectProperty
+  from torch import StaticModule
+  from torch import bit
+  from torch import classproperty
+  from torch import eig
+  from torch import get_autocast_ipu_dtype
+  from torch import get_autocast_xla_dtype
+  from torch import get_file_path
+  from torch import int1
+  from torch import int2
+  from torch import int3
+  from torch import int4
+  from torch import int5
+  from torch import int6
+  from torch import int7
+  from torch import is_autocast_ipu_enabled
+  from torch import is_autocast_xla_enabled
+  from torch import lstsq
+  from torch import matrix_rank
+  from torch import prepare_multiprocessing_environment
+  from torch import profiler_allow_cudagraph_cupti_lazy_reinit_cuda12
+  from torch import read_vitals
+  from torch import set_autocast_ipu_dtype
+  from torch import set_autocast_ipu_enabled
+  from torch import set_autocast_xla_dtype
+  from torch import set_autocast_xla_enabled
+  from torch import set_vital
+  from torch import solve
+  from torch import uint1
+  from torch import uint2
+  from torch import uint3
+  from torch import uint4
+  from torch import uint5
+  from torch import uint6
+  from torch import uint7
+  from torch import vitals_enabled
+
+torch.ao.nn.quantized.functional (1 missing):
+  from torch.ao.nn.quantized.functional import BroadcastingList2
+
+torch.ao.pruning (2 missing):
+  from torch.ao.pruning import get_dynamic_sparse_quantized_mapping
+  from torch.ao.pruning import get_static_sparse_quantized_mapping
+
+torch.ao.quantization.backend_config.executorch (2 missing):
+  from torch.ao.quantization.backend_config.executorch import qnnpack_default_op_qint8_symmetric_dtype_config
+  from torch.ao.quantization.backend_config.executorch import qnnpack_weighted_op_qint8_symmetric_dtype_config
+
+torch.ao.quantization.fake_quantize (2 missing):
+  from torch.ao.quantization.fake_quantize import default_fixed_qparams_range_0to1_observer
+  from torch.ao.quantization.fake_quantize import default_fixed_qparams_range_neg1to1_observer
+
+torch.ao.quantization.fx.convert (3 missing):
+  from torch.ao.quantization.fx.convert import convert_eq_obs
+  from torch.ao.quantization.fx.convert import quantized_decomposed_lib
+  from torch.ao.quantization.fx.convert import update_obs_for_equalization
+
+torch.ao.quantization.fx.lstm_utils (2 missing):
+  from torch.ao.quantization.fx.lstm_utils import default_weight_fake_quant
+  from torch.ao.quantization.fx.lstm_utils import default_weight_observer
+
+torch.ao.quantization.fx.prepare (3 missing):
+  from torch.ao.quantization.fx.prepare import NON_QUANTIZABLE_WEIGHT_OPS
+  from torch.ao.quantization.fx.prepare import is_equalization_observer
+  from torch.ao.quantization.fx.prepare import node_supports_equalization
+
+torch.ao.quantization.fx.utils (3 missing):
+  from torch.ao.quantization.fx.utils import float16_dynamic_qconfig
+  from torch.ao.quantization.fx.utils import float16_static_qconfig
+  from torch.ao.quantization.fx.utils import quantized_decomposed_lib
+
+torch.ao.quantization.pt2e.lowering (2 missing):
+  from torch.ao.quantization.pt2e.lowering import constant_fold
+  from torch.ao.quantization.pt2e.lowering import freezing_passes
+
+torch.ao.quantization.pt2e.port_metadata_pass (1 missing):
+  from torch.ao.quantization.pt2e.port_metadata_pass import InternalError
+
+torch.ao.quantization.pt2e.qat_utils (1 missing):
+  from torch.ao.quantization.pt2e.qat_utils import quantized_decomposed_lib
+
+torch.ao.quantization.pt2e.representation.rewrite (2 missing):
+  from torch.ao.quantization.pt2e.representation.rewrite import out_dtype
+  from torch.ao.quantization.pt2e.representation.rewrite import quantized_decomposed_lib
+
+torch.ao.quantization.pt2e.utils (1 missing):
+  from torch.ao.quantization.pt2e.utils import quantized_decomposed_lib
+
+torch.ao.quantization.qconfig (19 missing):
+  from torch.ao.quantization.qconfig import default_dynamic_fake_quant
+  from torch.ao.quantization.qconfig import default_dynamic_quant_observer
+  from torch.ao.quantization.qconfig import default_embedding_fake_quant
+  from torch.ao.quantization.qconfig import default_embedding_fake_quant_4bit
+  from torch.ao.quantization.qconfig import default_fake_quant
+  from torch.ao.quantization.qconfig import default_float_qparams_observer
+  from torch.ao.quantization.qconfig import default_float_qparams_observer_4bit
+  from torch.ao.quantization.qconfig import default_fused_act_fake_quant
+  from torch.ao.quantization.qconfig import default_fused_per_channel_wt_fake_quant
+  from torch.ao.quantization.qconfig import default_fused_wt_fake_quant
+  from torch.ao.quantization.qconfig import default_observer
+  from torch.ao.quantization.qconfig import default_per_channel_weight_fake_quant
+  from torch.ao.quantization.qconfig import default_per_channel_weight_observer
+  from torch.ao.quantization.qconfig import default_weight_fake_quant
+  from torch.ao.quantization.qconfig import default_weight_observer
+  from torch.ao.quantization.qconfig import fused_per_channel_wt_fake_quant_range_neg_127_to_127
+  from torch.ao.quantization.qconfig import fused_wt_fake_quant_range_neg_127_to_127
+  from torch.ao.quantization.qconfig import per_channel_weight_observer_range_neg_127_to_127
+  from torch.ao.quantization.qconfig import weight_observer_range_neg_127_to_127
+
+torch.ao.quantization.qconfig_mapping (8 missing):
+  from torch.ao.quantization.qconfig_mapping import default_fixed_qparams_range_0to1_observer
+  from torch.ao.quantization.qconfig_mapping import default_fixed_qparams_range_neg1to1_observer
+  from torch.ao.quantization.qconfig_mapping import default_quint8_weight_qconfig
+  from torch.ao.quantization.qconfig_mapping import default_reuse_input_qconfig
+  from torch.ao.quantization.qconfig_mapping import default_symmetric_qnnpack_qat_qconfig
+  from torch.ao.quantization.qconfig_mapping import default_symmetric_qnnpack_qconfig
+  from torch.ao.quantization.qconfig_mapping import default_weight_fake_quant
+  from torch.ao.quantization.qconfig_mapping import default_weight_observer
+
+torch.ao.quantization.quantization_mappings (2 missing):
+  from torch.ao.quantization.quantization_mappings import default_fixed_qparams_range_0to1_fake_quant
+  from torch.ao.quantization.quantization_mappings import default_fixed_qparams_range_neg1to1_fake_quant
+
+torch.ao.quantization.quantize (4 missing):
+  from torch.ao.quantization.quantize import default_dynamic_qconfig
+  from torch.ao.quantization.quantize import float16_dynamic_qconfig
+  from torch.ao.quantization.quantize import float_qparams_weight_only_qconfig
+  from torch.ao.quantization.quantize import float_qparams_weight_only_qconfig_4bit
+
+torch.ao.quantization.quantize_pt2e (1 missing):
+  from torch.ao.quantization.quantize_pt2e import constant_fold
+
+torch.ao.quantization.quantizer.xnnpack_quantizer (1 missing):
+  from torch.ao.quantization.quantizer.xnnpack_quantizer import OP_TO_ANNOTATOR
+
+torch.ao.quantization.quantizer.xpu_inductor_quantizer (1 missing):
+  from torch.ao.quantization.quantizer.xpu_inductor_quantizer import int8_in_int8_out_ops
+
+torch.autograd (7 missing):
+  from torch.autograd import DeviceType
+  from torch.autograd import ProfilerActivity
+  from torch.autograd import ProfilerConfig
+  from torch.autograd import ProfilerEvent
+  from torch.autograd import ProfilerState
+  from torch.autograd import SavedTensor
+  from torch.autograd import kineto_available
+
+torch.autograd.function (1 missing):
+  from torch.autograd.function import custom_function_call
+
+torch.autograd.grad_mode (1 missing):
+  from torch.autograd.grad_mode import F
+
+torch.autograd.gradcheck (1 missing):
+  from torch.autograd.gradcheck import vmap
+
+torch.autograd.graph (1 missing):
+  from torch.autograd.graph import TorchDispatchMode
+
+torch.backends.nnpack (2 missing):
+  from torch.backends.nnpack import ContextProp
+  from torch.backends.nnpack import PropModule
+
+torch.compiler.config (2 missing):
+  from torch.compiler.config import Config
+  from torch.compiler.config import install_config_module
+
+torch.cuda (10 missing):
+  from torch.cuda import BFloat16Tensor
+  from torch.cuda import BoolTensor
+  from torch.cuda import ByteTensor
+  from torch.cuda import CharTensor
+  from torch.cuda import DoubleTensor
+  from torch.cuda import FloatTensor
+  from torch.cuda import HalfTensor
+  from torch.cuda import IntTensor
+  from torch.cuda import LongTensor
+  from torch.cuda import ShortTensor
+
+torch.cuda.sparse (9 missing):
+  from torch.cuda.sparse import BFloat16Tensor
+  from torch.cuda.sparse import ByteTensor
+  from torch.cuda.sparse import CharTensor
+  from torch.cuda.sparse import DoubleTensor
+  from torch.cuda.sparse import FloatTensor
+  from torch.cuda.sparse import HalfTensor
+  from torch.cuda.sparse import IntTensor
+  from torch.cuda.sparse import LongTensor
+  from torch.cuda.sparse import ShortTensor
+
+torch.distributed.device_mesh (1 missing):
+  from torch.distributed.device_mesh import not_none
+
+torch.distributions.gumbel (1 missing):
+  from torch.distributions.gumbel import euler_constant
+
+torch.distributions.kumaraswamy (1 missing):
+  from torch.distributions.kumaraswamy import euler_constant
+
+torch.distributions.weibull (1 missing):
+  from torch.distributions.weibull import euler_constant
+
+torch.export (1 missing):
+  from torch.export import compatibility
+
+torch.export.dynamic_shapes (6 missing):
+  from torch.export.dynamic_shapes import BUILTIN_TYPES
+  from torch.export.dynamic_shapes import LeafSpec
+  from torch.export.dynamic_shapes import MappingKey
+  from torch.export.dynamic_shapes import SUPPORTED_NODES
+  from torch.export.dynamic_shapes import keystr
+  from torch.export.dynamic_shapes import tree_map_with_path
+
+torch.export.exported_program (9 missing):
+  from torch.export.exported_program import TracingContext
+  from torch.export.exported_program import Verifier
+  from torch.export.exported_program import autograd_not_implemented
+  from torch.export.exported_program import first_call_function_nn_module_stack
+  from torch.export.exported_program import is_equivalent
+  from torch.export.exported_program import placeholder_naming_pass
+  from torch.export.exported_program import register_op_impl
+  from torch.export.exported_program import tracing
+  from torch.export.exported_program import unset_fake_temporarily
+
+torch.export.graph_signature (1 missing):
+  from torch.export.graph_signature import is_fake
+
+torch.export.unflatten (4 missing):
+  from torch.export.unflatten import FakeScriptObject
+  from torch.export.unflatten import GetAttrKey
+  from torch.export.unflatten import is_fx_tracing
+  from torch.export.unflatten import reorder_kwargs
+
+torch.fft (2 missing):
+  from torch.fft import common_args
+  from torch.fft import factory_common_args
+
+torch.functional (1 missing):
+  from torch.functional import boolean_dispatch
+
+torch.fx (2 missing):
+  from torch.fx import PH
+  from torch.fx import ProxyableClassMeta
+
+torch.fx.experimental.migrate_gradual_types.constraint (9 missing):
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_add
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_div
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_eq
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_gt
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_lt
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_mod
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_mul
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_neq
+  from torch.fx.experimental.migrate_gradual_types.constraint import op_sub
+
+torch.fx.experimental.migrate_gradual_types.constraint_generator (12 missing):
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_add
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_consistency
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_div
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_eq
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_gt
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_leq
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_lt
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_matching
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_mul
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_neq
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_precision
+  from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_sub
+
+torch.fx.experimental.migrate_gradual_types.constraint_transformation (11 missing):
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_add
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_consistency
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_div
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_eq
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_leq
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_matching
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_mod
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_mul
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_neq
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_precision
+  from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_sub
+
+torch.fx.experimental.migrate_gradual_types.transform_to_z3 (10 missing):
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_add
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_div
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_eq
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_gt
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_leq
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_lt
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_mod
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_mul
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_neq
+  from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_sub
+
+torch.fx.experimental.migrate_gradual_types.util (1 missing):
+  from torch.fx.experimental.migrate_gradual_types.util import op_leq
+
+torch.fx.experimental.proxy_tensor (5 missing):
+  from torch.fx.experimental.proxy_tensor import BackwardState
+  from torch.fx.experimental.proxy_tensor import Thunk
+  from torch.fx.experimental.proxy_tensor import count
+  from torch.fx.experimental.proxy_tensor import fast_detach
+  from torch.fx.experimental.proxy_tensor import trace_structured
+
+torch.fx.experimental.rewriter (1 missing):
+  from torch.fx.experimental.rewriter import normalize_source_lines
+
+torch.fx.experimental.sym_node (3 missing):
+  from torch.fx.experimental.sym_node import SymTypes
+  from torch.fx.experimental.sym_node import dtrace_structured
+  from torch.fx.experimental.sym_node import is_channels_last_contiguous_2d
+
+torch.fx.experimental.symbolic_shapes (34 missing):
+  from torch.fx.experimental.symbolic_shapes import BoolLike
+  from torch.fx.experimental.symbolic_shapes import CeilToInt
+  from torch.fx.experimental.symbolic_shapes import CleanDiv
+  from torch.fx.experimental.symbolic_shapes import CppPrinter
+  from torch.fx.experimental.symbolic_shapes import FloatLike
+  from torch.fx.experimental.symbolic_shapes import FloorDiv
+  from torch.fx.experimental.symbolic_shapes import FloorToInt
+  from torch.fx.experimental.symbolic_shapes import IntLike
+  from torch.fx.experimental.symbolic_shapes import IntTrueDiv
+  from torch.fx.experimental.symbolic_shapes import IsNonOverlappingAndDenseIndicator
+  from torch.fx.experimental.symbolic_shapes import LazyString
+  from torch.fx.experimental.symbolic_shapes import Max
+  from torch.fx.experimental.symbolic_shapes import Min
+  from torch.fx.experimental.symbolic_shapes import Mod
+  from torch.fx.experimental.symbolic_shapes import PythonMod
+  from torch.fx.experimental.symbolic_shapes import PythonPrinter
+  from torch.fx.experimental.symbolic_shapes import SLoc
+  from torch.fx.experimental.symbolic_shapes import ShapeGuard
+  from torch.fx.experimental.symbolic_shapes import SingletonInt
+  from torch.fx.experimental.symbolic_shapes import Source
+  from torch.fx.experimental.symbolic_shapes import SymPyValueRangeAnalysis
+  from torch.fx.experimental.symbolic_shapes import SymT
+  from torch.fx.experimental.symbolic_shapes import SymTypes
+  from torch.fx.experimental.symbolic_shapes import TruncToInt
+  from torch.fx.experimental.symbolic_shapes import ValueRangeError
+  from torch.fx.experimental.symbolic_shapes import ValueRanges
+  from torch.fx.experimental.symbolic_shapes import bound_sympy
+  from torch.fx.experimental.symbolic_shapes import format_frame
+  from torch.fx.experimental.symbolic_shapes import int_oo
+  from torch.fx.experimental.symbolic_shapes import make_symbol
+  from torch.fx.experimental.symbolic_shapes import py_sym_types
+  from torch.fx.experimental.symbolic_shapes import signpost_event
+  from torch.fx.experimental.symbolic_shapes import symbol_is_type
+  from torch.fx.experimental.symbolic_shapes import try_solve
+
+torch.fx.experimental.unification (2 missing):
+  from torch.fx.experimental.unification import isvar
+  from torch.fx.experimental.unification import unify
+
+torch.fx.experimental.validator (3 missing):
+  from torch.fx.experimental.validator import TorchDynamoException
+  from torch.fx.experimental.validator import dynamo_timed
+  from torch.fx.experimental.validator import sympy_interp
+
+torch.fx.graph (1 missing):
+  from torch.fx.graph import dtype_abbrs
+
+torch.fx.graph_module (1 missing):
+  from torch.fx.graph_module import sys_importer
+
+torch.fx.passes.backends.cudagraphs (1 missing):
+  from torch.fx.passes.backends.cudagraphs import CALLABLE_NODE_OPS
+
+torch.fx.passes.fake_tensor_prop (2 missing):
+  from torch.fx.passes.fake_tensor_prop import OrderedSet
+  from torch.fx.passes.fake_tensor_prop import py_sym_types
+
+torch.fx.passes.graph_drawer (1 missing):
+  from torch.fx.passes.graph_drawer import pydot
+
+torch.fx.passes.net_min_base (1 missing):
+  from torch.fx.passes.net_min_base import CALLABLE_NODE_OPS
+
+torch.fx.passes.operator_support (1 missing):
+  from torch.fx.passes.operator_support import CALLABLE_NODE_OPS
+
+torch.fx.passes.reinplace (3 missing):
+  from torch.fx.passes.reinplace import FakeTensor
+  from torch.fx.passes.reinplace import FakeTensorMode
+  from torch.fx.passes.reinplace import tree_map_only
+
+torch.fx.passes.runtime_assert (1 missing):
+  from torch.fx.passes.runtime_assert import py_sym_types
+
+torch.fx.passes.shape_prop (3 missing):
+  from torch.fx.passes.shape_prop import contiguous_for_memory_format_or_false
+  from torch.fx.passes.shape_prop import detect_fake_mode
+  from torch.fx.passes.shape_prop import is_sparse_any
+
+torch.fx.passes.split_module (1 missing):
+  from torch.fx.passes.split_module import lazy_format_graph_code
+
+torch.fx.passes.splitter_base (1 missing):
+  from torch.fx.passes.splitter_base import CALLABLE_NODE_OPS
+
+torch.fx.proxy (4 missing):
+  from torch.fx.proxy import CapturedTraceback
+  from torch.fx.proxy import base_types
+  from torch.fx.proxy import magic_methods
+  from torch.fx.proxy import reflectable_magic_methods
+
+torch.jit (16 missing):
+  from torch.jit import ONNXTracedModule
+  from torch.jit import RecursiveScriptClass
+  from torch.jit import RecursiveScriptModule
+  from torch.jit import ScriptWarning
+  from torch.jit import TopLevelTracedModule
+  from torch.jit import TracedModule
+  from torch.jit import TracerWarning
+  from torch.jit import TracingCheckError
+  from torch.jit import fuser
+  from torch.jit import is_scripting
+  from torch.jit import is_tracing
+  from torch.jit import jit_module_from_flatbuffer
+  from torch.jit import optimized_execution
+  from torch.jit import run_frozen_optimizations
+  from torch.jit import save_jit_module_to_flatbuffer
+  from torch.jit import script_method
+
+torch.jit.annotations (4 missing):
+  from torch.jit.annotations import OpOverloadPacket
+  from torch.jit.annotations import is_await
+  from torch.jit.annotations import is_future
+  from torch.jit.annotations import is_ignored_fn
+
+torch.jit.frontend (53 missing):
+  from torch.jit.frontend import Apply
+  from torch.jit.frontend import Assert
+  from torch.jit.frontend import Assign
+  from torch.jit.frontend import Attribute
+  from torch.jit.frontend import AugAssign
+  from torch.jit.frontend import BinOp
+  from torch.jit.frontend import Break
+  from torch.jit.frontend import ClassDef
+  from torch.jit.frontend import Const
+  from torch.jit.frontend import Continue
+  from torch.jit.frontend import DATACLASS_MAGIC_METHODS
+  from torch.jit.frontend import Decl
+  from torch.jit.frontend import Def
+  from torch.jit.frontend import Delete
+  from torch.jit.frontend import DictComp
+  from torch.jit.frontend import DictLiteral
+  from torch.jit.frontend import Dots
+  from torch.jit.frontend import EmptyTypeAnnotation
+  from torch.jit.frontend import ExprStmt
+  from torch.jit.frontend import FalseLiteral
+  from torch.jit.frontend import For
+  from torch.jit.frontend import FunctionModifiers
+  from torch.jit.frontend import Ident
+  from torch.jit.frontend import If
+  from torch.jit.frontend import ListComp
+  from torch.jit.frontend import ListLiteral
+  from torch.jit.frontend import NoneLiteral
+  from torch.jit.frontend import Param
+  from torch.jit.frontend import Pass
+  from torch.jit.frontend import Property
+  from torch.jit.frontend import Raise
+  from torch.jit.frontend import Return
+  from torch.jit.frontend import Select
+  from torch.jit.frontend import SliceExpr
+  from torch.jit.frontend import Starred
+  from torch.jit.frontend import Stmt
+  from torch.jit.frontend import StringLiteral
+  from torch.jit.frontend import Subscript
+  from torch.jit.frontend import TernaryIf
+  from torch.jit.frontend import TrueLiteral
+  from torch.jit.frontend import TupleLiteral
+  from torch.jit.frontend import UnaryOp
+  from torch.jit.frontend import Var
+  from torch.jit.frontend import While
+  from torch.jit.frontend import With
+  from torch.jit.frontend import WithItem
+  from torch.jit.frontend import get_qualified_name
+  from torch.jit.frontend import get_source_lines_and_file
+  from torch.jit.frontend import is_static_fn
+  from torch.jit.frontend import make_source_context
+  from torch.jit.frontend import monkeytype_trace
+  from torch.jit.frontend import parse_def
+  from torch.jit.frontend import should_drop
+
+torch.jit.mobile (1 missing):
+  from torch.jit.mobile import validate_map_location
+
+torch.library (2 missing):
+  from torch.library import CustomOpDef
+  from torch.library import OpOverload
+
+torch.monitor (7 missing):
+  from torch.monitor import COUNT
+  from torch.monitor import MAX
+  from torch.monitor import MEAN
+  from torch.monitor import MIN
+  from torch.monitor import SUM
+  from torch.monitor import VALUE
+  from torch.monitor import data_value_t
+
+torch.multiprocessing.reductions (1 missing):
+  from torch.multiprocessing.reductions import check_serializing_named_tensor
+
+torch.nn.attention.bias (1 missing):
+  from torch.nn.attention.bias import is_flash_attention_available
+
+torch.nn.attention.flex_attention (1 missing):
+  from torch.nn.attention.flex_attention import flex_attention_hop
+
+torch.nn.functional (6 missing):
+  from torch.nn.functional import BroadcastingList1
+  from torch.nn.functional import BroadcastingList2
+  from torch.nn.functional import BroadcastingList3
+  from torch.nn.functional import reproducibility_notes
+  from torch.nn.functional import sparse_support_notes
+  from torch.nn.functional import tf32_notes
+
+torch.nn.modules.batchnorm (1 missing):
+  from torch.nn.modules.batchnorm import sync_batch_norm
+
+torch.nn.modules.conv (1 missing):
+  from torch.nn.modules.conv import reproducibility_notes
+
+torch.nn.modules.module (1 missing):
+  from torch.nn.modules.module import is_traceable_wrapper_subclass
+
+torch.nn.parallel.scatter_gather (2 missing):
+  from torch.nn.parallel.scatter_gather import Gather
+  from torch.nn.parallel.scatter_gather import Scatter
+
+torch.nn.parameter (1 missing):
+  from torch.nn.parameter import UninitializedTensorMixin
+
+torch.nn.utils.parametrize (1 missing):
+  from torch.nn.utils.parametrize import get_swap_module_params_on_conversion
+
+torch.nn.utils.stateless (1 missing):
+  from torch.nn.utils.stateless import NamedMemberAccessor
+
+torch.onnx.symbolic_helper (1 missing):
+  from torch.onnx.symbolic_helper import GLOBALS
+
+torch.onnx.symbolic_opset10 (1 missing):
+  from torch.onnx.symbolic_opset10 import GLOBALS
+
+torch.onnx.symbolic_opset14 (1 missing):
+  from torch.onnx.symbolic_opset14 import GLOBALS
+
+torch.onnx.symbolic_opset16 (2 missing):
+  from torch.onnx.symbolic_opset16 import GRID_SAMPLE_INTERPOLATION_MODES
+  from torch.onnx.symbolic_opset16 import GRID_SAMPLE_PADDING_MODES
+
+torch.onnx.symbolic_opset9 (3 missing):
+  from torch.onnx.symbolic_opset9 import GLOBALS
+  from torch.onnx.symbolic_opset9 import adaptive_avg_pool1d
+  from torch.onnx.symbolic_opset9 import gru
+
+torch.onnx.utils (1 missing):
+  from torch.onnx.utils import GLOBALS
+
+torch.onnx.verification (1 missing):
+  from torch.onnx.verification import GLOBALS
+
+torch.package (1 missing):
+  from torch.package import sys_importer
+
+torch.package.importer (3 missing):
+  from torch.package.importer import demangle
+  from torch.package.importer import get_mangle_prefix
+  from torch.package.importer import is_mangled
+
+torch.package.package_exporter (4 missing):
+  from torch.package.package_exporter import DiGraph
+  from torch.package.package_exporter import create_pickler
+  from torch.package.package_exporter import is_stdlib_module
+  from torch.package.package_exporter import sys_importer
+
+torch.package.package_importer (3 missing):
+  from torch.package.package_importer import DirectoryReader
+  from torch.package.package_importer import PackageMangler
+  from torch.package.package_importer import PackageUnpickler
+
+torch.profiler (2 missing):
+  from torch.profiler import RecordScope
+  from torch.profiler import is_fbcode
+
+torch.profiler.profiler (2 missing):
+  from torch.profiler.profiler import MemoryProfile
+  from torch.profiler.profiler import MemoryProfileTimeline
+
+torch.quantization.fake_quantize (9 missing):
+  from torch.quantization.fake_quantize import default_fake_quant
+  from torch.quantization.fake_quantize import default_fixed_qparams_range_0to1_fake_quant
+  from torch.quantization.fake_quantize import default_fixed_qparams_range_neg1to1_fake_quant
+  from torch.quantization.fake_quantize import default_fused_act_fake_quant
+  from torch.quantization.fake_quantize import default_fused_per_channel_wt_fake_quant
+  from torch.quantization.fake_quantize import default_fused_wt_fake_quant
+  from torch.quantization.fake_quantize import default_histogram_fake_quant
+  from torch.quantization.fake_quantize import default_per_channel_weight_fake_quant
+  from torch.quantization.fake_quantize import default_weight_fake_quant
+
+torch.quantization.fx.quantization_patterns (14 missing):
+  from torch.quantization.fx.quantization_patterns import BatchNormQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import BinaryOpQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import CatQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import ConvReluQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import CopyNodeQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import CustomModuleQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import DefaultNodeQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import EmbeddingQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import FixedQParamsOpQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import GeneralTensorShapeOpQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import LinearReLUQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import QuantizeHandler
+  from torch.quantization.fx.quantization_patterns import RNNDynamicQuantizeHandler
+  from torch.quantization.fx.quantization_patterns import StandaloneModuleQuantizeHandler
+
+torch.quantization.observer (6 missing):
+  from torch.quantization.observer import default_dynamic_quant_observer
+  from torch.quantization.observer import default_float_qparams_observer
+  from torch.quantization.observer import default_histogram_observer
+  from torch.quantization.observer import default_observer
+  from torch.quantization.observer import default_per_channel_weight_observer
+  from torch.quantization.observer import default_weight_observer
+
+torch.quantization.qconfig (12 missing):
+  from torch.quantization.qconfig import default_activation_only_qconfig
+  from torch.quantization.qconfig import default_debug_qconfig
+  from torch.quantization.qconfig import default_dynamic_qconfig
+  from torch.quantization.qconfig import default_per_channel_qconfig
+  from torch.quantization.qconfig import default_qat_qconfig
+  from torch.quantization.qconfig import default_qat_qconfig_v2
+  from torch.quantization.qconfig import default_qconfig
+  from torch.quantization.qconfig import default_weight_only_qconfig
+  from torch.quantization.qconfig import float16_dynamic_qconfig
+  from torch.quantization.qconfig import float16_static_qconfig
+  from torch.quantization.qconfig import float_qparams_weight_only_qconfig
+  from torch.quantization.qconfig import per_channel_dynamic_qconfig
+
+torch.quantization.quantization_mappings (6 missing):
+  from torch.quantization.quantization_mappings import DEFAULT_DYNAMIC_QUANT_MODULE_MAPPINGS
+  from torch.quantization.quantization_mappings import DEFAULT_FLOAT_TO_QUANTIZED_OPERATOR_MAPPINGS
+  from torch.quantization.quantization_mappings import DEFAULT_MODULE_TO_ACT_POST_PROCESS
+  from torch.quantization.quantization_mappings import DEFAULT_QAT_MODULE_MAPPINGS
+  from torch.quantization.quantization_mappings import DEFAULT_REFERENCE_STATIC_QUANT_MODULE_MAPPINGS
+  from torch.quantization.quantization_mappings import DEFAULT_STATIC_QUANT_MODULE_MAPPINGS
+
+torch.random (1 missing):
+  from torch.random import default_generator
+
+torch.return_types (50 missing):
+  from torch.return_types import SequenceKey
+  from torch.return_types import aminmax_out
+  from torch.return_types import cummax_out
+  from torch.return_types import cummin_out
+  from torch.return_types import frexp_out
+  from torch.return_types import geqrf_out
+  from torch.return_types import histogram_out
+  from torch.return_types import kthvalue_out
+  from torch.return_types import linalg_cholesky_ex
+  from torch.return_types import linalg_cholesky_ex_out
+  from torch.return_types import linalg_eig
+  from torch.return_types import linalg_eig_out
+  from torch.return_types import linalg_eigh
+  from torch.return_types import linalg_eigh_out
+  from torch.return_types import linalg_inv_ex
+  from torch.return_types import linalg_inv_ex_out
+  from torch.return_types import linalg_ldl_factor
+  from torch.return_types import linalg_ldl_factor_ex
+  from torch.return_types import linalg_ldl_factor_ex_out
+  from torch.return_types import linalg_ldl_factor_out
+  from torch.return_types import linalg_lstsq
+  from torch.return_types import linalg_lstsq_out
+  from torch.return_types import linalg_lu
+  from torch.return_types import linalg_lu_factor
+  from torch.return_types import linalg_lu_factor_ex
+  from torch.return_types import linalg_lu_factor_ex_out
+  from torch.return_types import linalg_lu_factor_out
+  from torch.return_types import linalg_lu_out
+  from torch.return_types import linalg_qr
+  from torch.return_types import linalg_qr_out
+  from torch.return_types import linalg_slogdet
+  from torch.return_types import linalg_slogdet_out
+  from torch.return_types import linalg_solve_ex
+  from torch.return_types import linalg_solve_ex_out
+  from torch.return_types import linalg_svd
+  from torch.return_types import linalg_svd_out
+  from torch.return_types import lu_unpack_out
+  from torch.return_types import max_out
+  from torch.return_types import median_out
+  from torch.return_types import min_out
+  from torch.return_types import mode_out
+  from torch.return_types import name
+  from torch.return_types import nanmedian_out
+  from torch.return_types import qr_out
+  from torch.return_types import register_pytree_node
+  from torch.return_types import slogdet_out
+  from torch.return_types import sort_out
+  from torch.return_types import svd_out
+  from torch.return_types import topk_out
+  from torch.return_types import triangular_solve_out
+
+torch.signal.windows.windows (3 missing):
+  from torch.signal.windows.windows import factory_common_args
+  from torch.signal.windows.windows import merge_dicts
+  from torch.signal.windows.windows import parse_kwargs
+
+torch.sparse (9 missing):
+  from torch.sparse import BFloat16Tensor
+  from torch.sparse import ByteTensor
+  from torch.sparse import CharTensor
+  from torch.sparse import DoubleTensor
+  from torch.sparse import FloatTensor
+  from torch.sparse import HalfTensor
+  from torch.sparse import IntTensor
+  from torch.sparse import LongTensor
+  from torch.sparse import ShortTensor
+
+torch.sparse.semi_structured (12 missing):
+  from torch.sparse.semi_structured import fallback_dispatcher
+  from torch.sparse.semi_structured import semi_sparse_addmm
+  from torch.sparse.semi_structured import semi_sparse_detach
+  from torch.sparse.semi_structured import semi_sparse_indices
+  from torch.sparse.semi_structured import semi_sparse_linear
+  from torch.sparse.semi_structured import semi_sparse_mm
+  from torch.sparse.semi_structured import semi_sparse_scaled_mm
+  from torch.sparse.semi_structured import semi_sparse_t
+  from torch.sparse.semi_structured import semi_sparse_values
+  from torch.sparse.semi_structured import semi_sparse_view
+  from torch.sparse.semi_structured import sparse_semi_structured_from_dense_cutlass
+  from torch.sparse.semi_structured import sparse_semi_structured_to_dense_cutlass
+
+torch.special (2 missing):
+  from torch.special import common_args
+  from torch.special import multi_dim_common
+
+torch.testing (1 missing):
+  from torch.testing import assert_allclose
+
+torch.torch_version (3 missing):
+  from torch.torch_version import InvalidVersion
+  from torch.torch_version import Version
+  from torch.torch_version import internal_version
+
+torch.utils.benchmark.utils.compile (2 missing):
+  from torch.utils.benchmark.utils.compile import CompileCounterWithBackend
+  from torch.utils.benchmark.utils.compile import tabulate
+
+torch.utils.benchmark.utils.cpp_jit (1 missing):
+  from torch.utils.benchmark.utils.cpp_jit import CallgrindModuleType
+
+torch.utils.benchmark.utils.timer (2 missing):
+  from torch.utils.benchmark.utils.timer import TimeitModuleType
+  from torch.utils.benchmark.utils.timer import TimerClass
+
+torch.utils.bundled_inputs (1 missing):
+  from torch.utils.bundled_inputs import wrap_cpp_module
+
+torch.utils.checkpoint (3 missing):
+  from torch.utils.checkpoint import LoggingTensorMode
+  from torch.utils.checkpoint import capture_logs
+  from torch.utils.checkpoint import tree_map
+
+torch.utils.cpp_extension (1 missing):
+  from torch.utils.cpp_extension import ExtensionVersioner
+
+torch.utils.data.dataloader (1 missing):
+  from torch.utils.data.dataloader import ExceptionWrapper
+
+torch.utils.data.datapipes.datapipe (2 missing):
+  from torch.utils.data.datapipes.datapipe import dill
+  from torch.utils.data.datapipes.datapipe import import_dill
+
+torch.utils.data.dataset (1 missing):
+  from torch.utils.data.dataset import default_generator
+
+torch.utils.data.graph (1 missing):
+  from torch.utils.data.graph import dill_available
+
+torch.utils.flop_counter (2 missing):
+  from torch.utils.flop_counter import tree_flatten
+  from torch.utils.flop_counter import tree_unflatten
+
+torch.utils.hipify.cuda_to_hip_mappings (1 missing):
+  from torch.utils.hipify.cuda_to_hip_mappings import CONV_VERSION
+
+torch.utils.hipify.hipify_python (2 missing):
+  from torch.utils.hipify.hipify_python import CUDA_TO_HIP_MAPPINGS
+  from torch.utils.hipify.hipify_python import MATH_TRANSPILATIONS
+
+
+All Missing Import Statements:
+----------------------------------------
+from torch import AVG
+from torch import ArgumentSpec
+from torch import Capsule
+from torch import Code
+from torch import CompleteArgumentSpec
+from torch import DeepCopyMemoTable
+from torch import ExcludeDispatchKeyGuard
+from torch import ExecutionPlan
+from torch import FatalError
+from torch import Gradient
+from torch import OperatorInfo
+from torch import PyObjectType
+from torch import SUM
+from torch import ScriptClass
+from torch import ScriptClassFunction
+from torch import ScriptDictIterator
+from torch import ScriptDictKeyIterator
+from torch import ScriptListIterator
+from torch import ScriptObjectProperty
+from torch import StaticModule
+from torch import bit
+from torch import classproperty
+from torch import eig
+from torch import get_autocast_ipu_dtype
+from torch import get_autocast_xla_dtype
+from torch import get_file_path
+from torch import int1
+from torch import int2
+from torch import int3
+from torch import int4
+from torch import int5
+from torch import int6
+from torch import int7
+from torch import is_autocast_ipu_enabled
+from torch import is_autocast_xla_enabled
+from torch import lstsq
+from torch import matrix_rank
+from torch import prepare_multiprocessing_environment
+from torch import profiler_allow_cudagraph_cupti_lazy_reinit_cuda12
+from torch import read_vitals
+from torch import set_autocast_ipu_dtype
+from torch import set_autocast_ipu_enabled
+from torch import set_autocast_xla_dtype
+from torch import set_autocast_xla_enabled
+from torch import set_vital
+from torch import solve
+from torch import uint1
+from torch import uint2
+from torch import uint3
+from torch import uint4
+from torch import uint5
+from torch import uint6
+from torch import uint7
+from torch import vitals_enabled
+from torch.ao.nn.quantized.functional import BroadcastingList2
+from torch.ao.pruning import get_dynamic_sparse_quantized_mapping
+from torch.ao.pruning import get_static_sparse_quantized_mapping
+from torch.ao.quantization.backend_config.executorch import qnnpack_default_op_qint8_symmetric_dtype_config
+from torch.ao.quantization.backend_config.executorch import qnnpack_weighted_op_qint8_symmetric_dtype_config
+from torch.ao.quantization.fake_quantize import default_fixed_qparams_range_0to1_observer
+from torch.ao.quantization.fake_quantize import default_fixed_qparams_range_neg1to1_observer
+from torch.ao.quantization.fx.convert import convert_eq_obs
+from torch.ao.quantization.fx.convert import quantized_decomposed_lib
+from torch.ao.quantization.fx.convert import update_obs_for_equalization
+from torch.ao.quantization.fx.lstm_utils import default_weight_fake_quant
+from torch.ao.quantization.fx.lstm_utils import default_weight_observer
+from torch.ao.quantization.fx.prepare import NON_QUANTIZABLE_WEIGHT_OPS
+from torch.ao.quantization.fx.prepare import is_equalization_observer
+from torch.ao.quantization.fx.prepare import node_supports_equalization
+from torch.ao.quantization.fx.utils import float16_dynamic_qconfig
+from torch.ao.quantization.fx.utils import float16_static_qconfig
+from torch.ao.quantization.fx.utils import quantized_decomposed_lib
+from torch.ao.quantization.pt2e.lowering import constant_fold
+from torch.ao.quantization.pt2e.lowering import freezing_passes
+from torch.ao.quantization.pt2e.port_metadata_pass import InternalError
+from torch.ao.quantization.pt2e.qat_utils import quantized_decomposed_lib
+from torch.ao.quantization.pt2e.representation.rewrite import out_dtype
+from torch.ao.quantization.pt2e.representation.rewrite import quantized_decomposed_lib
+from torch.ao.quantization.pt2e.utils import quantized_decomposed_lib
+from torch.ao.quantization.qconfig import default_dynamic_fake_quant
+from torch.ao.quantization.qconfig import default_dynamic_quant_observer
+from torch.ao.quantization.qconfig import default_embedding_fake_quant
+from torch.ao.quantization.qconfig import default_embedding_fake_quant_4bit
+from torch.ao.quantization.qconfig import default_fake_quant
+from torch.ao.quantization.qconfig import default_float_qparams_observer
+from torch.ao.quantization.qconfig import default_float_qparams_observer_4bit
+from torch.ao.quantization.qconfig import default_fused_act_fake_quant
+from torch.ao.quantization.qconfig import default_fused_per_channel_wt_fake_quant
+from torch.ao.quantization.qconfig import default_fused_wt_fake_quant
+from torch.ao.quantization.qconfig import default_observer
+from torch.ao.quantization.qconfig import default_per_channel_weight_fake_quant
+from torch.ao.quantization.qconfig import default_per_channel_weight_observer
+from torch.ao.quantization.qconfig import default_weight_fake_quant
+from torch.ao.quantization.qconfig import default_weight_observer
+from torch.ao.quantization.qconfig import fused_per_channel_wt_fake_quant_range_neg_127_to_127
+from torch.ao.quantization.qconfig import fused_wt_fake_quant_range_neg_127_to_127
+from torch.ao.quantization.qconfig import per_channel_weight_observer_range_neg_127_to_127
+from torch.ao.quantization.qconfig import weight_observer_range_neg_127_to_127
+from torch.ao.quantization.qconfig_mapping import default_fixed_qparams_range_0to1_observer
+from torch.ao.quantization.qconfig_mapping import default_fixed_qparams_range_neg1to1_observer
+from torch.ao.quantization.qconfig_mapping import default_quint8_weight_qconfig
+from torch.ao.quantization.qconfig_mapping import default_reuse_input_qconfig
+from torch.ao.quantization.qconfig_mapping import default_symmetric_qnnpack_qat_qconfig
+from torch.ao.quantization.qconfig_mapping import default_symmetric_qnnpack_qconfig
+from torch.ao.quantization.qconfig_mapping import default_weight_fake_quant
+from torch.ao.quantization.qconfig_mapping import default_weight_observer
+from torch.ao.quantization.quantization_mappings import default_fixed_qparams_range_0to1_fake_quant
+from torch.ao.quantization.quantization_mappings import default_fixed_qparams_range_neg1to1_fake_quant
+from torch.ao.quantization.quantize import default_dynamic_qconfig
+from torch.ao.quantization.quantize import float16_dynamic_qconfig
+from torch.ao.quantization.quantize import float_qparams_weight_only_qconfig
+from torch.ao.quantization.quantize import float_qparams_weight_only_qconfig_4bit
+from torch.ao.quantization.quantize_pt2e import constant_fold
+from torch.ao.quantization.quantizer.xnnpack_quantizer import OP_TO_ANNOTATOR
+from torch.ao.quantization.quantizer.xpu_inductor_quantizer import int8_in_int8_out_ops
+from torch.autograd import DeviceType
+from torch.autograd import ProfilerActivity
+from torch.autograd import ProfilerConfig
+from torch.autograd import ProfilerEvent
+from torch.autograd import ProfilerState
+from torch.autograd import SavedTensor
+from torch.autograd import kineto_available
+from torch.autograd.function import custom_function_call
+from torch.autograd.grad_mode import F
+from torch.autograd.gradcheck import vmap
+from torch.autograd.graph import TorchDispatchMode
+from torch.backends.nnpack import ContextProp
+from torch.backends.nnpack import PropModule
+from torch.compiler.config import Config
+from torch.compiler.config import install_config_module
+from torch.cuda import BFloat16Tensor
+from torch.cuda import BoolTensor
+from torch.cuda import ByteTensor
+from torch.cuda import CharTensor
+from torch.cuda import DoubleTensor
+from torch.cuda import FloatTensor
+from torch.cuda import HalfTensor
+from torch.cuda import IntTensor
+from torch.cuda import LongTensor
+from torch.cuda import ShortTensor
+from torch.cuda.sparse import BFloat16Tensor
+from torch.cuda.sparse import ByteTensor
+from torch.cuda.sparse import CharTensor
+from torch.cuda.sparse import DoubleTensor
+from torch.cuda.sparse import FloatTensor
+from torch.cuda.sparse import HalfTensor
+from torch.cuda.sparse import IntTensor
+from torch.cuda.sparse import LongTensor
+from torch.cuda.sparse import ShortTensor
+from torch.distributed.device_mesh import not_none
+from torch.distributions.gumbel import euler_constant
+from torch.distributions.kumaraswamy import euler_constant
+from torch.distributions.weibull import euler_constant
+from torch.export import compatibility
+from torch.export.dynamic_shapes import BUILTIN_TYPES
+from torch.export.dynamic_shapes import LeafSpec
+from torch.export.dynamic_shapes import MappingKey
+from torch.export.dynamic_shapes import SUPPORTED_NODES
+from torch.export.dynamic_shapes import keystr
+from torch.export.dynamic_shapes import tree_map_with_path
+from torch.export.exported_program import TracingContext
+from torch.export.exported_program import Verifier
+from torch.export.exported_program import autograd_not_implemented
+from torch.export.exported_program import first_call_function_nn_module_stack
+from torch.export.exported_program import is_equivalent
+from torch.export.exported_program import placeholder_naming_pass
+from torch.export.exported_program import register_op_impl
+from torch.export.exported_program import tracing
+from torch.export.exported_program import unset_fake_temporarily
+from torch.export.graph_signature import is_fake
+from torch.export.unflatten import FakeScriptObject
+from torch.export.unflatten import GetAttrKey
+from torch.export.unflatten import is_fx_tracing
+from torch.export.unflatten import reorder_kwargs
+from torch.fft import common_args
+from torch.fft import factory_common_args
+from torch.functional import boolean_dispatch
+from torch.fx import PH
+from torch.fx import ProxyableClassMeta
+from torch.fx.experimental.migrate_gradual_types.constraint import op_add
+from torch.fx.experimental.migrate_gradual_types.constraint import op_div
+from torch.fx.experimental.migrate_gradual_types.constraint import op_eq
+from torch.fx.experimental.migrate_gradual_types.constraint import op_gt
+from torch.fx.experimental.migrate_gradual_types.constraint import op_lt
+from torch.fx.experimental.migrate_gradual_types.constraint import op_mod
+from torch.fx.experimental.migrate_gradual_types.constraint import op_mul
+from torch.fx.experimental.migrate_gradual_types.constraint import op_neq
+from torch.fx.experimental.migrate_gradual_types.constraint import op_sub
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_add
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_consistency
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_div
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_eq
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_gt
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_leq
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_lt
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_matching
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_mul
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_neq
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_precision
+from torch.fx.experimental.migrate_gradual_types.constraint_generator import op_sub
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_add
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_consistency
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_div
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_eq
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_leq
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_matching
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_mod
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_mul
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_neq
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_precision
+from torch.fx.experimental.migrate_gradual_types.constraint_transformation import op_sub
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_add
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_div
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_eq
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_gt
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_leq
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_lt
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_mod
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_mul
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_neq
+from torch.fx.experimental.migrate_gradual_types.transform_to_z3 import op_sub
+from torch.fx.experimental.migrate_gradual_types.util import op_leq
+from torch.fx.experimental.proxy_tensor import BackwardState
+from torch.fx.experimental.proxy_tensor import Thunk
+from torch.fx.experimental.proxy_tensor import count
+from torch.fx.experimental.proxy_tensor import fast_detach
+from torch.fx.experimental.proxy_tensor import trace_structured
+from torch.fx.experimental.rewriter import normalize_source_lines
+from torch.fx.experimental.sym_node import SymTypes
+from torch.fx.experimental.sym_node import dtrace_structured
+from torch.fx.experimental.sym_node import is_channels_last_contiguous_2d
+from torch.fx.experimental.symbolic_shapes import BoolLike
+from torch.fx.experimental.symbolic_shapes import CeilToInt
+from torch.fx.experimental.symbolic_shapes import CleanDiv
+from torch.fx.experimental.symbolic_shapes import CppPrinter
+from torch.fx.experimental.symbolic_shapes import FloatLike
+from torch.fx.experimental.symbolic_shapes import FloorDiv
+from torch.fx.experimental.symbolic_shapes import FloorToInt
+from torch.fx.experimental.symbolic_shapes import IntLike
+from torch.fx.experimental.symbolic_shapes import IntTrueDiv
+from torch.fx.experimental.symbolic_shapes import IsNonOverlappingAndDenseIndicator
+from torch.fx.experimental.symbolic_shapes import LazyString
+from torch.fx.experimental.symbolic_shapes import Max
+from torch.fx.experimental.symbolic_shapes import Min
+from torch.fx.experimental.symbolic_shapes import Mod
+from torch.fx.experimental.symbolic_shapes import PythonMod
+from torch.fx.experimental.symbolic_shapes import PythonPrinter
+from torch.fx.experimental.symbolic_shapes import SLoc
+from torch.fx.experimental.symbolic_shapes import ShapeGuard
+from torch.fx.experimental.symbolic_shapes import SingletonInt
+from torch.fx.experimental.symbolic_shapes import Source
+from torch.fx.experimental.symbolic_shapes import SymPyValueRangeAnalysis
+from torch.fx.experimental.symbolic_shapes import SymT
+from torch.fx.experimental.symbolic_shapes import SymTypes
+from torch.fx.experimental.symbolic_shapes import TruncToInt
+from torch.fx.experimental.symbolic_shapes import ValueRangeError
+from torch.fx.experimental.symbolic_shapes import ValueRanges
+from torch.fx.experimental.symbolic_shapes import bound_sympy
+from torch.fx.experimental.symbolic_shapes import format_frame
+from torch.fx.experimental.symbolic_shapes import int_oo
+from torch.fx.experimental.symbolic_shapes import make_symbol
+from torch.fx.experimental.symbolic_shapes import py_sym_types
+from torch.fx.experimental.symbolic_shapes import signpost_event
+from torch.fx.experimental.symbolic_shapes import symbol_is_type
+from torch.fx.experimental.symbolic_shapes import try_solve
+from torch.fx.experimental.unification import isvar
+from torch.fx.experimental.unification import unify
+from torch.fx.experimental.validator import TorchDynamoException
+from torch.fx.experimental.validator import dynamo_timed
+from torch.fx.experimental.validator import sympy_interp
+from torch.fx.graph import dtype_abbrs
+from torch.fx.graph_module import sys_importer
+from torch.fx.passes.backends.cudagraphs import CALLABLE_NODE_OPS
+from torch.fx.passes.fake_tensor_prop import OrderedSet
+from torch.fx.passes.fake_tensor_prop import py_sym_types
+from torch.fx.passes.graph_drawer import pydot
+from torch.fx.passes.net_min_base import CALLABLE_NODE_OPS
+from torch.fx.passes.operator_support import CALLABLE_NODE_OPS
+from torch.fx.passes.reinplace import FakeTensor
+from torch.fx.passes.reinplace import FakeTensorMode
+from torch.fx.passes.reinplace import tree_map_only
+from torch.fx.passes.runtime_assert import py_sym_types
+from torch.fx.passes.shape_prop import contiguous_for_memory_format_or_false
+from torch.fx.passes.shape_prop import detect_fake_mode
+from torch.fx.passes.shape_prop import is_sparse_any
+from torch.fx.passes.split_module import lazy_format_graph_code
+from torch.fx.passes.splitter_base import CALLABLE_NODE_OPS
+from torch.fx.proxy import CapturedTraceback
+from torch.fx.proxy import base_types
+from torch.fx.proxy import magic_methods
+from torch.fx.proxy import reflectable_magic_methods
+from torch.jit import ONNXTracedModule
+from torch.jit import RecursiveScriptClass
+from torch.jit import RecursiveScriptModule
+from torch.jit import ScriptWarning
+from torch.jit import TopLevelTracedModule
+from torch.jit import TracedModule
+from torch.jit import TracerWarning
+from torch.jit import TracingCheckError
+from torch.jit import fuser
+from torch.jit import is_scripting
+from torch.jit import is_tracing
+from torch.jit import jit_module_from_flatbuffer
+from torch.jit import optimized_execution
+from torch.jit import run_frozen_optimizations
+from torch.jit import save_jit_module_to_flatbuffer
+from torch.jit import script_method
+from torch.jit.annotations import OpOverloadPacket
+from torch.jit.annotations import is_await
+from torch.jit.annotations import is_future
+from torch.jit.annotations import is_ignored_fn
+from torch.jit.frontend import Apply
+from torch.jit.frontend import Assert
+from torch.jit.frontend import Assign
+from torch.jit.frontend import Attribute
+from torch.jit.frontend import AugAssign
+from torch.jit.frontend import BinOp
+from torch.jit.frontend import Break
+from torch.jit.frontend import ClassDef
+from torch.jit.frontend import Const
+from torch.jit.frontend import Continue
+from torch.jit.frontend import DATACLASS_MAGIC_METHODS
+from torch.jit.frontend import Decl
+from torch.jit.frontend import Def
+from torch.jit.frontend import Delete
+from torch.jit.frontend import DictComp
+from torch.jit.frontend import DictLiteral
+from torch.jit.frontend import Dots
+from torch.jit.frontend import EmptyTypeAnnotation
+from torch.jit.frontend import ExprStmt
+from torch.jit.frontend import FalseLiteral
+from torch.jit.frontend import For
+from torch.jit.frontend import FunctionModifiers
+from torch.jit.frontend import Ident
+from torch.jit.frontend import If
+from torch.jit.frontend import ListComp
+from torch.jit.frontend import ListLiteral
+from torch.jit.frontend import NoneLiteral
+from torch.jit.frontend import Param
+from torch.jit.frontend import Pass
+from torch.jit.frontend import Property
+from torch.jit.frontend import Raise
+from torch.jit.frontend import Return
+from torch.jit.frontend import Select
+from torch.jit.frontend import SliceExpr
+from torch.jit.frontend import Starred
+from torch.jit.frontend import Stmt
+from torch.jit.frontend import StringLiteral
+from torch.jit.frontend import Subscript
+from torch.jit.frontend import TernaryIf
+from torch.jit.frontend import TrueLiteral
+from torch.jit.frontend import TupleLiteral
+from torch.jit.frontend import UnaryOp
+from torch.jit.frontend import Var
+from torch.jit.frontend import While
+from torch.jit.frontend import With
+from torch.jit.frontend import WithItem
+from torch.jit.frontend import get_qualified_name
+from torch.jit.frontend import get_source_lines_and_file
+from torch.jit.frontend import is_static_fn
+from torch.jit.frontend import make_source_context
+from torch.jit.frontend import monkeytype_trace
+from torch.jit.frontend import parse_def
+from torch.jit.frontend import should_drop
+from torch.jit.mobile import validate_map_location
+from torch.library import CustomOpDef
+from torch.library import OpOverload
+from torch.monitor import COUNT
+from torch.monitor import MAX
+from torch.monitor import MEAN
+from torch.monitor import MIN
+from torch.monitor import SUM
+from torch.monitor import VALUE
+from torch.monitor import data_value_t
+from torch.multiprocessing.reductions import check_serializing_named_tensor
+from torch.nn.attention.bias import is_flash_attention_available
+from torch.nn.attention.flex_attention import flex_attention_hop
+from torch.nn.functional import BroadcastingList1
+from torch.nn.functional import BroadcastingList2
+from torch.nn.functional import BroadcastingList3
+from torch.nn.functional import reproducibility_notes
+from torch.nn.functional import sparse_support_notes
+from torch.nn.functional import tf32_notes
+from torch.nn.modules.batchnorm import sync_batch_norm
+from torch.nn.modules.conv import reproducibility_notes
+from torch.nn.modules.module import is_traceable_wrapper_subclass
+from torch.nn.parallel.scatter_gather import Gather
+from torch.nn.parallel.scatter_gather import Scatter
+from torch.nn.parameter import UninitializedTensorMixin
+from torch.nn.utils.parametrize import get_swap_module_params_on_conversion
+from torch.nn.utils.stateless import NamedMemberAccessor
+from torch.onnx.symbolic_helper import GLOBALS
+from torch.onnx.symbolic_opset10 import GLOBALS
+from torch.onnx.symbolic_opset14 import GLOBALS
+from torch.onnx.symbolic_opset16 import GRID_SAMPLE_INTERPOLATION_MODES
+from torch.onnx.symbolic_opset16 import GRID_SAMPLE_PADDING_MODES
+from torch.onnx.symbolic_opset9 import GLOBALS
+from torch.onnx.symbolic_opset9 import adaptive_avg_pool1d
+from torch.onnx.symbolic_opset9 import gru
+from torch.onnx.utils import GLOBALS
+from torch.onnx.verification import GLOBALS
+from torch.package import sys_importer
+from torch.package.importer import demangle
+from torch.package.importer import get_mangle_prefix
+from torch.package.importer import is_mangled
+from torch.package.package_exporter import DiGraph
+from torch.package.package_exporter import create_pickler
+from torch.package.package_exporter import is_stdlib_module
+from torch.package.package_exporter import sys_importer
+from torch.package.package_importer import DirectoryReader
+from torch.package.package_importer import PackageMangler
+from torch.package.package_importer import PackageUnpickler
+from torch.profiler import RecordScope
+from torch.profiler import is_fbcode
+from torch.profiler.profiler import MemoryProfile
+from torch.profiler.profiler import MemoryProfileTimeline
+from torch.quantization.fake_quantize import default_fake_quant
+from torch.quantization.fake_quantize import default_fixed_qparams_range_0to1_fake_quant
+from torch.quantization.fake_quantize import default_fixed_qparams_range_neg1to1_fake_quant
+from torch.quantization.fake_quantize import default_fused_act_fake_quant
+from torch.quantization.fake_quantize import default_fused_per_channel_wt_fake_quant
+from torch.quantization.fake_quantize import default_fused_wt_fake_quant
+from torch.quantization.fake_quantize import default_histogram_fake_quant
+from torch.quantization.fake_quantize import default_per_channel_weight_fake_quant
+from torch.quantization.fake_quantize import default_weight_fake_quant
+from torch.quantization.fx.quantization_patterns import BatchNormQuantizeHandler
+from torch.quantization.fx.quantization_patterns import BinaryOpQuantizeHandler
+from torch.quantization.fx.quantization_patterns import CatQuantizeHandler
+from torch.quantization.fx.quantization_patterns import ConvReluQuantizeHandler
+from torch.quantization.fx.quantization_patterns import CopyNodeQuantizeHandler
+from torch.quantization.fx.quantization_patterns import CustomModuleQuantizeHandler
+from torch.quantization.fx.quantization_patterns import DefaultNodeQuantizeHandler
+from torch.quantization.fx.quantization_patterns import EmbeddingQuantizeHandler
+from torch.quantization.fx.quantization_patterns import FixedQParamsOpQuantizeHandler
+from torch.quantization.fx.quantization_patterns import GeneralTensorShapeOpQuantizeHandler
+from torch.quantization.fx.quantization_patterns import LinearReLUQuantizeHandler
+from torch.quantization.fx.quantization_patterns import QuantizeHandler
+from torch.quantization.fx.quantization_patterns import RNNDynamicQuantizeHandler
+from torch.quantization.fx.quantization_patterns import StandaloneModuleQuantizeHandler
+from torch.quantization.observer import default_dynamic_quant_observer
+from torch.quantization.observer import default_float_qparams_observer
+from torch.quantization.observer import default_histogram_observer
+from torch.quantization.observer import default_observer
+from torch.quantization.observer import default_per_channel_weight_observer
+from torch.quantization.observer import default_weight_observer
+from torch.quantization.qconfig import default_activation_only_qconfig
+from torch.quantization.qconfig import default_debug_qconfig
+from torch.quantization.qconfig import default_dynamic_qconfig
+from torch.quantization.qconfig import default_per_channel_qconfig
+from torch.quantization.qconfig import default_qat_qconfig
+from torch.quantization.qconfig import default_qat_qconfig_v2
+from torch.quantization.qconfig import default_qconfig
+from torch.quantization.qconfig import default_weight_only_qconfig
+from torch.quantization.qconfig import float16_dynamic_qconfig
+from torch.quantization.qconfig import float16_static_qconfig
+from torch.quantization.qconfig import float_qparams_weight_only_qconfig
+from torch.quantization.qconfig import per_channel_dynamic_qconfig
+from torch.quantization.quantization_mappings import DEFAULT_DYNAMIC_QUANT_MODULE_MAPPINGS
+from torch.quantization.quantization_mappings import DEFAULT_FLOAT_TO_QUANTIZED_OPERATOR_MAPPINGS
+from torch.quantization.quantization_mappings import DEFAULT_MODULE_TO_ACT_POST_PROCESS
+from torch.quantization.quantization_mappings import DEFAULT_QAT_MODULE_MAPPINGS
+from torch.quantization.quantization_mappings import DEFAULT_REFERENCE_STATIC_QUANT_MODULE_MAPPINGS
+from torch.quantization.quantization_mappings import DEFAULT_STATIC_QUANT_MODULE_MAPPINGS
+from torch.random import default_generator
+from torch.return_types import SequenceKey
+from torch.return_types import aminmax_out
+from torch.return_types import cummax_out
+from torch.return_types import cummin_out
+from torch.return_types import frexp_out
+from torch.return_types import geqrf_out
+from torch.return_types import histogram_out
+from torch.return_types import kthvalue_out
+from torch.return_types import linalg_cholesky_ex
+from torch.return_types import linalg_cholesky_ex_out
+from torch.return_types import linalg_eig
+from torch.return_types import linalg_eig_out
+from torch.return_types import linalg_eigh
+from torch.return_types import linalg_eigh_out
+from torch.return_types import linalg_inv_ex
+from torch.return_types import linalg_inv_ex_out
+from torch.return_types import linalg_ldl_factor
+from torch.return_types import linalg_ldl_factor_ex
+from torch.return_types import linalg_ldl_factor_ex_out
+from torch.return_types import linalg_ldl_factor_out
+from torch.return_types import linalg_lstsq
+from torch.return_types import linalg_lstsq_out
+from torch.return_types import linalg_lu
+from torch.return_types import linalg_lu_factor
+from torch.return_types import linalg_lu_factor_ex
+from torch.return_types import linalg_lu_factor_ex_out
+from torch.return_types import linalg_lu_factor_out
+from torch.return_types import linalg_lu_out
+from torch.return_types import linalg_qr
+from torch.return_types import linalg_qr_out
+from torch.return_types import linalg_slogdet
+from torch.return_types import linalg_slogdet_out
+from torch.return_types import linalg_solve_ex
+from torch.return_types import linalg_solve_ex_out
+from torch.return_types import linalg_svd
+from torch.return_types import linalg_svd_out
+from torch.return_types import lu_unpack_out
+from torch.return_types import max_out
+from torch.return_types import median_out
+from torch.return_types import min_out
+from torch.return_types import mode_out
+from torch.return_types import name
+from torch.return_types import nanmedian_out
+from torch.return_types import qr_out
+from torch.return_types import register_pytree_node
+from torch.return_types import slogdet_out
+from torch.return_types import sort_out
+from torch.return_types import svd_out
+from torch.return_types import topk_out
+from torch.return_types import triangular_solve_out
+from torch.signal.windows.windows import factory_common_args
+from torch.signal.windows.windows import merge_dicts
+from torch.signal.windows.windows import parse_kwargs
+from torch.sparse import BFloat16Tensor
+from torch.sparse import ByteTensor
+from torch.sparse import CharTensor
+from torch.sparse import DoubleTensor
+from torch.sparse import FloatTensor
+from torch.sparse import HalfTensor
+from torch.sparse import IntTensor
+from torch.sparse import LongTensor
+from torch.sparse import ShortTensor
+from torch.sparse.semi_structured import fallback_dispatcher
+from torch.sparse.semi_structured import semi_sparse_addmm
+from torch.sparse.semi_structured import semi_sparse_detach
+from torch.sparse.semi_structured import semi_sparse_indices
+from torch.sparse.semi_structured import semi_sparse_linear
+from torch.sparse.semi_structured import semi_sparse_mm
+from torch.sparse.semi_structured import semi_sparse_scaled_mm
+from torch.sparse.semi_structured import semi_sparse_t
+from torch.sparse.semi_structured import semi_sparse_values
+from torch.sparse.semi_structured import semi_sparse_view
+from torch.sparse.semi_structured import sparse_semi_structured_from_dense_cutlass
+from torch.sparse.semi_structured import sparse_semi_structured_to_dense_cutlass
+from torch.special import common_args
+from torch.special import multi_dim_common
+from torch.testing import assert_allclose
+from torch.torch_version import InvalidVersion
+from torch.torch_version import Version
+from torch.torch_version import internal_version
+from torch.utils.benchmark.utils.compile import CompileCounterWithBackend
+from torch.utils.benchmark.utils.compile import tabulate
+from torch.utils.benchmark.utils.cpp_jit import CallgrindModuleType
+from torch.utils.benchmark.utils.timer import TimeitModuleType
+from torch.utils.benchmark.utils.timer import TimerClass
+from torch.utils.bundled_inputs import wrap_cpp_module
+from torch.utils.checkpoint import LoggingTensorMode
+from torch.utils.checkpoint import capture_logs
+from torch.utils.checkpoint import tree_map
+from torch.utils.cpp_extension import ExtensionVersioner
+from torch.utils.data.dataloader import ExceptionWrapper
+from torch.utils.data.datapipes.datapipe import dill
+from torch.utils.data.datapipes.datapipe import import_dill
+from torch.utils.data.dataset import default_generator
+from torch.utils.data.graph import dill_available
+from torch.utils.flop_counter import tree_flatten
+from torch.utils.flop_counter import tree_unflatten
+from torch.utils.hipify.cuda_to_hip_mappings import CONV_VERSION
+from torch.utils.hipify.hipify_python import CUDA_TO_HIP_MAPPINGS
+from torch.utils.hipify.hipify_python import MATH_TRANSPILATIONS

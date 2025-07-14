@@ -1,0 +1,345 @@
+Grouped by Inferred Type:
+Inferred Type: "int", Count: 122
+Inferred Type: "bool", Count: 102
+Inferred Type: "list[str]", Count: 96
+Inferred Type: "Logger", Count: 68
+Inferred Type: "_PartialWrapper", Count: 65
+Inferred Type: "QConfig", Count: 56
+Inferred Type: "Tensor", Count: 42
+Inferred Type: "DTypeConfig", Count: 42
+Inferred Type: "str", Count: 37
+Inferred Type: "None", Count: 31
+Inferred Type: "Any", Count: 28
+Inferred Type: "dict[Unknown, Unknown]", Count: 28
+Inferred Type: "list[Unknown]", Count: 22
+Inferred Type: "Parameter", Count: 18
+Inferred Type: "float", Count: 18
+Inferred Type: "Unknown | None", Count: 18
+Inferred Type: "Unknown", Count: 13
+Inferred Type: "set[str]", Count: 13
+Inferred Type: "ContextProp", Count: 13
+Inferred Type: "dtype", Count: 12
+Inferred Type: "set[Unknown]", Count: 11
+Inferred Type: "_OpNamespace", Count: 11
+Inferred Type: "list[DTypeConfig]", Count: 9
+Inferred Type: "Linear", Count: 8
+Inferred Type: "dict[str, str]", Count: 8
+Inferred Type: "(...) -> Unknown", Count: 7
+Inferred Type: "property", Count: 7
+Inferred Type: "dict[Unknown, str]", Count: 7
+Inferred Type: "Dropout", Count: 7
+Inferred Type: "FloatFunctional", Count: 5
+Inferred Type: "_FP32Precision", Count: 5
+Inferred Type: "dict[str, Unknown]", Count: 5
+Inferred Type: "SymNumberMemoDescriptor", Count: 5
+Inferred Type: "LayerNorm", Count: 5
+Inferred Type: "DTypeWithConstraints", Count: 4
+Inferred Type: "tuple[Unknown, ...]", Count: 4
+Inferred Type: "ProcessGroup", Count: 4
+Inferred Type: "list[int]", Count: 4
+Inferred Type: "FileSystem", Count: 4
+Inferred Type: "Graph", Count: 4
+Inferred Type: "ConstraintRegistry", Count: 4
+Inferred Type: "ModuleList", Count: 3
+Inferred Type: "Sigmoid", Count: 3
+Inferred Type: "DeQuantStub", Count: 3
+Inferred Type: "list[Any]", Count: 3
+Inferred Type: "qscheme", Count: 3
+Inferred Type: "classmethod[Unknown, (**kwargs: Unknown), _PartialWrapper]", Count: 3
+Inferred Type: "product[tuple[bool, Overload[(input: Number | Tensor | complex, other: Number | Tensor | complex, *, alpha: Number | complex | None = 1, out: Tensor | None = None) -> Tensor, (self: Tensor, alpha: Number | complex, other: Tensor) -> Tensor, (self: Tensor, alpha: Number | complex, other: Tensor, *, out: Tensor) -> Tensor] | ((a: Any, b: Any, /) -> Any)]]", Count: 3
+Inferred Type: "ArgumentParser", Count: 3
+Inferred Type: "Namespace", Count: 3
+Inferred Type: "Stream", Count: 3
+Inferred Type: "str | PathLike[Unknown]", Count: 3
+Inferred Type: "dict[int, str]", Count: 3
+Inferred Type: "list[Node]", Count: 3
+Inferred Type: "count[int]", Count: 3
+Inferred Type: "MultiheadAttention", Count: 3
+Inferred Type: "(tensor: Tensor, gain: float = 1, generator: Generator | None = None) -> Tensor", Count: 3
+Inferred Type: "list[Tensor | Unknown]", Count: 3
+Inferred Type: "OpOverloadPacket[..., Any]", Count: 2
+Inferred Type: "Identity", Count: 2
+Inferred Type: "QuantStub", Count: 2
+Inferred Type: "dict[str, list[str]]", Count: 2
+Inferred Type: "Module", Count: 2
+Inferred Type: "PyTorchFileWriter", Count: 2
+Inferred Type: "set[Unknown | OpOverload[..., Any]]", Count: 2
+Inferred Type: "() -> bool", Count: 2
+Inferred Type: "ProfilerState", Count: 2
+Inferred Type: "cuFFTPlanCacheAttrContextProp", Count: 2
+Inferred Type: "ImportError", Count: 2
+Inferred Type: "_reduce_op", Count: 2
+Inferred Type: "partial[_GeneratorContextManager[None, None, None]]", Count: 2
+Inferred Type: "RendezvousHandlerRegistry", Count: 2
+Inferred Type: "dict[int, int]", Count: 2
+Inferred Type: "(self: Unknown, ...) -> Any", Count: 2
+Inferred Type: "tuple[Placement | Replicate]", Count: 2
+Inferred Type: "tuple[Placement | Shard]", Count: 2
+Inferred Type: "tuple[Placement] | tuple[Placement | None] | None", Count: 2
+Inferred Type: "dict[str, Placement]", Count: 2
+Inferred Type: "tuple[Placement]", Count: 2
+Inferred Type: "Size", Count: 2
+Inferred Type: "ComposeTransform", Count: 2
+Inferred Type: "_IntegerGreaterThan", Count: 2
+Inferred Type: "dict[str, Any]", Count: 2
+Inferred Type: "defaultdict[Unknown, set[Unknown]]", Count: 2
+Inferred Type: "tuple[type[SymInt], type[SymFloat], type[SymBool]]", Count: 2
+Inferred Type: "WeakIdKeyDictionary", Count: 2
+Inferred Type: "set[OpOverloadPacket[..., Any]]", Count: 2
+Inferred Type: "Sequence[str] | list[Unknown]", Count: 2
+Inferred Type: "Never", Count: 2
+Inferred Type: "(tensor: Tensor, a: float = 0, mode: _FanMode = ", Count: 2
+Inferred Type: "list[Pattern[str]]", Count: 2
+Inferred Type: "Warning", Count: 2
+Inferred Type: "(data: Unknown) -> (Tensor | Unknown | Any | dict[Unknown, Tensor | Unknown | Any | dict[Unknown, Unknown] | list[Unknown] | str | bytes] | list[Unknown] | str | bytes)", Count: 2
+Inferred Type: "() -> (WorkerInfo | None)", Count: 2
+Inferred Type: "dict[str, list[Unknown]]", Count: 2
+Inferred Type: "(self: TensorBase, other: Number | Tensor | complex) -> Tensor", Count: 1
+Inferred Type: "Overload[(TensorBase, exponent: Tensor) -> Tensor, (TensorBase, exponent: Number | complex) -> Tensor]", Count: 1
+Inferred Type: "(self: TensorBase) -> Tensor", Count: 1
+Inferred Type: "(func: (...) -> Unknown, types: Iterable[type], args: tuple[Unknown, ...], kwargs: dict[Unknown, Unknown]) -> Any", Count: 1
+Inferred Type: "ReferenceType[Any]", Count: 1
+Inferred Type: "ReferenceType[OrderedDict[Unknown, Unknown]]", Count: 1
+Inferred Type: "ReferenceType[Unknown]", Count: 1
+Inferred Type: "_HigherOrderNamespace", Count: 1
+Inferred Type: "DispatchKeySet", Count: 1
+Inferred Type: "_Classes", Count: 1
+Inferred Type: "() -> int", Count: 1
+Inferred Type: "(device: Device, /) -> None", Count: 1
+Inferred Type: "BatchNorm1d", Count: 1
+Inferred Type: "Tanh", Count: 1
+Inferred Type: "NonDynamicallyQuantizableLinear", Count: 1
+Inferred Type: "RLock", Count: 1
+Inferred Type: "GraphAppendingTracer | TracerBase", Count: 1
+Inferred Type: "DiGraph", Count: 1
+Inferred Type: "ScriptModuleSerializer", Count: 1
+Inferred Type: "SerializationStorageContext", Count: 1
+Inferred Type: "list[(int) -> float]", Count: 1
+Inferred Type: "(T: Unknown) -> Unknown", Count: 1
+Inferred Type: "MovingAverageMinMaxObserver", Count: 1
+Inferred Type: "ObservationType", Count: 1
+Inferred Type: "list[BackendPatternConfig]", Count: 1
+Inferred Type: "type[NodeInfo]", Count: 1
+Inferred Type: "dict[(...) -> Unknown, OpOverloadPacket[..., Any]]", Count: 1
+Inferred Type: "list[OperatorConfig]", Count: 1
+Inferred Type: "EventList", Count: 1
+Inferred Type: "type[Kernel]", Count: 1
+Inferred Type: "cuFFTPlanCacheManager", Count: 1
+Inferred Type: "cuBLASModule", Count: 1
+Inferred Type: "_QEngineProp", Count: 1
+Inferred Type: "_SupportedQEnginesProp", Count: 1
+Inferred Type: "_XNNPACKEnabled", Count: 1
+Inferred Type: "tuple[()] | tuple[Unknown]", Count: 1
+Inferred Type: "Unknown | Stream", Count: 1
+Inferred Type: "StreamContext", Count: 1
+Inferred Type: "MappingProxyType[str, RedOpType]", Count: 1
+Inferred Type: "Reducer", Count: 1
+Inferred Type: "_BufferCommHook", Count: 1
+Inferred Type: "RandomState", Count: 1
+Inferred Type: "OrderedDict[Unknown, Unknown]", Count: 1
+Inferred Type: "DistAutogradContext", Count: 1
+Inferred Type: "SavePlan", Count: 1
+Inferred Type: "STATE_DICT_TYPE[Unknown]", Count: 1
+Inferred Type: "_StorageReaderTransforms", Count: 1
+Inferred Type: "ExtensionRegistry", Count: 1
+Inferred Type: "_StorageWriterTransforms", Count: 1
+Inferred Type: "tuple[()] | Sequence[StreamTransformExtension]", Count: 1
+Inferred Type: "Metadata", Count: 1
+Inferred Type: "WorkerSpec", Count: 1
+Inferred Type: "list[Worker]", Count: 1
+Inferred Type: "WorkerState", Count: 1
+Inferred Type: "type[MetricData]", Count: 1
+Inferred Type: "CDLL | None", Count: 1
+Inferred Type: "timedelta", Count: 1
+Inferred Type: "Signals", Count: 1
+Inferred Type: "TrainingState", Count: 1
+Inferred Type: "str | int | None", Count: 1
+Inferred Type: "Node", Count: 1
+Inferred Type: "dict[str, Module]", Count: 1
+Inferred Type: "_LossReducer", Count: 1
+Inferred Type: "Event", Count: 1
+Inferred Type: "type[BackendValue]", Count: 1
+Inferred Type: "Enum", Count: 1
+Inferred Type: "type[BackendType]", Count: 1
+Inferred Type: "type[PythonUDF]", Count: 1
+Inferred Type: "type[RemoteException]", Count: 1
+Inferred Type: "list[device]", Count: 1
+Inferred Type: "_CommModeModuleTracker", Count: 1
+Inferred Type: "tuple[Replicate]", Count: 1
+Inferred Type: "PrepareModuleInput", Count: 1
+Inferred Type: "PrepareModuleOutput", Count: 1
+Inferred Type: "tuple[Shard]", Count: 1
+Inferred Type: "dict[OpOverload[..., Any], (op_call: OpOverload[..., Any], args: tuple[object, ...], kwargs: dict[str, object]) -> object]", Count: 1
+Inferred Type: "dict[str, bool]", Count: 1
+Inferred Type: "list[Transform]", Count: 1
+Inferred Type: "Transform", Count: 1
+Inferred Type: "_Dependent", Count: 1
+Inferred Type: "_Boolean", Count: 1
+Inferred Type: "_OneHot", Count: 1
+Inferred Type: "_Real", Count: 1
+Inferred Type: "independent", Count: 1
+Inferred Type: "_GreaterThan", Count: 1
+Inferred Type: "_GreaterThanEq", Count: 1
+Inferred Type: "_Interval", Count: 1
+Inferred Type: "_Simplex", Count: 1
+Inferred Type: "_LowerTriangular", Count: 1
+Inferred Type: "_LowerCholesky", Count: 1
+Inferred Type: "_CorrCholesky", Count: 1
+Inferred Type: "_Square", Count: 1
+Inferred Type: "_Symmetric", Count: 1
+Inferred Type: "_PositiveSemidefinite", Count: 1
+Inferred Type: "_PositiveDefinite", Count: 1
+Inferred Type: "dict[OperatorBase, (...) -> Unknown]", Count: 1
+Inferred Type: "ExportGraphSignature", Count: 1
+Inferred Type: "list[ModuleCallEntry]", Count: 1
+Inferred Type: "_IVals", Count: 1
+Inferred Type: "dict[Any, ValueRanges[Unknown]]", Count: 1
+Inferred Type: "Library", Count: 1
+Inferred Type: "ScriptObject", Count: 1
+Inferred Type: "PyTorchFileReader", Count: 1
+Inferred Type: "TransformerTracer", Count: 1
+Inferred Type: "GraphModule | None", Count: 1
+Inferred Type: "(...) -> Any", Count: 1
+Inferred Type: "dict[str, tuple[_Wrapped[..., Unknown, ..., Unknown], Unknown]]", Count: 1
+Inferred Type: "list[(a: Any, b: Any, /) -> Any]", Count: 1
+Inferred Type: "type[type[nullcontext[_T@nullcontext]]]", Count: 1
+Inferred Type: "object", Count: 1
+Inferred Type: "_NoDefault", Count: 1
+Inferred Type: "_GraphAppendingTracerEx", Count: 1
+Inferred Type: "Mapping[OpOverload[..., Any], (...) -> Unknown] | dict[OpOverload[..., Any], (...) -> Unknown]", Count: 1
+Inferred Type: "ProxyTorchDispatchMode", Count: 1
+Inferred Type: "ShapeEnvSettings", Count: 1
+Inferred Type: "TranslationValidator", Count: 1
+Inferred Type: "tuple[Literal['sqrt'], Literal['cos'], Literal['cosh'], Literal['sin'], Literal['sinh'], Literal['tan'], Literal['tanh'], Literal['asin'], Literal['acos'], Literal['atan'], Literal['log2']]", Count: 1
+Inferred Type: "ModuleType", Count: 1
+Inferred Type: "(a: Unknown) -> Any", Count: 1
+Inferred Type: "dict[str, (sizes: Unknown, strides: Unknown) -> Any]", Count: 1
+Inferred Type: "(sizes: Unknown, strides: Unknown) -> Any", Count: 1
+Inferred Type: "MetaTensorDescriber", Count: 1
+Inferred Type: "type[WeakIdRef]", Count: 1
+Inferred Type: "dict[OpOverload[..., Any], Literal[True]]", Count: 1
+Inferred Type: "FakeTensorConverter", Count: 1
+Inferred Type: "SymInt", Count: 1
+Inferred Type: "tuple[type[IsNonOverlappingAndDenseIndicator]]", Count: 1
+Inferred Type: "tuple[type[tuple[Unknown, ...]], type[list[Unknown]], type[Iterator[Unknown]]]", Count: 1
+Inferred Type: "_PackageNode", Count: 1
+Inferred Type: "(*args: Unknown, **kwargs: Unknown) -> PackageUnpickler", Count: 1
+Inferred Type: "tuple[Any, ...]", Count: 1
+Inferred Type: "dict[Node, Any | None]", Count: 1
+Inferred Type: "_DependencyViewer", Count: 1
+Inferred Type: "NodeSet", Count: 1
+Inferred Type: "_DynType", Count: 1
+Inferred Type: "BroadcastingListCls", Count: 1
+Inferred Type: "ErrorReport", Count: 1
+Inferred Type: "ExprBuilder", Count: 1
+Inferred Type: "StmtBuilder", Count: 1
+Inferred Type: "WithItemBuilder", Count: 1
+Inferred Type: "FileWriter", Count: 1
+Inferred Type: "dict[Unknown, FileWriter]", Count: 1
+Inferred Type: "LockType", Count: 1
+Inferred Type: "SharedCache", Count: 1
+Inferred Type: "dict[Unknown, int]", Count: 1
+Inferred Type: "_size_any_t", Count: 1
+Inferred Type: "TransformerEncoder", Count: 1
+Inferred Type: "(input: Tensor, inplace: bool = ...) -> Tensor", Count: 1
+Inferred Type: "TransformerDecoder", Count: 1
+Inferred Type: "(Tensor) -> Tensor", Count: 1
+Inferred Type: "T@DataParallel", Count: 1
+Inferred Type: "device", Count: 1
+Inferred Type: "(tensor: Tensor, a: float = 0, b: float = 1, generator: Generator | None = None) -> Tensor", Count: 1
+Inferred Type: "(tensor: Tensor, mean: float = 0, std: float = 1, generator: Generator | None = None) -> Tensor", Count: 1
+Inferred Type: "(tensor: Tensor, val: float) -> Tensor", Count: 1
+Inferred Type: "(tensor: Tensor) -> Tensor", Count: 1
+Inferred Type: "(tensor: Tensor, groups: int = 1) -> Tensor", Count: 1
+Inferred Type: "(tensor: Tensor, sparsity: float, std: float = 0.01, generator: Generator | None = None) -> Tensor", Count: 1
+Inferred Type: "(input: Tensor) -> Tensor", Count: 1
+Inferred Type: "(input: Tensor, shape: Tensor) -> Tensor", Count: 1
+Inferred Type: "dict[str, TensorProtoDataType]", Count: 1
+Inferred Type: "list[dtype]", Count: 1
+Inferred Type: "dict[str, dtype]", Count: 1
+Inferred Type: "list[TensorProtoDataType]", Count: 1
+Inferred Type: "tuple[Literal['scan'], Literal['expand'], Literal['expand_as'], Literal['meshgrid'], Literal['adaptive_max_pool1d'], Literal['adaptive_max_pool2d'], Literal['adaptive_max_pool3d'], Literal['max_pool1d_with_indices'], Literal['max_pool2d_with_indices'], Literal['max_pool3d_with_indices']]", Count: 1
+Inferred Type: "tuple[Literal['nonzero'], Literal['where'], Literal['scatter'], Literal['scatter_add'], Literal['erf'], Literal['sign'], Literal['isnan'], Literal['gather'], Literal['arange'], Literal['masked_fill'], Literal['index_fill'], Literal['index_copy'], Literal['repeat_interleave'], Literal['any'], Literal['all']]", Count: 1
+Inferred Type: "bytes", Count: 1
+Inferred Type: "Counter[int]", Count: 1
+Inferred Type: "list[float]", Count: 1
+Inferred Type: "list[float | int]", Count: 1
+Inferred Type: "int | Unknown", Count: 1
+Inferred Type: "float | Unknown", Count: 1
+Inferred Type: "_RequiredParameter", Count: 1
+Inferred Type: "(t: Unknown) -> float", Count: 1
+Inferred Type: "(t: Unknown) -> Unknown", Count: 1
+Inferred Type: "(args: Iterable[Any]) -> bool", Count: 1
+Inferred Type: "(Any: Unknown) -> bool", Count: 1
+Inferred Type: "(*args: Any) -> bool", Count: 1
+Inferred Type: "(src: str, package: str) -> list[tuple[str, str | None]]", Count: 1
+Inferred Type: "_SysImporter", Count: 1
+Inferred Type: "(int) -> ProfilerAction", Count: 1
+Inferred Type: "(_: int) -> ProfilerAction", Count: 1
+Inferred Type: "ProfilerAction", Count: 1
+Inferred Type: "set[ProfilerActivity]", Count: 1
+Inferred Type: "RemovableHandle", Count: 1
+Inferred Type: "int | None", Count: 1
+Inferred Type: "type[Benchmark]", Count: 1
+Inferred Type: "Benchmark", Count: 1
+Inferred Type: "TextIOWrapper[_WrappedBuffer]", Count: 1
+Inferred Type: "Compare", Count: 1
+Inferred Type: "tuple[_Row, ...]", Count: 1
+Inferred Type: "tuple[_Column, ...]", Count: 1
+Inferred Type: "type[SystemEnv]", Count: 1
+Inferred Type: "type[PandasWrapper]", Count: 1
+Inferred Type: "tuple[()] | tuple[Unknown, ...]", Count: 1
+Inferred Type: "IterDataPipe[_T_co@__init__]", Count: 1
+Inferred Type: "(_T_co@__init__) -> Any", Count: 1
+Inferred Type: "type[DataChunk[_T@DataChunk]]", Count: 1
+Inferred Type: "Decoder", Count: 1
+Inferred Type: "StreamWrapper", Count: 1
+Inferred Type: "dict[Any, Unknown]", Count: 1
+Inferred Type: "ModuleTracker", Count: 1
+Inferred Type: "TrieNode", Count: 1
+
+Grouped by Torch Namespace:
+Namespace: "torch.ao", Count: 291
+Namespace: "torch.distributed", Count: 197
+Namespace: "torch.nn", Count: 185
+Namespace: "torch.fx", Count: 133
+Namespace: "torch.utils", Count: 118
+Namespace: "torch.distributions", Count: 74
+Namespace: "torch.autograd", Count: 56
+Namespace: "torch.backends", Count: 34
+Namespace: "torch.optim", Count: 28
+Namespace: "torch.quantization", Count: 27
+Namespace: "torch.export", Count: 18
+Namespace: "torch._subclasses", Count: 17
+Namespace: "torch.package", Count: 14
+Namespace: "torch.jit", Count: 13
+Namespace: "torch.onnx", Count: 12
+Namespace: "torch.profiler", Count: 11
+Namespace: "torch.cuda", Count: 8
+Namespace: "torch.amp", Count: 7
+Namespace: "torch.multiprocessing", Count: 7
+Namespace: "torch._ops", Count: 6
+Namespace: "torch.quasirandom", Count: 6
+Namespace: "torch.xpu", Count: 5
+Namespace: "torch._tensor", Count: 4
+Namespace: "torch.accelerator", Count: 3
+Namespace: "torch.functional", Count: 3
+Namespace: "torch.mtia", Count: 3
+Namespace: "torch.overrides", Count: 3
+Namespace: "torch.old_flags", Count: 1
+Namespace: "torch.sym_sqrt", Count: 1
+Namespace: "torch.lu", Count: 1
+Namespace: "torch.unique", Count: 1
+Namespace: "torch.unique_consecutive", Count: 1
+Namespace: "torch.classes", Count: 1
+Namespace: "torch.quantized_lstm", Count: 1
+Namespace: "torch.quantized_gru", Count: 1
+Namespace: "torch.cpu", Count: 1
+Namespace: "torch.library", Count: 1
+Namespace: "torch._library", Count: 1
+Namespace: "torch.linalg", Count: 1
+Namespace: "torch.serialization", Count: 1
+Namespace: "torch.signal", Count: 1
+Namespace: "torch.sparse", Count: 1
+Namespace: "torch.torch_version", Count: 1
+Namespace: "torch.types", Count: 1

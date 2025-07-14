@@ -1,0 +1,195 @@
+Return Type: "Tensor", Count: 2118
+Return Type: "GraphModule", Count: 41
+Return Type: "RemovableHandle", Count: 30
+Return Type: "Work", Count: 28
+Return Type: "Module", Count: 25
+Return Type: "Node", Count: 24
+Return Type: "Constraint | None", Count: 24
+Return Type: "dict[(...) -> Unknown, Any]", Count: 19
+Return Type: "IterDataPipe[Unknown]", Count: 17
+Return Type: "BackendConfig", Count: 14
+Return Type: "Value", Count: 10
+Return Type: "Stream", Count: 9
+Return Type: "Future[Tensor]", Count: 9
+Return Type: "str | PathLike[Unknown]", Count: 9
+Return Type: "Graph", Count: 8
+Return Type: "sort", Count: 8
+Return Type: "DTensor", Count: 7
+Return Type: "int | SymInt", Count: 6
+Return Type: "set[(...) -> Unknown]", Count: 6
+Return Type: "Work | None", Count: 6
+Return Type: "SymFloat", Count: 5
+Return Type: "ScriptModule", Count: 5
+Return Type: "Proxy", Count: 5
+Return Type: "Metadata", Count: 5
+Return Type: "ExportedProgram", Count: 5
+Return Type: "OperatorSupportBase", Count: 5
+Return Type: "dict[Unknown, Unknown]", Count: 4
+Return Type: "cummax", Count: 4
+Return Type: "cummin", Count: 4
+Return Type: "histogram", Count: 4
+Return Type: "kthvalue", Count: 4
+Return Type: "max", Count: 4
+Return Type: "median", Count: 4
+Return Type: "min", Count: 4
+Return Type: "mode", Count: 4
+Return Type: "nanmedian", Count: 4
+Return Type: "ScriptFunction[..., Unknown]", Count: 4
+Return Type: "device | None", Count: 4
+Return Type: "device", Count: 4
+Return Type: "QConfigMapping", Count: 4
+Return Type: "Future[None]", Count: 4
+Return Type: "RendezvousHandler", Count: 4
+Return Type: "Tensor | None", Count: 4
+Return Type: "MaskedTensor", Count: 4
+Return Type: "SparseSemiStructuredTensor", Count: 4
+Return Type: "MapDataPipe[Unknown]", Count: 4
+Return Type: "IterDataPipe[Unknown] | MapDataPipe[Unknown]", Count: 4
+Return Type: "Event", Count: 3
+Return Type: "list[Unknown]", Count: 3
+Return Type: "Block", Count: 3
+Return Type: "histogramdd", Count: 3
+Return Type: "tuple[Argument, ...] | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 3
+Return Type: "dict[str, set[((...) -> Unknown) | str]]", Count: 3
+Return Type: "dict[((...) -> Unknown) | str, (...) -> Unknown]", Count: 3
+Return Type: "PassResult", Count: 3
+Return Type: "StreamContext", Count: 3
+Return Type: "dict[str, Unknown | Any]", Count: 3
+Return Type: "Future[list[WriteResult]]", Count: 3
+Return Type: "DeviceMesh", Count: 3
+Return Type: "RendezvousInfo", Count: 3
+Return Type: "_PipelineStage", Count: 3
+Return Type: "SymInt", Count: 3
+Return Type: "bool | SymBool", Count: 3
+Return Type: "Future[Unknown]", Count: 2
+Return Type: "aminmax", Count: 2
+Return Type: "frexp", Count: 2
+Return Type: "geqrf", Count: 2
+Return Type: "qr", Count: 2
+Return Type: "slogdet", Count: 2
+Return Type: "UntypedStorage", Count: 2
+Return Type: "svd", Count: 2
+Return Type: "topk", Count: 2
+Return Type: "triangular_solve", Count: 2
+Return Type: "Generator", Count: 2
+Return Type: "Iterator[Unknown]", Count: 2
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, (...) -> Unknown]", Count: 2
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, Any]", Count: 2
+Return Type: "Node | None", Count: 2
+Return Type: "PassResult | None", Count: 2
+Return Type: "list[list[(...) -> Unknown]]", Count: 2
+Return Type: "ScriptObject", Count: 2
+Return Type: "Backend", Count: 2
+Return Type: "Tensor | BytesIO", Count: 2
+Return Type: "StorageMeta | None", Count: 2
+Return Type: "ShardedTensorMetadata", Count: 2
+Return Type: "_IncompatibleKeys", Count: 2
+Return Type: "Store", Count: 2
+Return Type: "WorkerGroup", Count: 2
+Return Type: "ErrorHandler", Count: 2
+Return Type: "SubprocessHandler", Count: 2
+Return Type: "ValueRanges[Unknown]", Count: 2
+Return Type: "CustomDecompTable", Count: 2
+Return Type: "UnflattenedModule", Count: 2
+Return Type: "Proxy | ScriptObject | FakeScriptObject", Count: 2
+Return Type: "ProxyTorchDispatchMode | None", Count: 2
+Return Type: "SymBool", Count: 2
+Return Type: "RecursiveScriptModule", Count: 2
+Return Type: "CausalBias", Count: 2
+Return Type: "BlockMask", Count: 2
+Return Type: "PackedSequence", Count: 2
+Return Type: "tuple[AssertionError | None, Graph, Sequence[int | float | bool | Tensor | ndarray[tuple[Any, ...], dtype[Any]]] | Sequence[Unknown], Sequence[int | float | bool | Tensor | ndarray[tuple[Any, ...], dtype[Any]]] | Sequence[Unknown]]", Count: 2
+Return Type: "WorkerInfo | None", Count: 2
+Return Type: "list[IterDataPipe[Unknown]]", Count: 2
+Return Type: "dict[int, tuple[IterDataPipe[Unknown] | MapDataPipe[Unknown], DataPipeGraph]]", Count: 2
+Return Type: "_StorageBase | TypedStorage | str", Count: 1
+Return Type: "Storage", Count: 1
+Return Type: "list[ScriptFunction[..., Unknown]]", Count: 1
+Return Type: "SerializationStorageContext", Count: 1
+Return Type: "OptionalType[Unknown]", Count: 1
+Return Type: "lu_unpack", Count: 1
+Return Type: "_OpNamespace", Count: 1
+Return Type: "OpOverloadPacket[..., Any]", Count: 1
+Return Type: "OpOverload[_P@OpOverloadPacket, _T@OpOverloadPacket]", Count: 1
+Return Type: "HigherOrderOperator", Count: 1
+Return Type: "Parameter", Count: 1
+Return Type: "Tensor | Module", Count: 1
+Return Type: "LinearReLU", Count: 1
+Return Type: "Attribute", Count: 1
+Return Type: "_node_list", Count: 1
+Return Type: "tuple[... | Sequence[Argument] | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None, ...] | Sequence[tuple[Argument, ...] | ... | Mapping[str, Argument] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None] | Mapping[str, tuple[Argument, ...] | Sequence[Argument] | ... | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None] | slice[Any, Any, Any] | range | Node | str | int | float | bool | complex | dtype | Tensor | device | memory_format | layout | OpOverload[..., Any] | SymInt | SymBool | SymFloat | None", Count: 1
+Return Type: "set[tuple[((...) -> Unknown) | str, ((...) -> Unknown) | str]]", Count: 1
+Return Type: "list[tuple[tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]] | tuple[((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any], ((...) -> Unknown) | str | tuple[str, Any]], int]]", Count: 1
+Return Type: "dict[str, dict[(...) -> Unknown, (...) -> Unknown]]", Count: 1
+Return Type: "Module | None", Count: 1
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, list[DTypeConfig]]", Count: 1
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, dict[str, int]]", Count: 1
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, Sequential | ((...) -> Unknown)]", Count: 1
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, type[Module]]", Count: 1
+Return Type: "dict[((...) -> Unknown) | tuple[(...) -> Unknown, (...) -> Unknown] | tuple[(...) -> Unknown, tuple[(...) -> Unknown, (...) -> Unknown]] | Any, ObserverBase]", Count: 1
+Return Type: "list[set[Unknown]]", Count: 1
+Return Type: "OperatorConfig", Count: 1
+Return Type: "GradientEdge", Count: 1
+Return Type: "AbstractContextManager[Unknown, bool | None]", Count: 1
+Return Type: "ProcessGroup | None", Count: 1
+Return Type: "Future[dict[str, Unknown | Any]] | dict[str, Unknown | Any]", Count: 1
+Return Type: "dict[str, Unknown | Any] | Future[dict[str, Unknown | Any]]", Count: 1
+Return Type: "ProcessGroup", Count: 1
+Return Type: "ShardingSpec", Count: 1
+Return Type: "RendezvousStoreInfo | None", Count: 1
+Return Type: "PContext", Count: 1
+Return Type: "DynamicRendezvousHandler", Count: 1
+Return Type: "ConcatDataset[_T_co@Dataset]", Count: 1
+Return Type: "FSDPModule", Count: 1
+Return Type: "PipeInfo", Count: 1
+Return Type: "tuple[tuple[Unknown, ...], dict[Unknown, Unknown]]", Count: 1
+Return Type: "Pipe", Count: 1
+Return Type: "tuple[list[tuple[Unknown, ...]], list[dict[Unknown, Unknown]]]", Count: 1
+Return Type: "tuple[LaunchConfig, ((...) -> Unknown) | str, list[str]]", Count: 1
+Return Type: "Categorical", Count: 1
+Return Type: "Distribution", Count: 1
+Return Type: "Tensor | int", Count: 1
+Return Type: "Transform", Count: 1
+Return Type: "dict[OperatorBase, (...) -> Unknown]", Count: 1
+Return Type: "GuardSource", Count: 1
+Return Type: "tuple[Any, (...) -> Unknown]", Count: 1
+Return Type: "Future[list[Future[Unknown]]]", Count: 1
+Return Type: "PartitionResult", Count: 1
+Return Type: "DAG", Count: 1
+Return Type: "Partition", Count: 1
+Return Type: "FoldedGraphModule", Count: 1
+Return Type: "Proxy | Tensor", Count: 1
+Return Type: "Proxy | SymInt | SymFloat | SymBool", Count: 1
+Return Type: "_ProxyTensor", Count: 1
+Return Type: "_ProxyTensor | U@get_proxy_slot", Count: 1
+Return Type: "Proxy | U@get_proxy_slot", Count: 1
+Return Type: "SymInt | SymFloat | SymBool | ScriptObject | FakeScriptObject | BackwardState | list[_ExtractValType] | tuple[_ExtractValType, ...] | dict[str, _ExtractValType] | Tensor | int | float | bool | None", Count: 1
+Return Type: "_ProxyTensor | Tensor", Count: 1
+Return Type: "Thunk[Proxy] | SymInt | SymFloat | SymBool", Count: 1
+Return Type: "float | SymFloat", Count: 1
+Return Type: "SymInt | SymFloat | SymBool", Count: 1
+Return Type: "WeakValueDictionary[Unknown, Unknown]", Count: 1
+Return Type: "ViewFunc[Unknown]", Count: 1
+Return Type: "UntypedStorage | None", Count: 1
+Return Type: "MetaStorageDesc", Count: 1
+Return Type: "MetaTensorDesc[Unknown]", Count: 1
+Return Type: "SymInt | SymFloat | None", Count: 1
+Return Type: "Tensor | tuple[Tensor, ...]", Count: 1
+Return Type: "Directory", Count: 1
+Return Type: "GraphModule | tuple[GraphModule, dict[str, str]]", Count: 1
+Return Type: "ScriptDict[Unknown, Unknown]", Count: 1
+Return Type: "ScriptList[Unknown]", Count: 1
+Return Type: "RecursiveScriptClass", Count: 1
+Return Type: "CustomOpDef", Count: 1
+Return Type: "_ASMoutput", Count: 1
+Return Type: "Tensor | tuple[Tensor, Tensor]", Count: 1
+Return Type: "ONNXProgram | None", Count: 1
+Return Type: "dict[OpOverload[..., Any], (...) -> Unknown]", Count: 1
+Return Type: "GraphInfo", Count: 1
+Return Type: "list[((...) -> Unknown) | tuple[(...) -> Unknown, str]]", Count: 1
+Return Type: "_BaseDataLoaderIter", Count: 1
+Return Type: "Iterator[DataChunk[Unknown]]", Count: 1
+Return Type: "DataChunk[Unknown]", Count: 1
+Return Type: "list[IterDataPipe[Unknown] | MapDataPipe[Unknown]]", Count: 1
+Return Type: "HipifyResult", Count: 1
+Return Type: "tuple[Unknown, ...]", Count: 1
