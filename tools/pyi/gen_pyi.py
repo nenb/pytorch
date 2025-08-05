@@ -1568,27 +1568,57 @@ def gen_pyi(
                     "Self",
                 ),
             ],
-        }
-    )
-    for binop in ["add", "sub"]:
-        for inplace in [False, True]:
-            out_args = ["out: Tensor | None = None"]
-            if inplace:
-                binop += "_"
-                out_args = []
-            unsorted_tensor_method_hints[binop].append(
+            "add": [
                 defs(
-                    binop,
+                    "add",
                     [
                         "self",
                         "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
                         "*",
-                        "alpha: Number | _complex | None = 1",
-                        *out_args,
+                        "alpha: Number | _complex = 1",
                     ],
-                    "Tensor",
-                )
-            )
+                    "Self",
+                ),
+            ],
+            "add_": [
+                defs(
+                    "add_",
+                    [
+                        "self",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
+                        "*",
+                        "alpha: Number | _complex = 1",
+                    ],
+                    "Self",
+                ),
+            ],
+            "sub": [
+                defs(
+                    "sub",
+                    [
+                        "self",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
+                        "*",
+                        "alpha: Number | _complex = 1",
+                    ],
+                    "Self",
+                ),
+            ],
+            "sub_": [
+                defs(
+                    "sub_",
+                    [
+                        "self",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
+                        "*",
+                        "alpha: Number | _complex = 1",
+                    ],
+                    "Self",
+                ),
+            ],
+        }
+    )
+
     simple_conversions = [
         "bfloat16",
         "bool",
