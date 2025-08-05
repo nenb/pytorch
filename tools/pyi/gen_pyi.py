@@ -1258,10 +1258,10 @@ def gen_pyi(
                 defs("stride", ["self", "dim: _int"], "_int"),
             ],
             "new_ones": [
-                defs("new_ones", ["self", "size: _size", *FACTORY_PARAMS], "Tensor")
+                defs("new_ones", ["self", "size: _size", *FACTORY_PARAMS], "Self")
             ],
             "new_tensor": [
-                defs("new_tensor", ["self", "data: Any", *FACTORY_PARAMS], "Tensor")
+                defs("new_tensor", ["self", "data: Any", *FACTORY_PARAMS], "Self")
             ],
             "__new__": [defs("__new__", ["cls", "*args", "**kwargs"], "Self")],
             # new and __init__ have the same signatures differ only in return type
@@ -1319,7 +1319,7 @@ def gen_pyi(
                 )
             ],
             "__contains__": [defs("__contains__", ["self", "item: Any", "/"], "_bool")],
-            "__getitem__": [defs("__getitem__", ["self", INDICES, "/"], "Tensor")],
+            "__getitem__": [defs("__getitem__", ["self", INDICES, "/"], "Self")],
             "__setitem__": [
                 defs(
                     "__setitem__",
@@ -1329,7 +1329,7 @@ def gen_pyi(
             ],
             "tolist": [defs("tolist", ["self"], "list")],
             "requires_grad_": [
-                defs("requires_grad_", ["self", "mode: _bool = True"], "Tensor")
+                defs("requires_grad_", ["self", "mode: _bool = True"], "Self")
             ],
             "element_size": [defs("element_size", ["self"], "_int")],
             "data_ptr": [defs("data_ptr", ["self"], "_int")],
@@ -1358,7 +1358,7 @@ def gen_pyi(
                         "non_blocking: _bool = False",
                         "memory_format: torch.memory_format = torch.preserve_format",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "xpu": [
@@ -1370,7 +1370,7 @@ def gen_pyi(
                         "non_blocking: _bool = False",
                         "memory_format: torch.memory_format = torch.preserve_format",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "cpu": [
@@ -1380,21 +1380,21 @@ def gen_pyi(
                         "self",
                         "memory_format: torch.memory_format = torch.preserve_format",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "numpy": [
                 defs("numpy", ["self", "*", "force: _bool = False"], "numpy.ndarray")
             ],
-            "apply_": [defs("apply_", ["self", "callable: Callable"], "Tensor")],
+            "apply_": [defs("apply_", ["self", "callable: Callable[[Any], Any]"], "Self")],
             "map_": [
-                defs("map_", ["self", "other: Tensor", "callable: Callable"], "Tensor")
+                defs("map_", ["self", "other: Tensor", "callable: Callable[[Any, Any], Any]"], "Self")
             ],
             "map2_": [
                 defs(
                     "map2_",
-                    ["self", "x: Tensor", "y: Tensor", "callable: Callable"],
-                    "Tensor",
+                    ["self", "x: Tensor", "y: Tensor", "callable: Callable[[Any, Any, Any], Any]"],
+                    "Self",
                 )
             ],
             "storage": [defs("untyped_storage", ["self"], "UntypedStorage")],
@@ -1408,7 +1408,7 @@ def gen_pyi(
                 defs(
                     "type",
                     ["self", "dtype: str | _dtype", "non_blocking: _bool = False"],
-                    "Tensor",
+                    "Self",
                 ),
             ],
             "get_device": [defs("get_device", ["self"], "_int")],
@@ -1419,7 +1419,7 @@ def gen_pyi(
                         "self",
                         "memory_format: torch.memory_format = torch.contiguous_format",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "has_names": [defs("has_names", ["self"], "_bool")],
@@ -1462,7 +1462,7 @@ def gen_pyi(
                             "*",
                             "memory_format: torch.memory_format | None = None",
                         ],
-                        "Tensor",
+                        "Self",
                     )
                 )
                 for to_args in [
@@ -1479,7 +1479,7 @@ def gen_pyi(
                 defs(
                     "copy_",
                     ["self", "other: Tensor", "non_blocking: _bool = False"],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "set_": [
@@ -1492,24 +1492,24 @@ def gen_pyi(
                         "size: _symsize",
                         "stride: _symsize",
                     ],
-                    "Tensor",
+                    "Self",
                 ),
                 defs(
                     "set_",
                     ["self", "source: Storage | TypedStorage | UntypedStorage"],
-                    "Tensor",
+                    "Self",
                 ),
             ],
             "split": [
                 defs(
                     "split",
                     ["self", "split_size: _int", "dim: _int = 0"],
-                    "Sequence[Tensor]",
+                    "Tuple[Self, ...]",
                 ),
                 defs(
                     "split",
                     ["self", "split_size: tuple[_int, ...]", "dim: _int = 0"],
-                    "Sequence[Tensor]",
+                    "Tuple[Self, ...]",
                 ),
             ],
             "div": [
@@ -1521,7 +1521,7 @@ def gen_pyi(
                         "*",
                         "rounding_mode: str | None = None",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
             "div_": [
@@ -1533,7 +1533,7 @@ def gen_pyi(
                         "*",
                         "rounding_mode: str | None = None",
                     ],
-                    "Tensor",
+                    "Self",
                 )
             ],
         }
