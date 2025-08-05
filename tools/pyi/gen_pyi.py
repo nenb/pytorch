@@ -1323,7 +1323,7 @@ def gen_pyi(
             "__setitem__": [
                 defs(
                     "__setitem__",
-                    ["self", INDICES, "value: Tensor | Number", "/"],
+                    ["self", INDICES, "value: Tensor | Number | _complex", "/"],
                     "None",
                 )
             ],
@@ -1517,19 +1517,19 @@ def gen_pyi(
                     "div",
                     [
                         "self",
-                        "other: Tensor | Number",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
                         "*",
                         "rounding_mode: str | None = None",
                     ],
                     "Self",
-                )
+                ),
             ],
             "div_": [
                 defs(
                     "div_",
                     [
                         "self",
-                        "other: Tensor | Number",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
                         "*",
                         "rounding_mode: str | None = None",
                     ],
@@ -1537,36 +1537,39 @@ def gen_pyi(
                 )
             ],
             "true_divide": [
-                defs("true_divide", ["self", "other: Tensor | Number"], "Self"),
+                defs("true_divide", ["self", "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat"], "Self"),
             ],
             "floor_divide": [
-                defs("floor_divide", ["self", "other: Tensor | Number"], "Self"),
+                defs("floor_divide", ["self", "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat"], "Self"),
             ],
             "true_divide_": [
-                defs("true_divide_", ["self", "other: Tensor | Number"], "Self"),
+                defs("true_divide_", ["self", "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat"], "Self"),
             ],
             "floor_divide_": [
-                defs("floor_divide_", ["self", "other: Tensor | Number"], "Self"),
+                defs("floor_divide_", ["self", "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat"], "Self"),
             ],
-        }
-    )
-    for binop in ["mul"]:
-        for inplace in [False, True]:
-            out_args = ["*", "out: Tensor | None = None"]
-            if inplace:
-                binop += "_"
-                out_args = []
-            unsorted_tensor_method_hints[binop].append(
+            "mul": [
                 defs(
-                    binop,
+                    "mul",
                     [
                         "self",
                         "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
-                        *out_args,
                     ],
-                    "Tensor",
-                )
-            )
+                    "Self",
+                ),
+            ],
+            "mul_": [
+                defs(
+                    "mul_",
+                    [
+                        "self",
+                        "other: Tensor | Number | _complex | torch.SymInt | torch.SymFloat",
+                    ],
+                    "Self",
+                ),
+            ],
+        }
+    )
     for binop in ["add", "sub"]:
         for inplace in [False, True]:
             out_args = ["out: Tensor | None = None"]
