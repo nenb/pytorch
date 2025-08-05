@@ -1536,25 +1536,20 @@ def gen_pyi(
                     "Self",
                 )
             ],
+            "true_divide": [
+                defs("true_divide", ["self", "other: Tensor | Number"], "Self"),
+            ],
+            "floor_divide": [
+                defs("floor_divide", ["self", "other: Tensor | Number"], "Self"),
+            ],
+            "true_divide_": [
+                defs("true_divide_", ["self", "other: Tensor | Number"], "Self"),
+            ],
+            "floor_divide_": [
+                defs("floor_divide_", ["self", "other: Tensor | Number"], "Self"),
+            ],
         }
     )
-    for binop in ["true_divide", "floor_divide"]:
-        for inplace in [False, True]:
-            out_args = ["*", "out: Tensor | None = None"]
-            if inplace:
-                binop += "_"
-                out_args = []
-            unsorted_tensor_method_hints[binop].append(
-                defs(
-                    binop,
-                    [
-                        "self",
-                        "other: Tensor | Number | torch.SymInt | torch.SymFloat",
-                        *out_args,
-                    ],
-                    "Tensor",
-                )
-            )
     for binop in ["mul"]:
         for inplace in [False, True]:
             out_args = ["*", "out: Tensor | None = None"]
