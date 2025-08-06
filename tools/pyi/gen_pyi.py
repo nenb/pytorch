@@ -1318,7 +1318,8 @@ def gen_pyi(
                     "None",
                 )
             ],
-            "tolist": [defs("tolist", ["self"], "list")],
+            "tolist": [
+                defs("tolist", ["self"], "NestedList")],
             "requires_grad_": [
                 defs("requires_grad_", ["self", "mode: _bool = True"], "Self")
             ],
