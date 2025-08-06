@@ -251,18 +251,15 @@ def sig_for_ops(opname: str) -> list[str]:
     name = opname[2:-2]
     if name == "rpow":
         return [  # somehow required to make mypy ci happy?
-            f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ...  # type: ignore[has-type]"
+            f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ...  # type: ignore[has-type]"
         ]
     elif name in arithmetic_ops:
         if name.startswith("i"):
-            # In-place binary-operation dunder methods, like `__iadd__`, should return `Self`
-            return [
-                f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ...  # noqa: PYI034"
-            ]
-        return [f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ..."]
-    elif name in logic_ops:
-        return [f"def {opname}(self, other: Tensor | _int) -> Tensor: ..."]
-    elif name in shift_ops:
+            return [f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ..."]
+        return [f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ..."]
+    elif name in logic_ops or name in shift_ops:
+        if name.startswith("i"):
+            return [f"def {opname}(self, other: Tensor | _int) -> Self: ..."]
         return [f"def {opname}(self, other: Tensor | _int) -> Tensor: ..."]
     elif name in symmetric_comparison_ops:
         return [
@@ -273,7 +270,7 @@ def sig_for_ops(opname: str) -> list[str]:
     elif name in asymmetric_comparison_ops:
         return [f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ..."]
     elif name in unary_ops:
-        return [f"def {opname}(self) -> Tensor: ..."]
+        return [f"def {opname}(self) -> Self: ..."]
     if name in to_py_type_ops:
         if name in {"bool", "float", "complex"}:
             tname = name
