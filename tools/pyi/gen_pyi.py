@@ -254,21 +254,15 @@ def sig_for_ops(opname: str) -> list[str]:
             f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ...  # type: ignore[has-type]"
         ]
     elif name in arithmetic_ops:
-        if name.startswith("i"):
-            return [f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ..."]
         return [f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ..."]
     elif name in logic_ops or name in shift_ops:
-        if name.startswith("i"):
-            return [f"def {opname}(self, other: Tensor | _int) -> Self: ..."]
-        return [f"def {opname}(self, other: Tensor | _int) -> Tensor: ..."]
-    elif name in symmetric_comparison_ops:
+        return [f"def {opname}(self, other: Tensor | _int) -> Self: ..."]
+    elif name in symmetric_comparison_ops or name in asymmetric_comparison_ops:
         return [
             # unsafe override https://github.com/python/mypy/issues/5704
-            f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ...  # type: ignore[overload-overlap]",
-            f"def {opname}(self, other: object) -> _bool: ...",
+            f"def {opname}(self, other: Tensor | Number | _complex) -> Self: ...  # type: ignore[overload-overlap]",
+            f"def {opname}(self, other: object) -> Any: ...", # Returns NotImplemented, not _bool
         ]
-    elif name in asymmetric_comparison_ops:
-        return [f"def {opname}(self, other: Tensor | Number | _complex) -> Tensor: ..."]
     elif name in unary_ops:
         return [f"def {opname}(self) -> Self: ..."]
     if name in to_py_type_ops:
@@ -1501,12 +1495,12 @@ def gen_pyi(
                 defs(
                     "split",
                     ["self", "split_size: _int", "dim: _int = 0"],
-                    "Tuple[Self, ...]",
+                    "tuple[Self, ...]",
                 ),
                 defs(
                     "split",
                     ["self", "split_size: tuple[_int, ...]", "dim: _int = 0"],
-                    "Tuple[Self, ...]",
+                    "tuple[Self, ...]",
                 ),
             ],
             "div": [
