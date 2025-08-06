@@ -28,6 +28,7 @@ import argparse
 import collections
 import importlib
 import inspect
+import re
 import sys
 import textwrap
 from typing import TYPE_CHECKING
@@ -304,7 +305,7 @@ def generate_type_hints(sig_group: PythonSignatureGroup) -> list[str]:
         skip_outputs=sig_group.outplace is None
     )
     if type_hint_vararg:
-        type_hints.append(type_hint_vararg)
+        type_hints.append(type_hint_vararg)        
 
     return type_hints
 
@@ -1641,7 +1642,28 @@ def gen_pyi(
 
     for group in sorted(tensor_method_sig_groups, key=lambda g: g.signature.name):
         name = group.signature.name
-        unsorted_tensor_method_hints[name] += generate_type_hints(group)
+        type_hints = generate_type_hints(group)
+        
+        # the functions in native_functions.yaml all use a variation of Tensor as the return type
+        # we need to change the return type to Self for most of them here
+        updated_type_hints:list[str] = []
+        for hint in type_hints:
+            # sparse tensors have their own return type
+            if "sparse" in hint or "to_dense" in hint:
+                updated_type_hints.append(hint)
+                continue
+            # these are sparse tensor methods
+            if "sspaddmm" in hint or "smm" in hint or "row_indices" in hint or "indices" in hint or "crow_indices" in hint:
+                updated_type_hints.append(hint)
+                continue
+            
+            if "-> Tensor" in hint:
+                hint = hint.replace("-> Tensor", "-> Self")
+            if "-> Tuple[Tensor, ...]" in hint:
+                hint = hint.replace("-> Tuple[Tensor, ...]", "-> Tuple[Self, ...]")
+            updated_type_hints.append(hint)
+            
+        unsorted_tensor_method_hints[name] += updated_type_hints
 
         structseq = returns_structseq_pyi(group.signature)
         if structseq is not None and not group.signature.deprecated:
