@@ -1263,7 +1263,9 @@ def gen_pyi(
             "new_tensor": [
                 defs("new_tensor", ["self", "data: Any", *FACTORY_PARAMS], "Tensor")
             ],
-            "__new__": [defs("__new__", ["cls", "*args", "**kwargs"], "Self")],
+            "__new__": [
+                defs("__new__", ["cls", "*args: Any", "**kwargs: Any"], "Self")
+            ],
             # new and __init__ have the same signatures differ only in return type
             # Adapted from legacy_tensor_ctor and legacy_tensor_new
             "new": [
@@ -1327,7 +1329,8 @@ def gen_pyi(
                     "None",
                 )
             ],
-            "tolist": [defs("tolist", ["self"], "list")],
+            # TODO: replace list[Any] with NestedList and fix errors
+            "tolist": [defs("tolist", ["self"], "list[Any]")],
             "requires_grad_": [
                 defs("requires_grad_", ["self", "mode: _bool = True"], "Tensor")
             ],
@@ -1384,7 +1387,11 @@ def gen_pyi(
                 )
             ],
             "numpy": [
-                defs("numpy", ["self", "*", "force: _bool = False"], "numpy.ndarray")
+                defs(
+                    "numpy",
+                    ["self", "*", "force: _bool = False"],
+                    "numpy.ndarray[Any, Any]",
+                )
             ],
             "apply_": [defs("apply_", ["self", "callable: Callable"], "Tensor")],
             "map_": [
@@ -1487,7 +1494,7 @@ def gen_pyi(
                     "set_",
                     [
                         "self",
-                        "source: Storage | TypedStorage | UntypedStorage",
+                        "source: Storage | UntypedStorage",
                         "storage_offset: IntLikeType",
                         "size: _symsize",
                         "stride: _symsize",
@@ -1496,7 +1503,7 @@ def gen_pyi(
                 ),
                 defs(
                     "set_",
-                    ["self", "source: Storage | TypedStorage | UntypedStorage"],
+                    ["self", "source: Storage | UntypedStorage"],
                     "Tensor",
                 ),
             ],

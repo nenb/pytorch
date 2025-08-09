@@ -2373,7 +2373,7 @@ def to_gpu(obj, type_map=None):
             res.requires_grad = obj.requires_grad
         return res
     elif torch.is_storage(obj):
-        return obj.new().resize_(obj.size()).copy_(obj)  # type: ignore[attr-defined, union-attr]
+        return obj.new().resize_(obj.size()).copy_(obj)  # type: ignore[union-attr, arg-type]
     elif isinstance(obj, list):
         return [to_gpu(o, type_map) for o in obj]
     elif isinstance(obj, tuple):
