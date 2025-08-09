@@ -54,6 +54,7 @@ from torchgen.utils import FileManager
 if TYPE_CHECKING:
     from collections.abc import Sequence
 
+DEPRECATED_TENSOR_METHODS = {"triangular_solve": "Use torch.linalg.solve_triangular instead", "matrix_power": "Use torch.linalg.matrix_power instead"}
 
 def get_py_torch_functions(
     python_funcs: Sequence[PythonSignatureNativeFunctionPair],
@@ -1638,6 +1639,8 @@ def gen_pyi(
 
     tensor_method_hints = []
     for name, hints in sorted(unsorted_tensor_method_hints.items()):
+        if name in DEPRECATED_TENSOR_METHODS: # must be before @overload
+            hints = ["@deprecated('" + DEPRECATED_TENSOR_METHODS[name] + "')\n" + h for h in hints]
         if len(hints) > 1:
             hints = ["@overload\n" + h for h in hints]
         docstr = docstrs.get(f"torch._C.TensorBase.{name}")
