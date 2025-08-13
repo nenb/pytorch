@@ -484,9 +484,9 @@ class SymInt:
     def __rfloordiv__(self, other: "FloatLikeType") -> "SymFloat": ...
 
     # type ignore likely a bug in mypy, see https://github.com/python/mypy/issues/18498
-    def __rfloordiv__(
+    def __rfloordiv__(  # type: ignore[misc]
         self, other: _Union["IntLikeType", "FloatLikeType"]
-    ) -> _Union["SymFloat", "SymInt"]:  # type: ignore[misc]
+    ) -> _Union["SymFloat", "SymInt"]:
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(math.floor(other / sym_float(self)))
         if not isinstance(other, (builtins.int, SymInt)):
@@ -534,9 +534,9 @@ class SymInt:
     def __rpow__(self, other: "FloatLikeType") -> "SymFloat": ...
 
     # type ignore likely a bug in mypy, see https://github.com/python/mypy/issues/18498
-    def __rpow__(
+    def __rpow__( # type: ignore[misc]
         self, other: _Union["IntLikeType", "FloatLikeType"]
-    ) -> _Union["SymInt", "SymFloat"]:  # type: ignore[misc]
+    ) -> _Union["SymInt", "SymFloat"]:  
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(self).__rpow__(other)
         if not isinstance(other, (builtins.int, SymInt)):
