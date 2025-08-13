@@ -1080,7 +1080,7 @@ class DivideByKey:
     def __str__(self) -> str:
         return f".__floordiv__({self.divisor})"
 
-    def get(self, o: int) -> int:
+    def get(self, o: int) -> IntLikeType:
         """Divide object by divisor"""
         return o // self.divisor
 
