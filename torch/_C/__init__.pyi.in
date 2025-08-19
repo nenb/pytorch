@@ -17,6 +17,8 @@ from typing import (
     NamedTuple,
     overload,
     SupportsIndex,
+    Union,
+    TypeAlias,
     TypeVar,
 )
 from typing_extensions import ParamSpec, Protocol, runtime_checkable, Self, TypeAlias
@@ -73,6 +75,8 @@ S = TypeVar("S", bound=torch.Tensor)  # noqa: PYI001
 P = ParamSpec("P")  # noqa: PYI001
 R = TypeVar("R", covariant=True)  # return value (always covariant)  # noqa: PYI001
 T_co = TypeVar("T_co", covariant=True)  # noqa: PYI001
+
+NestedList: TypeAlias = Union[Number, _complex, _bool, list['NestedList']]
 
 @runtime_checkable
 class _NestedSequence(Protocol[T_co]):
