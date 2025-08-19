@@ -7,7 +7,7 @@ from collections import OrderedDict
 from copy import deepcopy
 from numbers import Number
 from typing import Any, Callable, cast, Optional, TypeVar, Union
-from typing_extensions import Concatenate, ParamSpec
+from typing_extensions import Concatenate, ParamSpec, deprecated
 
 import torch
 import torch._C as _C
@@ -870,21 +870,26 @@ class Tensor(torch._C.TensorBase):
             )
         return torch.norm(self, p, dim, keepdim, dtype=dtype)
 
+    @deprecated("Use torch.linalg.solve instead", category=None)
     def solve(self, other):
         from torch._linalg_utils import solve
 
         return solve(self, other)
 
+    @deprecated("Use torch.linalg.lstsq instead", category=None)
     def lstsq(self, other):
         from torch._linalg_utils import lstsq
 
         return lstsq(self, other)
 
+    @deprecated("Use torch.linalg.eig instead", category=None)
     def eig(self, eigenvectors=False):
         from torch._linalg_utils import eig
 
         return eig(self, eigenvectors=eigenvectors)
 
+
+    @deprecated("Use torch.linalg.eigvalsh or torch.linalg.eigh instead", category=None)
     def symeig(self, eigenvectors=False):
         from torch._linalg_utils import _symeig
 

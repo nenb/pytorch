@@ -19,7 +19,7 @@ from typing import (
     SupportsIndex,
     TypeVar,
 )
-from typing_extensions import ParamSpec, Protocol, runtime_checkable, Self, TypeAlias
+from typing_extensions import ParamSpec, Protocol, runtime_checkable, Self, TypeAlias, deprecated
 
 import numpy
 
