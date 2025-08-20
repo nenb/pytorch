@@ -3,10 +3,11 @@
 # mypy: allow-untyped-defs
 # ruff: noqa: F401
 
+import builtins
 from collections.abc import Iterable, Iterator, Sequence
 from enum import Enum, IntEnum
 from pathlib import Path
-from types import EllipsisType
+from types import EllipsisType, TracebackType
 from typing import (
     Any,
     AnyStr,
@@ -93,22 +94,25 @@ class _NestedSequence(Protocol[T_co]):
 
 # Defined in torch/csrc/Device.cpp
 class device:
-    type: str  # THPDevice_type
-    index: _int  # THPDevice_index
-
-    def __get__(self, instance, owner=None) -> device: ...
+    @property
+    def type(self) -> str: ...  # THPDevice_type
+    # TODO: index supports returning None but raises large amount
+    # of type errors and so suppressing - find a way to type correctly
+    @property
+    def index(self) -> _int: ...  # THPDevice_index
 
     # THPDevice_pynew
     @overload
     def __init__(self, device: DeviceLikeType) -> None: ...
     @overload
-    def __init__(self, type: str, index: _int) -> None: ...
+    def __init__(self, type: str, index: _int | None) -> None: ...
 
     # Uncomment if we ever make torch.device a decorator
     # def __call__(self, func: T) -> T: ...
 
     def __enter__(self) -> Self: ...
-    def __exit__(self, exc_type, exc_val, exc_tb) -> None: ...
+    def __exit__(self, exc_type: None | builtins.type[BaseException], exc_val: None | BaseException, exc_tb: None | TracebackType) -> None: ...
+
     def __reduce__(self) -> tuple[Any, ...]: ...  # THPDevice_reduce
 
 # Defined in torch/csrc/Stream.cpp
@@ -1904,7 +1908,8 @@ class TensorBase(metaclass=_TensorMeta):
     shape: Size
     data: Tensor
     names: list[str]
-    device: _device
+    @property
+    def device(self) -> _device: ...
     dtype: _dtype
     layout: _layout
     real: Tensor
