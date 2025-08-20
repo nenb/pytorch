@@ -18,7 +18,9 @@ from typing import (
     NamedTuple,
     overload,
     SupportsIndex,
+    TypeAlias,
     TypeVar,
+    Union,
 )
 from typing_extensions import ParamSpec, Protocol, runtime_checkable, Self, TypeAlias
 
@@ -44,7 +46,7 @@ from torch.autograd.graph import Node as _Node
 from torch.cuda import _POOL_HANDLE
 from torch.fx.node import Node as FxNode
 from torch.package import PackageExporter
-from torch.storage import TypedStorage, UntypedStorage
+from torch.storage import UntypedStorage
 from torch.types import (
     _bool,
     _bytes,
@@ -74,6 +76,8 @@ S = TypeVar("S", bound=torch.Tensor)  # noqa: PYI001
 P = ParamSpec("P")  # noqa: PYI001
 R = TypeVar("R", covariant=True)  # return value (always covariant)  # noqa: PYI001
 T_co = TypeVar("T_co", covariant=True)  # noqa: PYI001
+
+NestedList: TypeAlias = Union[Number, complex, list['NestedList']]
 
 @runtime_checkable
 class _NestedSequence(Protocol[T_co]):
@@ -147,7 +151,7 @@ class Stream:
     def __hash__(self) -> _int: ...
     def __eq__(self, other: object) -> _bool: ...
     def __enter__(self) -> Self: ...
-    def __exit__(self, exc_type, exc_val, exc_tb) -> None: ...
+    def __exit__(self, exc_type: None | builtins.type[BaseException], exc_val: None | BaseException, exc_tb: None | TracebackType) -> None: ...
 
 # Defined in torch/csrc/Event.cpp
 class Event:

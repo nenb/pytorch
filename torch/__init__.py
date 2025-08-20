@@ -36,7 +36,16 @@ from typing_extensions import ParamSpec as _ParamSpec, TypeIs as _TypeIs
 
 
 if TYPE_CHECKING:
-    from .types import Device, IntLikeType, _bool, _int, _float, FloatLikeType, _str, BoolLikeType
+    from .types import (
+        _bool,
+        _float,
+        _int,
+        _str,
+        BoolLikeType,
+        Device,
+        FloatLikeType,
+        IntLikeType,
+    )
 
 
 # As a bunch of torch.packages internally still have this check
@@ -454,48 +463,48 @@ class SymInt:
         if not isinstance(other, (builtins.int, SymInt)):
             return NotImplemented
         return self.__rint_truediv__(other)
-    
-    @_overload
-    def __floordiv__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __floordiv__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
 
-    def __floordiv__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymFloat", "SymInt"]:
+    @_overload
+    def __floordiv__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __floordiv__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __floordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymFloat", "SymInt"]:
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(math.floor(sym_float(self) / other))
         if not isinstance(other, (builtins.int, SymInt)):
             return NotImplemented
         return self.__int_floordiv__(other)
-    
+
     @_overload
-    def __rfloordiv__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __rfloordiv__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __rfloordiv__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __rfloordiv__(self, other: "FloatLikeType") -> "SymFloat": ...
 
     # type ignore likely a bug in mypy, see https://github.com/python/mypy/issues/18498
-    def __rfloordiv__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymFloat", "SymInt"]: # type: ignore[misc]
+    def __rfloordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymFloat", "SymInt"]:  # type: ignore[misc]
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(math.floor(other / sym_float(self)))
         if not isinstance(other, (builtins.int, SymInt)):
             return NotImplemented
         return self.__rint_floordiv__(other)
-    
+
     @_overload
-    def __pow__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __pow__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __pow__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __pow__(self, other: "FloatLikeType") -> "SymFloat": ...
 
     # nb: complex is impossible to handle correctly lol, with
     # negative base and integral float need to diverge semantics and
     # just always return complex.  Neener neener pretend this problem
     # doesn't exist
-    def __pow__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    def __pow__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(self).__pow__(other)
         if not isinstance(other, (builtins.int, SymInt)):
@@ -520,14 +529,14 @@ class SymInt:
             return sym_float(self).__pow__(sym_float(other))
 
     @_overload
-    def __rpow__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __rpow__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __rpow__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __rpow__(self, other: "FloatLikeType") -> "SymFloat": ...
 
     # type ignore likely a bug in mypy, see https://github.com/python/mypy/issues/18498
-    def __rpow__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]: # type: ignore[misc]
+    def __rpow__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:  # type: ignore[misc]
         if isinstance(other, (builtins.float, SymFloat)):
             return sym_float(self).__rpow__(other)
         if not isinstance(other, (builtins.int, SymInt)):
@@ -537,7 +546,7 @@ class SymInt:
         else:
             return sym_float(self).__rpow__(sym_float(other))
 
-    def __eq__(self, other: _Any) -> "_bool":
+    def __eq__(self, other: object) -> "_bool":
         raise TypeError("type stub not overridden")
 
     def __lt__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> "_bool":
@@ -551,121 +560,125 @@ class SymInt:
 
     def __ge__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> "_bool":
         raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __add__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __add__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
 
-    def __add__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
-        raise TypeError("type stub not overridden")
-    
     @_overload
-    def __radd__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __add__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __radd__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __add__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __radd__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
-        raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __rmul__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __rmul__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
-
-    def __rmul__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
-        raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __mod__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __mod__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
-
-    def __mod__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    def __add__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     @_overload
-    def __mul__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __radd__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __mul__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
-        
-    def __mul__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
-        raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __pow_by_natural__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __pow_by_natural__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __radd__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __pow_by_natural__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> _Union["SymInt", "SymFloat"]:
+    def __radd__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     @_overload
-    def __rpow_by_natural__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __rmul__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __rpow_by_natural__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __rmul__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __rpow_by_natural__(self, other:  _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
-        raise TypeError("type stub not overridden")
-
-    def __int_truediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
-        raise TypeError("type stub not overridden")
-
-    def __rint_truediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
-        raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __int_floordiv__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __int_floordiv__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
-
-    def __int_floordiv__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymFloat", "SymInt"]:
+    def __rmul__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     @_overload
-    def __rint_floordiv__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __mod__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __rint_floordiv__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __mod__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __rint_floordiv__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymFloat", "SymInt"]:
-        raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __sym_max__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __sym_max__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
-
-    def __sym_max__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    def __mod__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     @_overload
-    def __sym_min__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __mul__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __sym_min__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __mul__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __sym_min__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    def __mul__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __pow_by_natural__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __pow_by_natural__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __pow_by_natural__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> _Union["SymInt", "SymFloat"]:
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __rpow_by_natural__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __rpow_by_natural__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __rpow_by_natural__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
+        raise TypeError("type stub not overridden")
+
+    def __int_truediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
+        raise TypeError("type stub not overridden")
+
+    def __rint_truediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __int_floordiv__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __int_floordiv__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __int_floordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymFloat", "SymInt"]:
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __rint_floordiv__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __rint_floordiv__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __rint_floordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymFloat", "SymInt"]:
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __sym_max__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __sym_max__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __sym_max__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
+        raise TypeError("type stub not overridden")
+
+    @_overload
+    def __sym_min__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __sym_min__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __sym_min__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     def __sym_float__(self) -> "SymFloat":
@@ -675,23 +688,23 @@ class SymInt:
         raise TypeError("type stub not overridden")
 
     @_overload
-    def __sub__(self, other: "IntLikeType") -> "SymInt":
-        ...
+    def __sub__(self, other: "IntLikeType") -> "SymInt": ...
     @_overload
-    def __sub__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
+    def __sub__(self, other: "FloatLikeType") -> "SymFloat": ...
 
-    def __sub__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    def __sub__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
-    
-    @_overload
-    def __rsub__(self, other: "IntLikeType") -> "SymInt":
-        ...
-    @_overload
-    def __rsub__(self, other: "FloatLikeType") -> "SymFloat":
-        ...
 
-    def __rsub__(self, other: _Union["IntLikeType", "FloatLikeType"]) -> _Union["SymInt", "SymFloat"]:
+    @_overload
+    def __rsub__(self, other: "IntLikeType") -> "SymInt": ...
+    @_overload
+    def __rsub__(self, other: "FloatLikeType") -> "SymFloat": ...
+
+    def __rsub__(
+        self, other: _Union["IntLikeType", "FloatLikeType"]
+    ) -> _Union["SymInt", "SymFloat"]:
         raise TypeError("type stub not overridden")
 
     def __and__(self, other: _Union["IntLikeType", "_bool"]) -> "SymInt":
@@ -745,22 +758,30 @@ class SymFloat:
         # class has a field named node that stores SymNode
         self.node = node
 
-    def __truediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __truediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         return self.__float_truediv__(sym_float(other))
 
-    def __rtruediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __rtruediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         return self.__rfloat_truediv__(sym_float(other))
 
-    def __floordiv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __floordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         return sym_float(math.floor(self / sym_float(other)))
 
-    def __rfloordiv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __rfloordiv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         return sym_float(math.floor(sym_float(other) / self))
@@ -773,13 +794,17 @@ class SymFloat:
 
     # Symbolic power does NOT work with negative base, this is to avoid
     # potential complex outputs
-    def __pow__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __pow__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         torch._check(self >= 0)
         return self.__float_pow__(other)
 
-    def __rpow__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __rpow__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         if not isinstance(other, (builtins.int, builtins.float, SymInt, SymFloat)):
             return NotImplemented
         torch._check(other >= 0)
@@ -787,7 +812,7 @@ class SymFloat:
 
     # Magic methods installed by torch.fx.experimental.sym_node
 
-    def __eq__(self, other: _Any) -> "_bool":
+    def __eq__(self, other: object) -> "_bool":
         raise TypeError("type stub not overridden")
 
     def __lt__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "_bool":
@@ -802,25 +827,37 @@ class SymFloat:
     def __ge__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "_bool":
         raise TypeError("type stub not overridden")
 
-    def __float_pow__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __float_pow__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
-    def __rfloat_pow__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __rfloat_pow__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
-    def __float_truediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __float_truediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
-    def __rfloat_truediv__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __rfloat_truediv__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
     def __trunc__(self) -> "SymInt":
         raise TypeError("type stub not overridden")
 
-    def __sym_max__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __sym_max__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
-    def __sym_min__(self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]) -> "SymFloat":
+    def __sym_min__(
+        self, other: _Union["IntLikeType", "FloatLikeType", "_bool"]
+    ) -> "SymFloat":
         raise TypeError("type stub not overridden")
 
     def __sym_int__(self) -> "SymInt":
@@ -900,21 +937,28 @@ class SymBool:
     def __sym_not__(self) -> "SymBool":
         raise TypeError("type stub not overridden")
 
-
     # booleans behave like fixed-value ints in Python, type checker unable
     # to handle separate overloads for booleans and ints as a result
     @_overload
-    def __sym_ite__(self, then_val: _Union["IntLikeType", "BoolLikeType"], else_val: _Union["IntLikeType", "BoolLikeType"]) -> _Union["SymInt", "SymBool"]:
-        ...
+    def __sym_ite__(
+        self,
+        then_val: _Union["IntLikeType", "BoolLikeType"],
+        else_val: _Union["IntLikeType", "BoolLikeType"],
+    ) -> _Union["SymInt", "SymBool"]: ...
 
     @_overload
-    def __sym_ite__(self, then_val: "FloatLikeType", else_val: "FloatLikeType") -> "SymFloat":
-        ...
+    def __sym_ite__(
+        self, then_val: "FloatLikeType", else_val: "FloatLikeType"
+    ) -> "SymFloat": ...
 
-    def __sym_ite__(self, then_val: _Union["IntLikeType", "FloatLikeType", "BoolLikeType"], else_val: _Union["IntLikeType", "FloatLikeType", "BoolLikeType"]) -> _Union["SymInt", "SymFloat", "SymBool"]:
+    def __sym_ite__(
+        self,
+        then_val: _Union["IntLikeType", "FloatLikeType", "BoolLikeType"],
+        else_val: _Union["IntLikeType", "FloatLikeType", "BoolLikeType"],
+    ) -> _Union["SymInt", "SymFloat", "SymBool"]:
         raise TypeError("type stub not overridden")
 
-    def __eq__(self, other: _Any) -> "_bool":
+    def __eq__(self, other: object) -> "_bool":
         raise TypeError("type stub not overridden")
 
     def __repr__(self) -> "_str":

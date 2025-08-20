@@ -3,7 +3,12 @@ import torch
 from collections import OrderedDict
 import weakref
 import warnings
-from typing import Any
+from typing import Any, Callable, Union, TypeAlias
+from collections.abc import MutableMapping
+from types import TracebackType
+
+HooksDict: TypeAlias = MutableMapping[int, Callable[..., Any]]
+ExtraDict: TypeAlias = MutableMapping[int, Any]
 
 __all__ = ["RemovableHandle", "unserializable_hook", "warn_if_has_hooks", "BackwardHook"]
 
@@ -12,8 +17,8 @@ class RemovableHandle:
     A handle which provides the capability to remove a hook.
 
     Args:
-        hooks_dict (dict): A dictionary of hooks, indexed by hook ``id``.
-        extra_dict (Union[dict, List[dict]]): An additional dictionary or list of
+        hooks_dict: A dictionary of hooks, indexed by hook ``id``.
+        extra_dict: An additional dictionary or list of
             dictionaries whose keys will be deleted when the same keys are
             removed from ``hooks_dict``.
     """
@@ -21,12 +26,12 @@ class RemovableHandle:
     id: int
     next_id: int = 0
 
-    def __init__(self, hooks_dict: Any, *, extra_dict: Any = None) -> None:
-        self.hooks_dict_ref = weakref.ref(hooks_dict)
+    def __init__(self, hooks_dict: HooksDict, *, extra_dict: Union[ExtraDict, list[ExtraDict]] | None = None) -> None:
+        self.hooks_dict_ref: weakref.ref[HooksDict] = weakref.ref(hooks_dict)
         self.id = RemovableHandle.next_id
         RemovableHandle.next_id += 1
 
-        self.extra_dict_ref: tuple = ()
+        self.extra_dict_ref: tuple[weakref.ref[ExtraDict], ...] = ()
         if isinstance(extra_dict, dict):
             self.extra_dict_ref = (weakref.ref(extra_dict),)
         elif isinstance(extra_dict, list):
@@ -42,13 +47,17 @@ class RemovableHandle:
             if extra_dict is not None and self.id in extra_dict:
                 del extra_dict[self.id]
 
-    def __getstate__(self):
+    def __getstate__(self) -> Union[
+    tuple[HooksDict | None, int],
+    tuple[HooksDict | None, int, tuple[ExtraDict | None, ...]]
+]:
+        # TODO: this condition is never true, investigate fix
         if self.extra_dict_ref is None:
             return (self.hooks_dict_ref(), self.id)
         else:
             return (self.hooks_dict_ref(), self.id, tuple(ref() for ref in self.extra_dict_ref))
 
-    def __setstate__(self, state) -> None:
+    def __setstate__(self, state: Any) -> None:
         if state[0] is None:
             # create a dead reference
             self.hooks_dict_ref = weakref.ref(OrderedDict())
@@ -65,7 +74,7 @@ class RemovableHandle:
     def __enter__(self) -> "RemovableHandle":
         return self
 
-    def __exit__(self, type: Any, value: Any, tb: Any) -> None:
+    def __exit__(self, type:  None | type[BaseException], value: None | BaseException, tb: None | TracebackType) -> None:
         self.remove()
 
 

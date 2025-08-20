@@ -66,7 +66,7 @@ class Node(abc.ABC):
         raise NotImplementedError
 
     @abc.abstractmethod
-    def metadata(self) -> dict:
+    def metadata(self) -> dict[Any, Any]:
         r"""Return the metadata."""
         raise NotImplementedError
 
@@ -440,7 +440,11 @@ class _MultiHandle(RemovableHandle):
         for handle in self.handles:
             handle.remove()
 
-    def __getstate__(self) -> tuple[RemovableHandle, ...]:
+    # TODO: this subclass violates Liskov substitution principle
+    # also not clear why it needs to subclass RemovableHandle
+    # as it overrides all methods apart from context manager methods,
+    # confirm whether intentional and remove the type ignore if not
+    def __getstate__(self) -> tuple[RemovableHandle, ...]:  # type: ignore[override]
         return self.handles
 
     def __setstate__(self, state: tuple[RemovableHandle, ...]) -> None:
