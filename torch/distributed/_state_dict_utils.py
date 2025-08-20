@@ -423,7 +423,8 @@ def _create_cpu_state_dict(
             t = t.share_memory_()
             if pin_memory:
                 pin_memory_utils.pin_memory(t.data_ptr(), t.numel() * t.element_size())
-                weakref.finalize(t, pin_memory_utils.unpin_memory, t)
+                # TODO: think this is a bug, needs t.data_ptr()?
+                weakref.finalize(t, pin_memory_utils.unpin_memory, t)  # type: ignore [arg-type]
 
             return t
         elif pin_memory:

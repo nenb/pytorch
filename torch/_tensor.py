@@ -4,9 +4,22 @@ import enum
 import functools
 import warnings
 from collections import OrderedDict
+from collections.abc import Iterator, Sequence
 from copy import deepcopy
 from numbers import Number
-from typing import Any, Callable, cast, Optional, TypeVar, Union
+from typing import (
+    Any,
+    Callable,
+    cast,
+    Literal,
+    Optional,
+    overload,
+    Self,
+    SupportsIndex,
+    TYPE_CHECKING,
+    TypeVar,
+    Union,
+)
 from typing_extensions import Concatenate, ParamSpec
 
 import torch
@@ -28,8 +41,14 @@ from torch.overrides import (
 )
 
 
+if TYPE_CHECKING:
+    import numpy
+    from types import EllipsisType
+
+
 _P = ParamSpec("_P")
 _TensorLike = TypeVar("_TensorLike", bound=_C.TensorBase)
+T = TypeVar("T", bound="Tensor")
 
 
 def _handle_torch_function_and_wrap_type_error_to_not_implemented(
@@ -107,6 +126,8 @@ def _dtype_to_typestr(dtype):
 # otherwise, it will not show up in autocomplete.
 class Tensor(torch._C.TensorBase):
     _is_param: bool
+    data: "Tensor"
+    requires_grad: bool
 
     def _clear_non_serializable_cached_data(self):
         r"""Clears any data cached in the tensor's ``__dict__`` that would prevent the tensor
@@ -135,7 +156,9 @@ class Tensor(torch._C.TensorBase):
         for key in CACHED_SIZES_STRIDES_KEYS:
             self.__dict__.pop(key, None)
 
-    def __deepcopy__(self, memo):
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    def __deepcopy__(self, memo: dict[int, Any]) -> "Tensor":
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__deepcopy__, (self,), self, memo)
         if not self.is_leaf:
@@ -267,7 +290,7 @@ class Tensor(torch._C.TensorBase):
             memo[id(self)] = new_tensor
             return new_tensor
 
-    def __reduce_ex__(self, proto):
+    def __reduce_ex__(self, proto: SupportsIndex) -> tuple[Any, ...]:
         materialize_fake_tensors = (
             torch.serialization._serialization_tls.materialize_fake_tensors
         )
@@ -291,7 +314,7 @@ class Tensor(torch._C.TensorBase):
         self._clear_non_serializable_cached_data()
         return (_rebuild_from_type_v2, (func, type(self), args, state))
 
-    def storage(self):
+    def storage(self) -> "torch.TypedStorage":
         r"""
         storage() -> torch.TypedStorage
 
@@ -540,7 +563,7 @@ class Tensor(torch._C.TensorBase):
 
             return (rebuild_func, args)
 
-    def __setstate__(self, state):
+    def __setstate__(self, state: Any) -> None:
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__setstate__, (self,), self, state)
         # Warning: this method is NOT called when you torch.load() a tensor;
@@ -559,7 +582,7 @@ class Tensor(torch._C.TensorBase):
         # See Note [Don't serialize hooks]
         self.requires_grad, _, self._backward_hooks = state
 
-    def __repr__(self, *, tensor_contents=None):
+    def __repr__(self, *, tensor_contents: Any | None = None) -> str:
         if has_torch_function_unary(self):
             return handle_torch_function(
                 Tensor.__repr__, (self,), self, tensor_contents=tensor_contents
@@ -568,8 +591,12 @@ class Tensor(torch._C.TensorBase):
         return torch._tensor_str._str(self, tensor_contents=tensor_contents)
 
     def backward(
-        self, gradient=None, retain_graph=None, create_graph=False, inputs=None
-    ):
+        self,
+        gradient: "Tensor | None" = None,
+        retain_graph: bool | None = None,
+        create_graph: bool = False,
+        inputs: Sequence["Tensor"] | None = None,
+    ) -> None:
         r"""Computes the gradient of current tensor wrt graph leaves.
 
         The graph is differentiated using the chain rule. If the tensor is
@@ -626,7 +653,11 @@ class Tensor(torch._C.TensorBase):
             self, gradient, retain_graph, create_graph, inputs=inputs
         )
 
-    def register_hook(self, hook):
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    def register_hook(
+        self, hook: Callable[["Tensor"], "Tensor | None"]
+    ) -> "torch.utils.hooks.RemovableHandle":
         r"""Registers a backward hook.
 
         The hook will be called every time a gradient with respect to the
@@ -676,7 +707,9 @@ class Tensor(torch._C.TensorBase):
         self._backward_hooks[handle.id] = hook
         return handle
 
-    def register_post_accumulate_grad_hook(self, hook):
+    def register_post_accumulate_grad_hook(
+        self, hook: Callable[[Self], "Self | None"]
+    ) -> "torch.utils.hooks.RemovableHandle":
         r"""Registers a backward hook that runs after grad accumulation.
 
         The hook will be called after all gradients for a tensor have been accumulated,
@@ -686,7 +719,7 @@ class Tensor(torch._C.TensorBase):
 
         The hook should have the following signature::
 
-            hook(param: Tensor) -> None
+            hook(param: Tensor) -> Tensor | None
 
         Note that, unlike other autograd hooks, this hook operates on the tensor
         that requires grad and not the grad itself. The hook can in-place modify
@@ -735,7 +768,7 @@ class Tensor(torch._C.TensorBase):
         self._post_accumulate_grad_hooks[handle.id] = hook
         return handle
 
-    def reinforce(self, reward):
+    def reinforce(self, reward: Any) -> None:
         def trim(str):
             return "\n".join([line.strip() for line in str.split("\n")])
 
@@ -766,7 +799,7 @@ class Tensor(torch._C.TensorBase):
             )
         )
 
-    detach = _C._add_docstr(
+    detach: Any = _C._add_docstr(
         _C.TensorBase.detach,
         r"""
     Returns a new Tensor, detached from the current graph.
@@ -784,7 +817,7 @@ class Tensor(torch._C.TensorBase):
     """,
     )
 
-    detach_ = _C._add_docstr(
+    detach_: Any = _C._add_docstr(
         _C.TensorBase.detach_,
         r"""
     Detaches the Tensor from the graph that created it, making it a leaf.
@@ -795,7 +828,7 @@ class Tensor(torch._C.TensorBase):
     """,
     )
 
-    def is_shared(self):
+    def is_shared(self) -> bool:
         r"""Checks if tensor is in shared memory.
 
         This is always ``True`` for CUDA tensors.
@@ -804,7 +837,7 @@ class Tensor(torch._C.TensorBase):
             return handle_torch_function(Tensor.is_shared, (self,), self)
         return self._typed_storage()._is_shared()
 
-    def share_memory_(self):
+    def share_memory_(self) -> Self:
         r"""Moves the underlying storage to shared memory.
 
         This is a no-op if the underlying storage is already in shared memory
@@ -817,7 +850,9 @@ class Tensor(torch._C.TensorBase):
         self._typed_storage()._share_memory_()
         return self
 
-    def module_load(self, other, assign=False):
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    def module_load(self, other: "Tensor", assign: bool = False) -> "Tensor":
         r"""Defines how to transform ``other`` when loading it into ``self`` in :meth:`~nn.Module.load_state_dict`.
 
         Used when :func:`~torch.__future__.get_swap_module_params_on_conversion` is ``True``.
@@ -847,7 +882,9 @@ class Tensor(torch._C.TensorBase):
         else:
             return self.copy_(other).detach()
 
-    def __reversed__(self):
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    def __reversed__(self) -> "Tensor":
         r"""Reverses the tensor along dimension 0."""
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__reversed__, (self,), self)
@@ -859,10 +896,10 @@ class Tensor(torch._C.TensorBase):
     def norm(
         self,
         p: Optional[Union[float, str]] = "fro",
-        dim=None,
-        keepdim=False,
-        dtype=None,
-    ):
+        dim: Any = None,
+        keepdim: bool = False,
+        dtype: Any = None,
+    ) -> Any:
         r"""See :func:`torch.norm`"""
         if has_torch_function_unary(self):
             return handle_torch_function(
@@ -870,27 +907,27 @@ class Tensor(torch._C.TensorBase):
             )
         return torch.norm(self, p, dim, keepdim, dtype=dtype)
 
-    def solve(self, other):
+    def solve(self, other: Any) -> Any:
         from torch._linalg_utils import solve
 
         return solve(self, other)
 
-    def lstsq(self, other):
+    def lstsq(self, other: Any) -> Any:
         from torch._linalg_utils import lstsq
 
         return lstsq(self, other)
 
-    def eig(self, eigenvectors=False):
+    def eig(self, eigenvectors: Any = False) -> Any:
         from torch._linalg_utils import eig
 
         return eig(self, eigenvectors=eigenvectors)
 
-    def symeig(self, eigenvectors=False):
+    def symeig(self, eigenvectors: Any = False) -> Any:
         from torch._linalg_utils import _symeig
 
         return _symeig(self, eigenvectors=eigenvectors)
 
-    def lu(self, pivot=True, get_infos=False):
+    def lu(self, pivot: Any = True, get_infos: Any = False) -> Any:
         r"""See :func:`torch.lu`"""
         # If get_infos is True, then we don't need to check for errors and vice versa
         if has_torch_function_unary(self):
@@ -906,6 +943,8 @@ class Tensor(torch._C.TensorBase):
         else:
             return LU, pivots
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     def stft(
         self,
         n_fft: int,
@@ -918,7 +957,7 @@ class Tensor(torch._C.TensorBase):
         onesided: Optional[bool] = None,
         return_complex: Optional[bool] = None,
         align_to_window: Optional[bool] = None,
-    ):
+    ) -> "Tensor":
         r"""See :func:`torch.stft`
 
         .. warning::
@@ -955,6 +994,8 @@ class Tensor(torch._C.TensorBase):
             align_to_window=align_to_window,
         )
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     def istft(
         self,
         n_fft: int,
@@ -966,7 +1007,7 @@ class Tensor(torch._C.TensorBase):
         onesided: Optional[bool] = None,
         length: Optional[int] = None,
         return_complex: bool = False,
-    ):
+    ) -> "Tensor":
         r"""See :func:`torch.istft`"""
         if has_torch_function_unary(self):
             return handle_torch_function(
@@ -996,7 +1037,7 @@ class Tensor(torch._C.TensorBase):
             return_complex=return_complex,
         )
 
-    def resize(self, *sizes):
+    def resize(self, *sizes: Any) -> Any:
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.resize, (self,), self, *sizes)
         warnings.warn("non-inplace resize is deprecated")
@@ -1004,7 +1045,7 @@ class Tensor(torch._C.TensorBase):
 
         return Resize.apply(self, sizes)
 
-    def resize_as(self, tensor):
+    def resize_as(self, tensor: Any) -> Any:
         if has_torch_function_variadic(self, tensor):
             return handle_torch_function(Tensor.resize_as, (self, tensor), self, tensor)
         warnings.warn("non-inplace resize_as is deprecated")
@@ -1012,7 +1053,11 @@ class Tensor(torch._C.TensorBase):
 
         return Resize.apply(self, tensor.size())
 
-    def split(self, split_size, dim=0):
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    def split(
+        self, split_size: Sequence[int] | int, dim: int = 0
+    ) -> tuple["Tensor", ...]:
         r"""See :func:`torch.split`"""
         if has_torch_function_unary(self):
             return handle_torch_function(
@@ -1029,7 +1074,49 @@ class Tensor(torch._C.TensorBase):
         else:
             return torch._VF.split_with_sizes(self, split_size, dim)
 
-    def unique(self, sorted=True, return_inverse=False, return_counts=False, dim=None):
+    @overload
+    def unique(
+        self,
+        sorted: bool = True,
+        return_inverse: Literal[False] = False,
+        return_counts: Literal[False] = False,
+        dim: int | None = None,
+    ) -> Self: ...
+
+    @overload
+    def unique(
+        self,
+        sorted: bool = True,
+        return_inverse: Literal[True] = True,
+        return_counts: Literal[False] = False,
+        dim: int | None = None,
+    ) -> tuple[Self, Self]: ...
+
+    @overload
+    def unique(
+        self,
+        sorted: bool = True,
+        return_inverse: Literal[False] = False,
+        return_counts: Literal[True] = True,
+        dim: int | None = None,
+    ) -> tuple[Self, Self]: ...
+
+    @overload
+    def unique(
+        self,
+        sorted: bool = True,
+        return_inverse: Literal[True] = True,
+        return_counts: Literal[True] = True,
+        dim: int | None = None,
+    ) -> tuple[Self, Self, Self]: ...
+
+    def unique(
+        self,
+        sorted: bool = True,
+        return_inverse: bool = False,
+        return_counts: bool = False,
+        dim: int | None = None,
+    ) -> Self | tuple[Self, Self] | tuple[Self, Self, Self]:
         r"""Returns the unique elements of the input tensor.
 
         See :func:`torch.unique`
@@ -1052,7 +1139,44 @@ class Tensor(torch._C.TensorBase):
             dim=dim,
         )
 
-    def unique_consecutive(self, return_inverse=False, return_counts=False, dim=None):
+    @overload
+    def unique_consecutive(
+        self,
+        return_inverse: Literal[False] = False,
+        return_counts: Literal[False] = False,
+        dim: int | None = None,
+    ) -> Self: ...
+
+    @overload
+    def unique_consecutive(
+        self,
+        return_inverse: Literal[True] = True,
+        return_counts: Literal[False] = False,
+        dim: int | None = None,
+    ) -> tuple[Self, Self]: ...
+
+    @overload
+    def unique_consecutive(
+        self,
+        return_inverse: Literal[False] = False,
+        return_counts: Literal[True] = True,
+        dim: int | None = None,
+    ) -> tuple[Self, Self]: ...
+
+    @overload
+    def unique_consecutive(
+        self,
+        return_inverse: Literal[True] = True,
+        return_counts: Literal[True] = True,
+        dim: int | None = None,
+    ) -> tuple[Self, Self, Self]: ...
+
+    def unique_consecutive(
+        self,
+        return_inverse: bool = False,
+        return_counts: bool = False,
+        dim: int | None = None,
+    ) -> Self | tuple[Self, Self] | tuple[Self, Self, Self]:
         r"""Eliminates all but the first element from every consecutive group of equivalent elements.
 
         See :func:`torch.unique_consecutive`
@@ -1070,18 +1194,24 @@ class Tensor(torch._C.TensorBase):
             self, return_inverse=return_inverse, return_counts=return_counts, dim=dim
         )
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rsub__(self, other: Union["Tensor", int, float, bool, complex]) -> "Tensor":
         return _C._VariableFunctions.rsub(self, other)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rdiv__(self, other: Union["Tensor", int, float, bool, complex]) -> "Tensor":
         return self.reciprocal() * other
 
-    __rtruediv__ = __rdiv__
-    __itruediv__ = _C.TensorBase.__idiv__
+    __rtruediv__: Any = __rdiv__
+    __itruediv__: Any = _C.TensorBase.__idiv__
 
-    __pow__ = cast(
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
+    __pow__: Any = cast(
         Callable[
             ["torch._C.TensorBase", Union["Tensor", int, float, bool, complex]],
             "Tensor",
@@ -1091,15 +1221,17 @@ class Tensor(torch._C.TensorBase):
         ),
     )
 
-    __ipow__ = _handle_torch_function_and_wrap_type_error_to_not_implemented(
+    __ipow__: Any = _handle_torch_function_and_wrap_type_error_to_not_implemented(
         _C.TensorBase.pow_
     )
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rmod__(self, other: Union["Tensor", int, float, bool, complex]) -> "Tensor":
         return torch.remainder(other, self)
 
-    def __format__(self, format_spec):
+    def __format__(self, format_spec: str) -> str:
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__format__, (self,), self, format_spec)
         if self.dim() == 0 and not self.is_meta and type(self) is Tensor:
@@ -1108,41 +1240,53 @@ class Tensor(torch._C.TensorBase):
             return self.detach().item().__format__(format_spec)
         return object.__format__(self, format_spec)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rpow__(self, other: Union["Tensor", int, float, bool, complex]) -> "Tensor":
         return torch.pow(other, self)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __floordiv__(self, other: Union["Tensor", int, float, bool]) -> "Tensor":  # type: ignore[override]
         # TODO(rec): the superclass says it accepts complex here,
         # but torch.floor_divide says it doesn't.
         return torch.floor_divide(self, other)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rfloordiv__(self, other: Union["Tensor", int, float, bool]) -> "Tensor":  # type: ignore[override]
         return torch.floor_divide(other, self)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rlshift__(
         self, other: Union["Tensor", int, float, bool, complex]
     ) -> "Tensor":
         return torch.bitwise_left_shift(other, self)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rrshift__(
         self, other: Union["Tensor", int, float, bool, complex]
     ) -> "Tensor":
         return torch.bitwise_right_shift(other, self)
 
+    # TODO: https://github.com/pytorch/pytorch/issues/160322#issuecomment-3180385001
+    # Update this to return Self if torch.Tensor methods updated to return Self
     @_handle_torch_function_and_wrap_type_error_to_not_implemented
     def __rmatmul__(self, other: "Tensor") -> "Tensor":
         return torch.matmul(other, self)
 
-    __pos__ = _C.TensorBase.positive
-    __neg__ = _C.TensorBase.neg
-    __abs__ = _C.TensorBase.abs
+    __pos__: Any = _C.TensorBase.positive
+    __neg__: Any = _C.TensorBase.neg
+    __abs__: Any = _C.TensorBase.abs
 
-    def __len__(self):
+    def __len__(self) -> int:
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__len__, (self,), self)
         if self.dim() == 0:
@@ -1158,7 +1302,8 @@ class Tensor(torch._C.TensorBase):
             )
         return self.shape[0]
 
-    def __iter__(self):
+    # TODO: This raises an enormous amount of errors, need to fix as separate PR
+    def __iter__(self) -> Iterator[Any]:
         # NB: we use 'imap' and not 'map' here, so that in Python 2 we get a
         # generator and don't eagerly perform all the indexes.  This could
         # save us work, and also helps keep trace ordering deterministic
@@ -1180,14 +1325,14 @@ class Tensor(torch._C.TensorBase):
             )
         return iter(self.unbind(0))
 
-    def __hash__(self):
+    def __hash__(self) -> int:
         # Do NOT handle __torch_function__ here as user's default
         # implementation that handle most functions will most likely do it wrong.
         # It can be easily overridden by defining this method on the user
         # subclass if needed.
         return id(self)
 
-    def __dir__(self):
+    def __dir__(self) -> list[str]:
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__dir__, (self,), self)
         tensor_methods = dir(self.__class__)
@@ -1202,9 +1347,9 @@ class Tensor(torch._C.TensorBase):
         return sorted(keys)
 
     # Numpy array interface, to support `numpy.asarray(tensor) -> ndarray`
-    __array_priority__ = 1000  # prefer Tensor ops over numpy ones
+    __array_priority__: int = 1000  # prefer Tensor ops over numpy ones
 
-    def __array__(self, dtype=None):
+    def __array__(self, dtype: Any | None = None) -> "numpy.ndarray[Any, Any]":
         if has_torch_function_unary(self):
             return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
         if dtype is None:
@@ -1214,7 +1359,7 @@ class Tensor(torch._C.TensorBase):
 
     # Wrap Numpy array again in a suitable tensor when done, to support e.g.
     # `numpy.sin(tensor) -> tensor` or `numpy.greater(tensor, 0) -> ByteTensor`
-    def __array_wrap__(self, array):
+    def __array_wrap__(self, array: "numpy.ndarray[Any, Any]") -> "Tensor":
         if has_torch_function_unary(self):
             return handle_torch_function(
                 Tensor.__array_wrap__, (self,), self, array=array
@@ -1244,7 +1389,7 @@ class Tensor(torch._C.TensorBase):
         )
 
     @property
-    def __cuda_array_interface__(self):
+    def __cuda_array_interface__(self) -> dict[str, Any]:
         """Array view description for cuda tensors.
 
         See:
@@ -1293,7 +1438,7 @@ class Tensor(torch._C.TensorBase):
 
         return dict(typestr=typestr, shape=shape, strides=strides, data=data, version=2)
 
-    def storage_type(self):
+    def storage_type(self) -> Any:
         r"""storage_type() -> type
 
         Returns the type of the underlying storage.
@@ -1306,7 +1451,7 @@ class Tensor(torch._C.TensorBase):
 
         return self._typed_storage()._get_legacy_storage_class()
 
-    def refine_names(self, *names):
+    def refine_names(self, *names: Sequence[str | EllipsisType | None]) -> "Tensor":
         r"""Refines the dimension names of :attr:`self` according to :attr:`names`.
 
         Refining is a special case of renaming that "lifts" unnamed dimensions.
@@ -1350,7 +1495,7 @@ class Tensor(torch._C.TensorBase):
         names = resolve_ellipsis(names, self.names, "refine_names")
         return super().refine_names(names)
 
-    def align_to(self, *names):
+    def align_to(self, *names: Sequence[str | EllipsisType | None]) -> "Tensor":
         r"""Permutes the dimensions of the :attr:`self` tensor to match the order
         specified in :attr:`names`, adding size-one dims for any new names.
 
@@ -1395,7 +1540,7 @@ class Tensor(torch._C.TensorBase):
             [name for name in names if not is_ellipsis(name)], ellipsis_idx
         )
 
-    def unflatten(self, dim, sizes):  # type: ignore[override]
+    def unflatten(self, dim: int, sizes: Any) -> "Tensor":  # type: ignore[override]
         r"""
         unflatten(dim, sizes) -> Tensor
 
@@ -1417,7 +1562,7 @@ class Tensor(torch._C.TensorBase):
         else:
             return super().unflatten(dim, sizes)
 
-    def rename_(self, *names, **rename_map):
+    def rename_(self, *names: Sequence[str | EllipsisType | None], **rename_map: str | None) -> "Tensor":
         """In-place version of :meth:`~Tensor.rename`."""
 
         if has_torch_function_unary(self):
@@ -1432,7 +1577,7 @@ class Tensor(torch._C.TensorBase):
         # C++ is static, making it difficult to implement similar behavior.
         return update_names(self, names, rename_map, inplace=True)
 
-    def rename(self, *names, **rename_map):
+    def rename(self, *names: Sequence[str | EllipsisType | None], **rename_map: str | None) -> "Tensor":
         """Renames dimension names of :attr:`self`.
 
         There are two main usages:
@@ -1474,7 +1619,7 @@ class Tensor(torch._C.TensorBase):
         # See Note [rename_ / rename API]
         return update_names(self, names, rename_map, inplace=False)
 
-    def to_sparse_coo(self):
+    def to_sparse_coo(self) -> "Tensor":
         """Convert a tensor to :ref:`coordinate format <sparse-coo-docs>`.
 
         Examples::
@@ -1489,7 +1634,7 @@ class Tensor(torch._C.TensorBase):
 
     def dim_order(
         self, *, ambiguity_check: Union[bool, list[torch.memory_format]] = False
-    ):
+    ) -> tuple[int, ...]:
         """
         dim_order(ambiguity_check=False) -> tuple
 
@@ -1630,7 +1775,7 @@ class Tensor(torch._C.TensorBase):
             return super().rename(names)
 
     @classmethod
-    def __torch_function__(cls, func, types, args=(), kwargs=None):
+    def __torch_function__(cls, func: Any, types: Any, args: Any = (), kwargs: Any = None) -> Any:
         """
         This __torch_function__ implementation wraps subclasses such that
         methods called on subclasses return a subclass instance instead of
@@ -1657,7 +1802,7 @@ class Tensor(torch._C.TensorBase):
             else:
                 return _convert(ret, cls)
 
-    __torch_dispatch__ = _C._disabled_torch_dispatch_impl
+    __torch_dispatch__: Any = _C._disabled_torch_dispatch_impl
 
     def __dlpack__(
         self,
@@ -1666,7 +1811,7 @@ class Tensor(torch._C.TensorBase):
         max_version: Optional[tuple[int, int]] = None,
         dl_device: Optional[tuple[enum.IntEnum, int]] = None,
         copy: Optional[bool] = None,
-    ):
+    ) -> Any:
         """
         Creates a DLpack `capsule https://data-apis.org/array-api/latest/design_topics/data_interchange.html#data-interchange`_
         of the current tensor to be exported to other libraries.

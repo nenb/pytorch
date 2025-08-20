@@ -597,10 +597,12 @@ class MemTracker(TorchDispatchMode):
             if (
                 self._param_to_grad_hook_handles.get(param, None) is None
                 and install_grad_hooks
+                and param.grad is not None
             ):
                 grad_hook_handle = param.register_hook(_grad_hook)
+                # type checker not smart enough to know that param.grad is not None
                 post_acc_grad_hook_handle = param.register_post_accumulate_grad_hook(
-                    lambda p: (_grad_hook(p.grad))
+                    lambda p: (_grad_hook(p.grad))  # type: ignore [arg-type]
                 )
                 self._param_to_grad_hook_handles[param] = (
                     grad_hook_handle,

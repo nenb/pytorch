@@ -175,7 +175,7 @@ def _conv_fn(
         dist_param = torch.nn.Parameter(
             distribute_tensor(param, device_mesh, dist_spec)
         )
-        dist_param.register_hook(lambda grad: grad.redistribute(placements=dist_spec))
+        dist_param.register_hook(lambda grad: grad.redistribute(placements=dist_spec))  # type: ignore [attr-defined]
         name = "_".join(name.split("."))
         module.register_parameter(name, dist_param)
 

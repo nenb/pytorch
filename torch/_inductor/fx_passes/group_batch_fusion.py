@@ -1330,12 +1330,12 @@ def get_fusion_candidates(
     return candidate_dict
 
 
-def apply_group_batch_fusion(graph: torch.fx.GraphModule, rule: GroupBatchFusionBase):
-    stable_topological_sort(graph)  # type: ignore[arg-type]
+def apply_group_batch_fusion(graph: torch.fx.Graph, rule: GroupBatchFusionBase):
+    stable_topological_sort(graph)
     fused_set = OrderedSet[torch.fx.Node]()
     log_to_scuba = False
 
-    for node in reversed(graph.nodes):  # type: ignore[arg-type]
+    for node in reversed(graph.nodes):
         candidates = get_fusion_candidates(rule, node, fused_set)
 
         for key, candidate_nodes in candidates.items():
@@ -1426,4 +1426,4 @@ def group_batch_fusion_passes(graph: torch.fx.Graph, pre_grad=True):
             graph.owning_module,
             f"group_batch_fusion_{i}",
         ):
-            apply_group_batch_fusion(graph, rule)  # type: ignore[arg-type]
+            apply_group_batch_fusion(graph, rule)
